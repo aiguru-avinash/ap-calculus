@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 4: Contextual Applications | AP Calculus</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+<div id="topNav"></div>
+<div class="page-wrapper">
+<div id="sidebarNav"></div>
+<main class="main-content"><div class="content-inner">
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow">
+    <span class="chapter-badge ab">AB</span><span class="chapter-badge bc">BC</span>
+    <span class="chapter-num">Chapter 4 of 10</span>
+  </div>
+  <h1>Contextual Applications of Differentiation</h1>
+  <p class="page-hero-subtitle">Apply derivatives to real-world contexts: rates of change, linear approximation, related rates, and L'Hôpital's Rule.</p>
+  <div class="hero-meta">
+    <span class="hero-meta-item">📖 ~50 min read</span>
+    <span class="hero-meta-item">✏️ 7 worked examples</span>
+    <span class="hero-meta-item"><a href="../mcq/mcq-ch04.html">→ 20 MCQs</a></span>
+  </div>
+</div>
+
+<div class="toc-box">
+  <div class="toc-title">In This Chapter</div>
+  <ul class="toc-list">
+    <li><a href="#sec-rates">4.1 Rates of Change in Context</a></li>
+    <li><a href="#sec-linear">4.2 Linear Approximation &amp; Linearization</a></li>
+    <li><a href="#sec-related">4.3 Related Rates</a></li>
+    <li><a href="#sec-lhopital">4.4 L'Hôpital's Rule</a></li>
+    <li><a href="#sec-examples">Worked Examples</a></li>
+  </ul>
+</div>
+
+<!-- 4.1 -->
+<section id="sec-rates">
+  <h2>4.1 Rates of Change in Context</h2>
+  <p>If $f(x)$ models a quantity, then $f'(x)$ is the <strong>instantaneous rate of change</strong> of that quantity with respect to $x$.</p>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Velocity and Acceleration</div>
+    For position function $s(t)$:
+    $$v(t) = s'(t) \quad \text{(velocity)} \qquad a(t) = v'(t) = s''(t) \quad \text{(acceleration)}$$
+    <ul>
+      <li>Object moves <strong>right/up</strong> when $v(t) > 0$; moves <strong>left/down</strong> when $v(t) < 0$.</li>
+      <li>Object <strong>speeds up</strong> when $v$ and $a$ have the same sign; <strong>slows down</strong> when they have opposite signs.</li>
+      <li><strong>Speed</strong> $= |v(t)|$ (always non-negative).</li>
+    </ul>
+  </div>
+
+  <div class="callout callout-example">
+    <div class="callout-title">📝 Example</div>
+    A particle has position $s(t) = t^3 - 6t^2 + 9t$ (meters, $t$ in seconds).
+    <ul>
+      <li>$v(t) = 3t^2 - 12t + 9 = 3(t-1)(t-3)$</li>
+      <li>$a(t) = 6t - 12$</li>
+      <li>At $t=2$: $v = 3(1)(-1) = -3$ m/s (moving left), $a = 0$.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 4.2 -->
+<section id="sec-linear">
+  <h2>4.2 Linear Approximation &amp; Linearization</h2>
+  <p>Near $x = a$, any differentiable function looks like its tangent line. This is <strong>local linear approximation</strong>.</p>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Linearization</div>
+    The linearization of $f$ at $a$:
+    $$L(x) = f(a) + f'(a)(x - a)$$
+    For $x$ near $a$: $f(x) \approx L(x)$.
+  </div>
+
+  <div class="callout callout-example">
+    <div class="callout-title">📝 Example — Approximating $\sqrt{4.1}$</div>
+    Use $f(x) = \sqrt{x}$, $a = 4$.<br>
+    $f(4) = 2$, $f'(x) = \dfrac{1}{2\sqrt{x}}$, $f'(4) = \dfrac{1}{4}$.<br>
+    $L(x) = 2 + \dfrac{1}{4}(x-4)$, so $\sqrt{4.1} \approx 2 + \dfrac{1}{4}(0.1) = 2.025$.
+    (Actual: $\approx 2.02485$.)
+  </div>
+</section>
+
+<!-- 4.3 -->
+<section id="sec-related">
+  <h2>4.3 Related Rates</h2>
+  <p>Related rates problems involve two or more quantities that both depend on time $t$. Differentiate the relating equation implicitly with respect to $t$.</p>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Strategy for Related Rates</div>
+    <ol>
+      <li>Draw a diagram and label variables.</li>
+      <li>Write an equation relating the variables.</li>
+      <li>Differentiate both sides with respect to $t$ (using chain rule).</li>
+      <li>Substitute known values and solve for the unknown rate.</li>
+    </ol>
+  </div>
+
+  <div class="callout callout-warning">
+    <div class="callout-title">⚠️ Common Error</div>
+    Do NOT substitute specific values for the variables before differentiating — the values are only valid at a single instant, but the differentiated equation must hold generally.
+  </div>
+
+  <h3>Common Geometric Formulas Used in Related Rates</h3>
+  <table class="data-table">
+    <tr><th>Shape</th><th>Formula</th></tr>
+    <tr><td>Circle area</td><td>$A = \pi r^2 \;\Rightarrow\; \dfrac{dA}{dt} = 2\pi r \dfrac{dr}{dt}$</td></tr>
+    <tr><td>Sphere volume</td><td>$V = \tfrac{4}{3}\pi r^3 \;\Rightarrow\; \dfrac{dV}{dt} = 4\pi r^2 \dfrac{dr}{dt}$</td></tr>
+    <tr><td>Cone volume</td><td>$V = \tfrac{1}{3}\pi r^2 h$</td></tr>
+    <tr><td>Pythagorean</td><td>$z^2 = x^2 + y^2 \;\Rightarrow\; z\dfrac{dz}{dt} = x\dfrac{dx}{dt} + y\dfrac{dy}{dt}$</td></tr>
+  </table>
+</section>
+
+<!-- 4.4 L'Hôpital -->
+<section id="sec-lhopital">
+  <h2>4.4 L'Hôpital's Rule</h2>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ L'Hôpital's Rule</div>
+    If $\displaystyle\lim_{x\to a}\frac{f(x)}{g(x)}$ gives the indeterminate form $\dfrac{0}{0}$ or $\dfrac{\infty}{\infty}$, and if $f$ and $g$ are differentiable near $a$ with $g'(x) \ne 0$, then:
+    $$\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}$$
+    (provided the right-hand limit exists or is $\pm\infty$). May be applied repeatedly.
+  </div>
+
+  <div class="callout callout-warning">
+    <div class="callout-title">⚠️ Only for Indeterminate Forms</div>
+    L'Hôpital's Rule applies ONLY to $\dfrac{0}{0}$ or $\dfrac{\infty}{\infty}$. Do not apply it when the limit is already determinate.
+  </div>
+
+  <h3>Other Indeterminate Forms — Rewrite First</h3>
+  <table class="data-table">
+    <tr><th>Form</th><th>Rewrite as</th></tr>
+    <tr><td>$0 \cdot \infty$</td><td>$\dfrac{f}{1/g}$ or $\dfrac{g}{1/f}$ → $\dfrac{0}{0}$ or $\dfrac{\infty}{\infty}$</td></tr>
+    <tr><td>$\infty - \infty$</td><td>Common denominator or factor</td></tr>
+    <tr><td>$1^\infty$, $0^0$, $\infty^0$</td><td>Take $\ln$: $\lim \ln y = \lim [g\ln f]$, then $y = e^{\lim\ln y}$</td></tr>
+  </table>
+</section>
+
+<!-- Worked Examples -->
+<section id="sec-examples">
+  <h2>Worked Examples</h2>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 1</span><span class="example-title">Velocity and Acceleration</span></div>
+    <div class="example-body">
+      <p class="example-problem">A particle moves along a line with position $s(t) = 2t^3 - 9t^2 + 12t$ (ft, $t$ in sec). Find when the particle is at rest, the velocity at $t=1$, and when it's speeding up on $[0,4]$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">$v(t) = 6t^2 - 18t + 12 = 6(t^2 - 3t + 2) = 6(t-1)(t-2)$. At rest: $t = 1$ and $t = 2$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">$v(1) = 6(0)(-1) = 0$ ft/s.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">$a(t) = 12t - 18$. Sign analysis: $v > 0$ on $(0,1)\cup(2,4)$; $v < 0$ on $(1,2)$. $a > 0$ when $t > 3/2$; $a < 0$ when $t < 3/2$. Speeding up when same sign: $(1, 3/2)$ both negative, and $(2, 4)$ both positive. <strong>Speeding up on $(1, \frac{3}{2})$ and $(2, 4)$.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 2</span><span class="example-title">Related Rates — Ladder Problem</span></div>
+    <div class="example-body">
+      <p class="example-problem">A 10-ft ladder leans against a wall. The base slides away at 2 ft/sec. How fast is the top of the ladder sliding down when the base is 6 ft from the wall?</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Let $x$ = distance of base from wall, $y$ = height of top. Pythagorean: $x^2 + y^2 = 100$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">Differentiate w.r.t. $t$: $2x\dfrac{dx}{dt} + 2y\dfrac{dy}{dt} = 0$, so $\dfrac{dy}{dt} = -\dfrac{x}{y}\dfrac{dx}{dt}$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">At $x=6$: $y = \sqrt{100-36} = 8$. Given $\dfrac{dx}{dt} = 2$:
+          $$\frac{dy}{dt} = -\frac{6}{8} \cdot 2 = \boxed{-\tfrac{3}{2} \text{ ft/sec}}$$
+          The negative means the top is sliding <em>down</em>.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 3</span><span class="example-title">Related Rates — Expanding Circle</span></div>
+    <div class="example-body">
+      <p class="example-problem">A stone dropped in a pond creates circular ripples. The radius grows at 4 cm/s. How fast is the area increasing when the radius is 10 cm?</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">$A = \pi r^2$, $\dfrac{dA}{dt} = 2\pi r \dfrac{dr}{dt}$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">At $r=10$, $\dfrac{dr}{dt}=4$: $\dfrac{dA}{dt} = 2\pi(10)(4) = \boxed{80\pi \approx 251.3 \text{ cm}^2/\text{s}}$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 4</span><span class="example-title">L'Hôpital's Rule — $0/0$</span></div>
+    <div class="example-body">
+      <p class="example-problem">Evaluate $\displaystyle\lim_{x\to 0}\frac{e^x - 1 - x}{x^2}$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Direct sub gives $\dfrac{0}{0}$. Apply L'Hôpital: $\dfrac{e^x - 1}{2x}$. Still $\dfrac{0}{0}$ at $x=0$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">Apply again: $\dfrac{e^x}{2}$. At $x=0$: $\boxed{\dfrac{1}{2}}$.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 5</span><span class="example-title">L'Hôpital's Rule — $\infty/\infty$</span></div>
+    <div class="example-body">
+      <p class="example-problem">Evaluate $\displaystyle\lim_{x\to\infty}\frac{\ln x}{x}$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Form: $\dfrac{\infty}{\infty}$. Apply L'Hôpital: $\dfrac{1/x}{1} = \dfrac{1}{x} \to 0$ as $x\to\infty$. So $\boxed{0}$.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 6</span><span class="example-title">L'Hôpital — $1^\infty$ Form</span></div>
+    <div class="example-body">
+      <p class="example-problem">Evaluate $\displaystyle\lim_{x\to\infty}\left(1 + \frac{1}{x}\right)^x$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Form $1^\infty$. Let $y = \left(1+\dfrac{1}{x}\right)^x$. Then $\ln y = x\ln\!\left(1+\dfrac{1}{x}\right)$, which is $\infty \cdot 0$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">Rewrite: $\ln y = \dfrac{\ln(1+1/x)}{1/x}$ — form $\dfrac{0}{0}$. Apply L'Hôpital:
+          $$= \frac{\tfrac{-1/x^2}{1+1/x}}{-1/x^2} = \frac{1}{1+1/x} \to 1 \text{ as } x\to\infty$$</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">So $\ln y \to 1$, meaning $y \to e^1 = \boxed{e}$. (This is the classic definition of $e$.)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 7</span><span class="example-title">Related Rates — Water Tank (Cone)</span></div>
+    <div class="example-body">
+      <p class="example-problem">Water drains from a conical tank (vertex down) with height 12 m and radius 4 m. Water leaves at 2 m³/min. How fast is the water level dropping when the depth is 6 m?</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Similar triangles: $\dfrac{r}{h} = \dfrac{4}{12} = \dfrac{1}{3}$, so $r = \dfrac{h}{3}$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">$V = \dfrac{1}{3}\pi r^2 h = \dfrac{1}{3}\pi\left(\dfrac{h}{3}\right)^2 h = \dfrac{\pi h^3}{27}$</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">Differentiate: $\dfrac{dV}{dt} = \dfrac{\pi h^2}{9}\dfrac{dh}{dt}$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">4</div>
+          <div class="step-content">At $h=6$, $\dfrac{dV}{dt} = -2$:
+          $$-2 = \frac{\pi(36)}{9}\frac{dh}{dt} \implies \frac{dh}{dt} = \frac{-2}{4\pi} = \boxed{-\frac{1}{2\pi} \approx -0.159 \text{ m/min}}$$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="chapter-nav">
+  <a href="ch03-derivatives-advanced.html" class="chapter-nav-card prev">
+    <span class="nav-card-arrow">←</span>
+    <div><div class="nav-card-label">Previous</div><div class="nav-card-title">Differentiation: Advanced</div></div>
+  </a>
+  <a href="ch05-analytical-applications.html" class="chapter-nav-card next">
+    <span class="nav-card-arrow">→</span>
+    <div><div class="nav-card-label">Next Chapter</div><div class="nav-card-title">Analytical Applications</div></div>
+  </a>
+</div>
+
+</div></main></div>
+<footer class="site-footer"><p>© 2024 <a href="https://avinashai.com">AvinashAI</a> · Chapter 4: Contextual Applications</p></footer>
+<script src="../js/nav.js" id="navScript" data-root=".."></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/main.js"></script>
+</body></html>

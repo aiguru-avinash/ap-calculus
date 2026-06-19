@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 2: Differentiation — Basic Rules | AP Calculus</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+<div id="topNav"></div>
+<div class="page-wrapper">
+<div id="sidebarNav"></div>
+<main class="main-content">
+<div class="content-inner">
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow">
+    <span class="chapter-badge ab">AB</span><span class="chapter-badge bc">BC</span>
+    <span class="chapter-num">Chapter 2 of 10</span>
+  </div>
+  <h1>Differentiation: Basic Rules</h1>
+  <p class="page-hero-subtitle">Develop the machinery of derivatives — from the limit definition to the power, product, quotient, and basic transcendental rules.</p>
+  <div class="hero-meta">
+    <span class="hero-meta-item">📖 ~50 min read</span>
+    <span class="hero-meta-item">🎯 8 key rules</span>
+    <span class="hero-meta-item">✏️ 6 worked examples</span>
+    <span class="hero-meta-item"><a href="../mcq/mcq-ch02.html">→ 20 MCQs</a></span>
+  </div>
+</div>
+
+<div class="toc-box">
+  <div class="toc-title">In This Chapter</div>
+  <ul class="toc-list">
+    <li><a href="#sec-definition">2.1 The Limit Definition of the Derivative</a></li>
+    <li><a href="#sec-notation">2.2 Derivative Notation</a></li>
+    <li><a href="#sec-basic-rules">2.3 Basic Differentiation Rules</a></li>
+    <li><a href="#sec-trig">2.4 Derivatives of Trigonometric Functions</a></li>
+    <li><a href="#sec-exp-log">2.5 Derivatives of Exponential and Logarithmic Functions</a></li>
+    <li><a href="#sec-differentiability">2.6 Differentiability vs. Continuity</a></li>
+    <li><a href="#sec-examples">Worked Examples</a></li>
+  </ul>
+</div>
+
+<!-- 2.1 -->
+<section id="sec-definition">
+  <h2>2.1 The Limit Definition of the Derivative</h2>
+  <p>The <strong>derivative</strong> of $f$ at $x = a$ measures the instantaneous rate of change — the slope of the tangent line to the curve at that point.</p>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Definition — Derivative at a Point</div>
+    $$f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}$$
+    provided this limit exists. The expression $\dfrac{f(a+h)-f(a)}{h}$ is called the <strong>difference quotient</strong>.
+  </div>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Alternate Form</div>
+    $$f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}$$
+  </div>
+
+  <p>The <strong>derivative function</strong> is obtained by treating $a$ as a variable $x$:</p>
+  <div class="math-block">$$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$$</div>
+
+  <!-- Tangent line diagram -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg" width="500" height="280">
+      <line x1="50" y1="20" x2="50" y2="260" class="svg-axis"/>
+      <line x1="50" y1="240" x2="470" y2="240" class="svg-axis"/>
+      <polygon points="50,20 45,34 55,34" class="svg-arrow"/>
+      <polygon points="470,240 456,235 456,245" class="svg-arrow"/>
+      <!-- Parabola y = 0.003(x-50)^2 + 40, shifted -->
+      <path d="M70,230 C120,190 180,140 240,110 C300,80 360,70 430,80" class="svg-curve"/>
+      <!-- Tangent line at x=240 (approx y=110), slope ≈ -0.5 -->
+      <line x1="120" y1="170" x2="380" y2="40" class="svg-tangent"/>
+      <!-- Secant line -->
+      <line x1="160" y1="148" x2="340" y2="72" stroke="var(--color-text-muted)" stroke-width="1.2" stroke-dasharray="3,3"/>
+      <!-- Points -->
+      <circle cx="240" cy="110" r="5" class="svg-point"/>
+      <circle cx="310" cy="77" r="4" fill="var(--color-text-muted)" stroke="var(--color-bg)" stroke-width="1.5"/>
+      <!-- h indicator -->
+      <line x1="240" y1="240" x2="310" y2="240" stroke="var(--color-warning)" stroke-width="1.5"/>
+      <line x1="240" y1="237" x2="240" y2="243" stroke="var(--color-warning)" stroke-width="1.5"/>
+      <line x1="310" y1="237" x2="310" y2="243" stroke="var(--color-warning)" stroke-width="1.5"/>
+      <!-- Labels -->
+      <text x="238" y="258" class="svg-label" text-anchor="middle">x</text>
+      <text x="308" y="258" class="svg-label" text-anchor="middle">x+h</text>
+      <text x="273" y="232" class="svg-label" fill="var(--color-warning)" text-anchor="middle">h</text>
+      <text x="348" y="58" class="svg-label" fill="var(--color-accent-2)">tangent</text>
+      <text x="338" y="80" class="svg-label" fill="var(--color-text-muted)">secant</text>
+      <text x="54" y="18" class="svg-label">y</text>
+      <text x="466" y="244" class="svg-label">x</text>
+      <text x="235" y="103" class="svg-value" font-size="11">(x, f(x))</text>
+    </svg>
+    <p class="diagram-caption">Figure 2.1 — As $h \to 0$, the secant line approaches the tangent line. The slope of the tangent is $f'(x)$.</p>
+  </div>
+</section>
+
+<!-- 2.2 -->
+<section id="sec-notation">
+  <h2>2.2 Derivative Notation</h2>
+  <table class="data-table">
+    <tr><th>Notation</th><th>Read as</th><th>Used by</th></tr>
+    <tr><td>$f'(x)$</td><td>"$f$ prime of $x$"</td><td>Lagrange</td></tr>
+    <tr><td>$\dfrac{dy}{dx}$</td><td>"$dy$ $dx$" or "the derivative of $y$ with respect to $x$"</td><td>Leibniz</td></tr>
+    <tr><td>$\dfrac{d}{dx}[f(x)]$</td><td>"the derivative of $f(x)$ with respect to $x$"</td><td>Leibniz operator</td></tr>
+    <tr><td>$\dot{y}$</td><td>"$y$ dot"</td><td>Newton (physics)</td></tr>
+    <tr><td>$D_x[f]$</td><td>"$D$ sub $x$ of $f$"</td><td>Euler</td></tr>
+  </table>
+  <p>Higher-order derivatives: $f''(x)$, $f'''(x)$, $f^{(n)}(x)$, $\dfrac{d^2y}{dx^2}$, etc.</p>
+</section>
+
+<!-- 2.3 -->
+<section id="sec-basic-rules">
+  <h2>2.3 Basic Differentiation Rules</h2>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Core Differentiation Rules</div>
+    <table class="data-table">
+      <tr><th>Rule</th><th>Formula</th><th>Example</th></tr>
+      <tr><td>Constant</td><td>$\dfrac{d}{dx}[c] = 0$</td><td>$\dfrac{d}{dx}[7] = 0$</td></tr>
+      <tr><td>Power</td><td>$\dfrac{d}{dx}[x^n] = nx^{n-1}$</td><td>$\dfrac{d}{dx}[x^5] = 5x^4$</td></tr>
+      <tr><td>Constant Multiple</td><td>$\dfrac{d}{dx}[cf] = cf'$</td><td>$\dfrac{d}{dx}[3x^4] = 12x^3$</td></tr>
+      <tr><td>Sum / Difference</td><td>$(f \pm g)' = f' \pm g'$</td><td>$\dfrac{d}{dx}[x^3 + x] = 3x^2 + 1$</td></tr>
+      <tr><td>Product</td><td>$(fg)' = f'g + fg'$</td><td>$\dfrac{d}{dx}[x^2\sin x] = 2x\sin x + x^2\cos x$</td></tr>
+      <tr><td>Quotient</td><td>$\left(\dfrac{f}{g}\right)' = \dfrac{f'g - fg'}{g^2}$</td><td>$\dfrac{d}{dx}\!\left[\dfrac{x}{x+1}\right] = \dfrac{1}{(x+1)^2}$</td></tr>
+    </table>
+  </div>
+
+  <div class="callout callout-note">
+    <div class="callout-title">📌 Power Rule for All Reals</div>
+    The power rule $\dfrac{d}{dx}[x^n] = nx^{n-1}$ works for <em>any real number</em> $n$ (including negative and fractional exponents).
+    $$\frac{d}{dx}[x^{-3}] = -3x^{-4} \qquad \frac{d}{dx}[\sqrt{x}] = \frac{d}{dx}[x^{1/2}] = \frac{1}{2}x^{-1/2} = \frac{1}{2\sqrt{x}}$$
+  </div>
+
+  <h3>The Product Rule — Memory Device</h3>
+  <p>Think of it as: <em>"derivative of first times second, plus first times derivative of second."</em></p>
+  <div class="math-block">$$(fg)' = \underbrace{f'}_{\text{d first}} \cdot \underbrace{g}_{\text{second}} \;+\; \underbrace{f}_{\text{first}} \cdot \underbrace{g'}_{\text{d second}}$$</div>
+
+  <h3>The Quotient Rule — Memory Device</h3>
+  <p>"Low d-high minus high d-low, over low squared." ($\text{low} = g$, $\text{high} = f$)</p>
+  <div class="math-block">$$\left(\frac{f}{g}\right)' = \frac{g \cdot f' - f \cdot g'}{g^2}$$</div>
+</section>
+
+<!-- 2.4 -->
+<section id="sec-trig">
+  <h2>2.4 Derivatives of Trigonometric Functions</h2>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Trig Derivatives (Memorize All Six)</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);">
+      <div>
+        <p>$\dfrac{d}{dx}[\sin x] = \cos x$</p>
+        <p>$\dfrac{d}{dx}[\cos x] = -\sin x$</p>
+        <p>$\dfrac{d}{dx}[\tan x] = \sec^2 x$</p>
+      </div>
+      <div>
+        <p>$\dfrac{d}{dx}[\csc x] = -\csc x\cot x$</p>
+        <p>$\dfrac{d}{dx}[\sec x] = \sec x\tan x$</p>
+        <p>$\dfrac{d}{dx}[\cot x] = -\csc^2 x$</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-note">
+    <div class="callout-title">📌 Pattern</div>
+    The "co-functions" (cosine, cosecant, cotangent) always pick up a negative sign. Pair them: $\sin\leftrightarrow\cos$, $\tan\leftrightarrow\sec$, $\cot\leftrightarrow\csc$.
+  </div>
+</section>
+
+<!-- 2.5 -->
+<section id="sec-exp-log">
+  <h2>2.5 Derivatives of Exponential and Logarithmic Functions</h2>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Exponential and Log Derivatives</div>
+    <table class="data-table">
+      <tr><th>Function</th><th>Derivative</th></tr>
+      <tr><td>$e^x$</td><td>$e^x$</td></tr>
+      <tr><td>$a^x$ ($a>0, a\ne1$)</td><td>$a^x \ln a$</td></tr>
+      <tr><td>$\ln x$ ($x>0$)</td><td>$\dfrac{1}{x}$</td></tr>
+      <tr><td>$\log_a x$</td><td>$\dfrac{1}{x\ln a}$</td></tr>
+    </table>
+  </div>
+
+  <div class="callout callout-note">
+    <div class="callout-title">📌 Why $\frac{d}{dx}[e^x] = e^x$?</div>
+    $e$ is defined precisely so that $\lim_{h\to 0}\frac{e^h - 1}{h} = 1$. This makes $e^x$ the unique function equal to its own derivative.
+  </div>
+</section>
+
+<!-- 2.6 -->
+<section id="sec-differentiability">
+  <h2>2.6 Differentiability vs. Continuity</h2>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Key Relationship</div>
+    <strong>Differentiability implies continuity.</strong><br>
+    If $f'(a)$ exists, then $f$ is continuous at $a$.
+    <br><br>
+    The <em>converse is false</em>: continuity does not imply differentiability.
+  </div>
+
+  <h3>Where Differentiability Fails (but the function is continuous)</h3>
+  <ul>
+    <li><strong>Corner/cusp:</strong> $f(x) = |x|$ at $x=0$ — left and right derivatives exist but differ.</li>
+    <li><strong>Vertical tangent:</strong> $f(x) = x^{1/3}$ at $x=0$ — slope is $\pm\infty$.</li>
+  </ul>
+
+  <div class="math-block">
+    $$\frac{d}{dx}[|x|] = \frac{x}{|x|} = \begin{cases} 1 & x > 0 \\ -1 & x < 0 \end{cases} \quad \text{undefined at } x=0$$
+  </div>
+</section>
+
+<!-- Worked Examples -->
+<section id="sec-examples">
+  <h2>Worked Examples</h2>
+
+  <div class="example-box">
+    <div class="example-header">
+      <span class="example-number">Example 1</span>
+      <span class="example-title">Using the Limit Definition</span>
+    </div>
+    <div class="example-body">
+      <p class="example-problem">Use the limit definition to find $f'(x)$ for $f(x) = x^2 - 3x$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Write the difference quotient:
+          $$\frac{f(x+h)-f(x)}{h} = \frac{[(x+h)^2 - 3(x+h)] - [x^2-3x]}{h}$$</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">Expand: $= \dfrac{x^2+2xh+h^2 - 3x-3h - x^2+3x}{h} = \dfrac{2xh + h^2 - 3h}{h}$</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">Factor and cancel $h$: $= \dfrac{h(2x+h-3)}{h} = 2x + h - 3$</div>
+        </div>
+        <div class="solution-step"><div class="step-num">4</div>
+          <div class="step-content">Take the limit: $f'(x) = \lim_{h\to 0}(2x+h-3) = \boxed{2x-3}$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header">
+      <span class="example-number">Example 2</span>
+      <span class="example-title">Differentiating a Polynomial</span>
+    </div>
+    <div class="example-body">
+      <p class="example-problem">Find $\dfrac{d}{dx}\!\left[5x^4 - \dfrac{3}{x^2} + 7\sqrt{x} - 2\right]$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Rewrite as powers: $5x^4 - 3x^{-2} + 7x^{1/2} - 2$</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">Apply power rule term by term:
+          $$= 20x^3 - 3(-2)x^{-3} + 7 \cdot \tfrac{1}{2}x^{-1/2} - 0$$</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">
+          $$= \boxed{20x^3 + \frac{6}{x^3} + \frac{7}{2\sqrt{x}}}$$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header">
+      <span class="example-number">Example 3</span>
+      <span class="example-title">Product Rule</span>
+    </div>
+    <div class="example-body">
+      <p class="example-problem">Differentiate $g(x) = x^3 e^x$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Let $f = x^3$, $\;g_2 = e^x$. Then $f' = 3x^2$, $\;g_2' = e^x$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">$(fg_2)' = f'g_2 + fg_2' = 3x^2 e^x + x^3 e^x = \boxed{e^x(3x^2 + x^3)} = \boxed{x^2 e^x(3+x)}$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header">
+      <span class="example-number">Example 4</span>
+      <span class="example-title">Quotient Rule</span>
+    </div>
+    <div class="example-body">
+      <p class="example-problem">Find $h'(x)$ for $h(x) = \dfrac{\sin x}{x^2 + 1}$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">$f = \sin x$, $\;g = x^2+1$. Then $f' = \cos x$, $\;g' = 2x$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">$$h'(x) = \frac{g f' - f g'}{g^2} = \frac{(x^2+1)\cos x - \sin x \cdot 2x}{(x^2+1)^2} = \boxed{\frac{(x^2+1)\cos x - 2x\sin x}{(x^2+1)^2}}$$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header">
+      <span class="example-number">Example 5</span>
+      <span class="example-title">Trig + Product</span>
+    </div>
+    <div class="example-body">
+      <p class="example-problem">Find $\dfrac{d}{dx}[x^2 \tan x]$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">$f = x^2$, $g = \tan x$. $f' = 2x$, $g' = \sec^2 x$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">$(fg)' = 2x\tan x + x^2\sec^2 x = \boxed{x(2\tan x + x\sec^2 x)}$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header">
+      <span class="example-number">Example 6</span>
+      <span class="example-title">Equation of Tangent Line</span>
+    </div>
+    <div class="example-body">
+      <p class="example-problem">Find the equation of the tangent line to $f(x) = x^3 - 2x$ at $x = 2$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Find the point: $f(2) = 8 - 4 = 4$. Point: $(2, 4)$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">Find the slope: $f'(x) = 3x^2 - 2$, so $f'(2) = 12 - 2 = 10$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">Point-slope form: $y - 4 = 10(x - 2)$, so $\boxed{y = 10x - 16}$.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="chapter-nav">
+  <a href="ch01-limits.html" class="chapter-nav-card prev">
+    <span class="nav-card-arrow">←</span>
+    <div><div class="nav-card-label">Previous</div><div class="nav-card-title">Limits &amp; Continuity</div></div>
+  </a>
+  <a href="ch03-derivatives-advanced.html" class="chapter-nav-card next">
+    <span class="nav-card-arrow">→</span>
+    <div><div class="nav-card-label">Next Chapter</div><div class="nav-card-title">Differentiation: Advanced</div></div>
+  </a>
+</div>
+
+</div></main></div>
+
+<footer class="site-footer">
+  <p>© 2024 <a href="https://avinashai.com">AvinashAI</a> · Chapter 2: Differentiation — Basic Rules</p>
+</footer>
+<script src="../js/nav.js" id="navScript" data-root=".."></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

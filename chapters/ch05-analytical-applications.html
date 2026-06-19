@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 5: Analytical Applications | AP Calculus</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+<div id="topNav"></div>
+<div class="page-wrapper">
+<div id="sidebarNav"></div>
+<main class="main-content"><div class="content-inner">
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow">
+    <span class="chapter-badge ab">AB</span><span class="chapter-badge bc">BC</span>
+    <span class="chapter-num">Chapter 5 of 10</span>
+  </div>
+  <h1>Analytical Applications of Differentiation</h1>
+  <p class="page-hero-subtitle">Use derivatives to analyze function behavior: critical points, MVT, concavity, curve sketching, and optimization.</p>
+  <div class="hero-meta">
+    <span class="hero-meta-item">📖 ~60 min read</span>
+    <span class="hero-meta-item">✏️ 7 worked examples</span>
+    <span class="hero-meta-item"><a href="../mcq/mcq-ch05.html">→ 20 MCQs</a></span>
+  </div>
+</div>
+
+<div class="toc-box">
+  <div class="toc-title">In This Chapter</div>
+  <ul class="toc-list">
+    <li><a href="#sec-mvt">5.1 Mean Value Theorem (MVT)</a></li>
+    <li><a href="#sec-evt">5.2 Extreme Value Theorem (EVT)</a></li>
+    <li><a href="#sec-critical">5.3 Critical Numbers &amp; Local Extrema</a></li>
+    <li><a href="#sec-fdt">5.4 First Derivative Test</a></li>
+    <li><a href="#sec-concavity">5.5 Concavity &amp; Second Derivative Test</a></li>
+    <li><a href="#sec-sketch">5.6 Curve Sketching</a></li>
+    <li><a href="#sec-opt">5.7 Optimization</a></li>
+    <li><a href="#sec-examples">Worked Examples</a></li>
+  </ul>
+</div>
+
+<!-- 5.1 MVT -->
+<section id="sec-mvt">
+  <h2>5.1 Mean Value Theorem (MVT)</h2>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Mean Value Theorem</div>
+    If $f$ is:
+    <ul>
+      <li>continuous on the closed interval $[a,b]$, and</li>
+      <li>differentiable on the open interval $(a,b)$,</li>
+    </ul>
+    then there exists at least one $c \in (a,b)$ such that:
+    $$f'(c) = \frac{f(b) - f(a)}{b - a}$$
+    The instantaneous rate of change equals the average rate of change at some point.
+  </div>
+
+  <!-- MVT Diagram -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" width="480" height="260">
+      <line x1="50" y1="20" x2="50" y2="240" class="svg-axis"/>
+      <line x1="50" y1="240" x2="460" y2="240" class="svg-axis"/>
+      <polygon points="50,20 45,34 55,34" class="svg-arrow"/>
+      <polygon points="460,240 446,235 446,245" class="svg-arrow"/>
+      <!-- Curve -->
+      <path d="M100,200 C150,185 200,150 240,120 C280,90 320,75 380,90" class="svg-curve"/>
+      <!-- Secant line (a to b) -->
+      <line x1="100" y1="200" x2="380" y2="90" stroke="var(--color-text-muted)" stroke-width="1.5" stroke-dasharray="5,4"/>
+      <!-- Tangent parallel to secant at c -->
+      <line x1="200" y1="118" x2="320" y2="68" stroke="var(--color-accent-2)" stroke-width="1.5"/>
+      <!-- Points -->
+      <circle cx="100" cy="200" r="4" class="svg-point"/>
+      <circle cx="380" cy="90" r="4" class="svg-point"/>
+      <circle cx="260" cy="107" r="4" fill="var(--color-warning)" stroke="var(--color-bg)" stroke-width="2"/>
+      <!-- Labels -->
+      <text x="95" y="218" class="svg-label" text-anchor="middle">a</text>
+      <text x="378" y="258" class="svg-label" text-anchor="middle">b</text>
+      <text x="258" y="258" class="svg-label" text-anchor="middle">c</text>
+      <line x1="260" y1="240" x2="260" y2="107" stroke="var(--color-warning)" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="54" y="18" class="svg-label">y</text>
+      <text x="456" y="244" class="svg-label">x</text>
+      <text x="190" y="60" class="svg-label" fill="var(--color-accent-2)">f'(c) = slope of secant</text>
+    </svg>
+    <p class="diagram-caption">Figure 5.1 — The MVT guarantees a tangent line parallel to the secant through $(a,f(a))$ and $(b,f(b))$.</p>
+  </div>
+
+  <div class="callout callout-note">
+    <div class="callout-title">📌 Rolle's Theorem (Special Case)</div>
+    If additionally $f(a) = f(b)$, then there exists $c \in (a,b)$ with $f'(c) = 0$ (a horizontal tangent).
+  </div>
+</section>
+
+<!-- 5.2 EVT -->
+<section id="sec-evt">
+  <h2>5.2 Extreme Value Theorem (EVT)</h2>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Extreme Value Theorem</div>
+    If $f$ is continuous on $[a,b]$, then $f$ attains both an <strong>absolute maximum</strong> and an <strong>absolute minimum</strong> on $[a,b]$.
+  </div>
+
+  <p>To find absolute extrema on $[a,b]$:</p>
+  <ol>
+    <li>Find all critical numbers in $(a,b)$ (where $f'(c) = 0$ or $f'(c)$ undefined).</li>
+    <li>Evaluate $f$ at each critical number AND at the endpoints $a$ and $b$.</li>
+    <li>The largest value is the absolute maximum; the smallest is the absolute minimum.</li>
+  </ol>
+</section>
+
+<!-- 5.3 Critical Numbers -->
+<section id="sec-critical">
+  <h2>5.3 Critical Numbers &amp; Local Extrema</h2>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Critical Number</div>
+    $c$ is a <strong>critical number</strong> of $f$ if $f'(c) = 0$ or $f'(c)$ does not exist (and $f(c)$ is defined).
+    Local extrema can only occur at critical numbers.
+  </div>
+
+  <p><strong>Note:</strong> Not every critical number is a local extremum — it could be an inflection point.</p>
+</section>
+
+<!-- 5.4 First Derivative Test -->
+<section id="sec-fdt">
+  <h2>5.4 First Derivative Test</h2>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ First Derivative Test</div>
+    Suppose $c$ is a critical number of a continuous function $f$.
+    <ul>
+      <li>If $f'$ changes from <strong>positive to negative</strong> at $c$ → <strong>local maximum</strong> at $c$.</li>
+      <li>If $f'$ changes from <strong>negative to positive</strong> at $c$ → <strong>local minimum</strong> at $c$.</li>
+      <li>If $f'$ does not change sign at $c$ → <strong>no local extremum</strong> (could be inflection).</li>
+    </ul>
+  </div>
+
+  <div class="callout callout-note">
+    <div class="callout-title">📌 Sign Chart Method</div>
+    Draw a number line, mark critical numbers. Test one value in each interval to determine the sign of $f'$.
+    Arrows: ↑ for $f'>0$, ↓ for $f'&lt;0$. Local max at ↑↓ transition, local min at ↓↑ transition.
+  </div>
+</section>
+
+<!-- 5.5 Concavity -->
+<section id="sec-concavity">
+  <h2>5.5 Concavity &amp; Second Derivative Test</h2>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Concavity</div>
+    <ul>
+      <li>$f$ is <strong>concave up</strong> on $(a,b)$ if $f'' > 0$ on $(a,b)$ — graph "holds water" ∪</li>
+      <li>$f$ is <strong>concave down</strong> on $(a,b)$ if $f'' &lt; 0$ on $(a,b)$ — graph "spills water" ∩</li>
+    </ul>
+    An <strong>inflection point</strong> is where the concavity changes. Candidate points: where $f'' = 0$ or $f''$ undefined — but must verify a sign change.
+  </div>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Second Derivative Test</div>
+    If $f'(c) = 0$ and $f''(c)$ exists:
+    <ul>
+      <li>$f''(c) > 0$ → $f$ concave up at $c$ → <strong>local minimum</strong></li>
+      <li>$f''(c) &lt; 0$ → $f$ concave down at $c$ → <strong>local maximum</strong></li>
+      <li>$f''(c) = 0$ → <strong>inconclusive</strong> (use first derivative test)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 5.6 Curve Sketching -->
+<section id="sec-sketch">
+  <h2>5.6 Curve Sketching Checklist</h2>
+  <ol>
+    <li><strong>Domain</strong> — where is $f$ defined?</li>
+    <li><strong>Intercepts</strong> — $y$-intercept: $f(0)$. $x$-intercepts: $f(x) = 0$.</li>
+    <li><strong>Symmetry</strong> — even ($f(-x)=f(x)$), odd ($f(-x)=-f(x)$), or neither?</li>
+    <li><strong>Asymptotes</strong> — horizontal (limits at $\pm\infty$), vertical (where denominator = 0).</li>
+    <li><strong>Increasing/Decreasing</strong> — sign of $f'$; locate critical numbers.</li>
+    <li><strong>Local Extrema</strong> — apply first or second derivative test.</li>
+    <li><strong>Concavity</strong> — sign of $f''$; locate inflection points.</li>
+    <li><strong>Sketch</strong> — plot key points and connect with the behavior above.</li>
+  </ol>
+</section>
+
+<!-- 5.7 Optimization -->
+<section id="sec-opt">
+  <h2>5.7 Optimization</h2>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Optimization Strategy</div>
+    <ol>
+      <li>Define variables and write the <strong>objective function</strong> to maximize/minimize.</li>
+      <li>Use any constraint to reduce to one variable.</li>
+      <li>Find critical numbers using $f' = 0$.</li>
+      <li>Verify using first/second derivative test or endpoint analysis.</li>
+      <li>Answer the question (include units).</li>
+    </ol>
+  </div>
+</section>
+
+<!-- Worked Examples -->
+<section id="sec-examples">
+  <h2>Worked Examples</h2>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 1</span><span class="example-title">Applying the MVT</span></div>
+    <div class="example-body">
+      <p class="example-problem">Verify the MVT applies to $f(x) = x^3 - x$ on $[0,2]$ and find the guaranteed $c$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">$f$ is a polynomial: continuous on $[0,2]$, differentiable on $(0,2)$. MVT applies.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">Average rate: $\dfrac{f(2)-f(0)}{2-0} = \dfrac{(8-2)-0}{2} = \dfrac{6}{2} = 3$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">$f'(x) = 3x^2 - 1 = 3 \Rightarrow 3x^2 = 4 \Rightarrow x^2 = 4/3 \Rightarrow x = \dfrac{2}{\sqrt{3}} \approx 1.155$. This is in $(0,2)$ ✓. So $c = \dfrac{2}{\sqrt{3}} = \boxed{\dfrac{2\sqrt{3}}{3}}$.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 2</span><span class="example-title">Absolute Extrema on Closed Interval</span></div>
+    <div class="example-body">
+      <p class="example-problem">Find the absolute max and min of $f(x) = x^3 - 3x^2 + 1$ on $[-1, 3]$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">$f'(x) = 3x^2 - 6x = 3x(x-2) = 0 \Rightarrow x = 0, 2$. Both in $[-1,3]$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">Evaluate at critical numbers and endpoints:
+          <br>$f(-1) = -1-3+1 = -3$
+          <br>$f(0) = 0-0+1 = 1$
+          <br>$f(2) = 8-12+1 = -3$
+          <br>$f(3) = 27-27+1 = 1$</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content"><strong>Absolute max: $1$</strong> at $x=0$ and $x=3$. <strong>Absolute min: $-3$</strong> at $x=-1$ and $x=2$.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 3</span><span class="example-title">Full Curve Analysis</span></div>
+    <div class="example-body">
+      <p class="example-problem">Analyze $f(x) = x^4 - 4x^3$: find local extrema, inflection points, and concavity.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">$f'(x) = 4x^3 - 12x^2 = 4x^2(x-3)$. Critical: $x=0$ and $x=3$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">Sign of $f'$: $x&lt;0$: $4(-)(-)= -$ (dec), $0&lt;x&lt;3$: $4(+)(-) = -$ (dec), $x>3$: $4(+)(+) = +$ (inc).
+          First derivative test: $f'$ stays negative through $x=0$ → no extremum at $x=0$.
+          $f'$ goes $-$ to $+$ at $x=3$ → <strong>local min at $x=3$, $f(3) = 81-108 = -27$.</strong></div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">$f''(x) = 12x^2 - 24x = 12x(x-2)$. $f''=0$ at $x=0$ and $x=2$.
+          $f''<0$ on $(0,2)$ → concave down; $f''>0$ on $(-\infty,0)\cup(2,\infty)$ → concave up.
+          <strong>Inflection points at $x=0$ ($y=0$) and $x=2$ ($y = 16-32 = -16$).</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 4</span><span class="example-title">Optimization — Fence Problem</span></div>
+    <div class="example-body">
+      <p class="example-problem">A farmer has 240 meters of fence to enclose a rectangular area, one side of which is a river (no fence needed on that side). What dimensions maximize the enclosed area?</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Variables: let $x$ = length parallel to river, $y$ = width (two sides needed). Constraint: $x + 2y = 240$, so $x = 240 - 2y$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">Objective: $A = xy = (240-2y)y = 240y - 2y^2$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">$A'(y) = 240 - 4y = 0 \Rightarrow y = 60$. $A'' = -4 < 0$ → maximum.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">4</div>
+          <div class="step-content">$x = 240 - 120 = 120$ m, $y = 60$ m. $A_{\max} = 120 \times 60 = \boxed{7200 \text{ m}^2}$.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 5</span><span class="example-title">Optimization — Minimum Surface Area Box</span></div>
+    <div class="example-body">
+      <p class="example-problem">An open-top box with a square base must hold a volume of 32 cm³. Find dimensions that minimize surface area.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Let base side $= x$, height $= h$. Volume: $x^2 h = 32 \Rightarrow h = 32/x^2$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">Surface area (open top): $S = x^2 + 4xh = x^2 + 4x \cdot \dfrac{32}{x^2} = x^2 + \dfrac{128}{x}$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">$S'(x) = 2x - \dfrac{128}{x^2} = 0 \Rightarrow 2x^3 = 128 \Rightarrow x^3 = 64 \Rightarrow x = 4$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">4</div>
+          <div class="step-content">$h = 32/16 = 2$. $S''(x) = 2 + 256/x^3 > 0$ → minimum. <strong>Base: $4\times 4$ cm, height: 2 cm.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="chapter-nav">
+  <a href="ch04-applications-derivatives.html" class="chapter-nav-card prev">
+    <span class="nav-card-arrow">←</span>
+    <div><div class="nav-card-label">Previous</div><div class="nav-card-title">Contextual Applications</div></div>
+  </a>
+  <a href="ch06-integration.html" class="chapter-nav-card next">
+    <span class="nav-card-arrow">→</span>
+    <div><div class="nav-card-label">Next Chapter</div><div class="nav-card-title">Integration &amp; Accumulation</div></div>
+  </a>
+</div>
+
+</div></main></div>
+<footer class="site-footer"><p>© 2024 <a href="https://avinashai.com">AvinashAI</a> · Chapter 5: Analytical Applications</p></footer>
+<script src="../js/nav.js" id="navScript" data-root=".."></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/main.js"></script>
+</body></html>

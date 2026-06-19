@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1: Limits & Continuity | AP Calculus</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+
+<div id="topNav"></div>
+
+<div class="page-wrapper">
+  <div id="sidebarNav"></div>
+
+  <main class="main-content">
+    <div class="content-inner">
+
+      <!-- Page Hero -->
+      <div class="page-hero">
+        <div class="page-hero-eyebrow">
+          <span class="chapter-badge ab">AB</span>
+          <span class="chapter-badge bc">BC</span>
+          <span class="chapter-num">Chapter 1 of 10</span>
+        </div>
+        <h1>Limits &amp; Continuity</h1>
+        <p class="page-hero-subtitle">
+          The foundation of all calculus. Learn how functions behave as inputs approach a value — and what it means for a function to be truly continuous.
+        </p>
+        <div class="hero-meta">
+          <span class="hero-meta-item">📖 ~45 min read</span>
+          <span class="hero-meta-item">🎯 9 key topics</span>
+          <span class="hero-meta-item">✏️ 6 worked examples</span>
+          <span class="hero-meta-item"><a href="../mcq/mcq-ch01.html">→ 20 MCQs for this chapter</a></span>
+        </div>
+      </div>
+
+      <!-- TOC -->
+      <div class="toc-box">
+        <div class="toc-title">In This Chapter</div>
+        <ul class="toc-list">
+          <li><a href="#sec-intuition">1.1 Intuitive Definition of a Limit</a></li>
+          <li><a href="#sec-onesided">1.2 One-Sided Limits</a></li>
+          <li><a href="#sec-limit-laws">1.3 Limit Laws &amp; Algebraic Techniques</a></li>
+          <li><a href="#sec-infinity">1.4 Limits at Infinity &amp; Asymptotes</a></li>
+          <li><a href="#sec-squeeze">1.5 The Squeeze Theorem</a></li>
+          <li><a href="#sec-continuity">1.6 Continuity</a></li>
+          <li><a href="#sec-ivt">1.7 Intermediate Value Theorem</a></li>
+          <li><a href="#sec-examples">Worked Examples</a></li>
+        </ul>
+      </div>
+
+      <!-- =============================================
+           1.1 Intuitive Definition
+           ============================================= -->
+      <section id="sec-intuition">
+        <h2>1.1 Intuitive Definition of a Limit</h2>
+        <p>
+          Informally, the <strong>limit</strong> of a function $f(x)$ as $x$ approaches a value $a$ is the value that $f(x)$ gets arbitrarily close to as $x$ gets arbitrarily close to (but not necessarily equal to) $a$.
+        </p>
+
+        <div class="callout callout-definition">
+          <div class="callout-title">📐 Definition — Limit</div>
+          We write
+          $$\lim_{x \to a} f(x) = L$$
+          and say <em>"the limit of $f(x)$ as $x$ approaches $a$ equals $L$"</em> if we can make the values of $f(x)$ as close to $L$ as we like by taking $x$ close enough to $a$ (but not equal to $a$).
+        </div>
+
+        <p>
+          Notice: the limit <strong>does not depend on $f(a)$</strong>. The function may be undefined at $x = a$, and the limit can still exist. What matters is the <em>behavior near</em> $a$.
+        </p>
+
+        <!-- Diagram: approaching from both sides -->
+        <div class="diagram-container">
+          <svg viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg" width="500" height="280">
+            <!-- Grid -->
+            <line x1="60" y1="20" x2="60" y2="260" class="svg-axis"/>
+            <line x1="60" y1="240" x2="480" y2="240" class="svg-axis"/>
+            <!-- Arrow heads -->
+            <polygon points="60,20 55,34 65,34" class="svg-arrow"/>
+            <polygon points="480,240 466,235 466,245" class="svg-arrow"/>
+            <!-- Grid lines -->
+            <line x1="60" y1="120" x2="480" y2="120" class="svg-grid"/>
+            <line x1="270" y1="20" x2="270" y2="260" class="svg-grid"/>
+            <!-- Curve (parabola-like, with hole at x=270) -->
+            <path d="M80,210 C120,190 160,160 200,145 C220,138 240,130 265,123" class="svg-curve" stroke-dasharray="none"/>
+            <path d="M275,117 C300,110 330,105 360,108 C400,113 440,130 470,155" class="svg-curve"/>
+            <!-- Hole at limit point -->
+            <circle cx="270" cy="120" r="5" fill="var(--color-bg)" stroke="var(--color-primary)" stroke-width="2"/>
+            <!-- Approaching arrows on curve -->
+            <line x1="225" y1="133" x2="258" y2="121" stroke="var(--color-accent)" stroke-width="1.5" marker-end="url(#arr)"/>
+            <line x1="315" y1="107" x2="282" y2="119" stroke="var(--color-accent)" stroke-width="1.5" marker-end="url(#arr)"/>
+            <!-- Dashed lines to axes -->
+            <line x1="270" y1="120" x2="270" y2="240" stroke="var(--color-text-muted)" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="60" y1="120" x2="270" y2="120" stroke="var(--color-text-muted)" stroke-width="1" stroke-dasharray="4,3"/>
+            <!-- Labels -->
+            <text x="265" y="258" class="svg-label" text-anchor="middle">a</text>
+            <text x="45" y="124" class="svg-label" text-anchor="end">L</text>
+            <text x="475" y="244" class="svg-label">x</text>
+            <text x="64" y="18" class="svg-label">y</text>
+            <text x="170" y="175" class="svg-label" fill="var(--color-accent)">x → a⁻</text>
+            <text x="310" y="97" class="svg-label" fill="var(--color-accent)">x → a⁺</text>
+            <text x="320" y="72" class="svg-value">f(x) → L</text>
+            <!-- Arrow marker def -->
+            <defs>
+              <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" fill="var(--color-accent)"/>
+              </marker>
+            </defs>
+          </svg>
+          <p class="diagram-caption">Figure 1.1 — $f(x)$ approaches $L$ from both sides as $x \to a$, even though $f(a)$ may be undefined (open circle).</p>
+        </div>
+
+        <div class="callout callout-note">
+          <div class="callout-title">🔑 Key Insight</div>
+          The function value $f(a)$ is <em>irrelevant</em> to the limit. Even if $f(a) \ne L$ or $f(a)$ is undefined, $\lim_{x\to a} f(x)$ can equal $L$.
+        </div>
+      </section>
+
+      <!-- =============================================
+           1.2 One-Sided Limits
+           ============================================= -->
+      <section id="sec-onesided">
+        <h2>1.2 One-Sided Limits</h2>
+        <p>Sometimes a function approaches different values depending on the <em>direction</em> of approach.</p>
+
+        <div class="callout callout-definition">
+          <div class="callout-title">📐 Definition — One-Sided Limits</div>
+          <p>The <strong>left-hand limit</strong>: $\displaystyle\lim_{x \to a^-} f(x) = L$ means $f(x) \to L$ as $x$ approaches $a$ from the left ($x &lt; a$).</p>
+          <p>The <strong>right-hand limit</strong>: $\displaystyle\lim_{x \to a^+} f(x) = L$ means $f(x) \to L$ as $x$ approaches $a$ from the right ($x &gt; a$).</p>
+        </div>
+
+        <div class="callout callout-theorem">
+          <div class="callout-title">✅ Theorem — Two-Sided Limit Exists iff Both One-Sided Limits Agree</div>
+          $$\lim_{x \to a} f(x) = L \quad \iff \quad \lim_{x \to a^-} f(x) = L \;\text{ and }\; \lim_{x \to a^+} f(x) = L$$
+        </div>
+
+        <p><strong>Example:</strong> For $f(x) = \dfrac{|x|}{x}$:</p>
+        <div class="math-block">
+          $$\lim_{x \to 0^-} \frac{|x|}{x} = \frac{-x}{x} = -1, \qquad \lim_{x \to 0^+} \frac{|x|}{x} = \frac{x}{x} = 1$$
+        </div>
+        <p>Since $-1 \ne 1$, the two-sided limit $\displaystyle\lim_{x \to 0} \frac{|x|}{x}$ <strong>does not exist</strong>.</p>
+      </section>
+
+      <!-- =============================================
+           1.3 Limit Laws
+           ============================================= -->
+      <section id="sec-limit-laws">
+        <h2>1.3 Limit Laws &amp; Algebraic Techniques</h2>
+
+        <div class="callout callout-theorem">
+          <div class="callout-title">✅ Limit Laws</div>
+          If $\lim_{x\to a} f(x) = L$ and $\lim_{x\to a} g(x) = M$, then:
+          <table class="data-table" style="margin-top:1rem;">
+            <tr><th>Law</th><th>Statement</th></tr>
+            <tr><td>Sum</td><td>$\lim_{x\to a}[f(x)+g(x)] = L + M$</td></tr>
+            <tr><td>Difference</td><td>$\lim_{x\to a}[f(x)-g(x)] = L - M$</td></tr>
+            <tr><td>Constant Multiple</td><td>$\lim_{x\to a}[c\cdot f(x)] = cL$</td></tr>
+            <tr><td>Product</td><td>$\lim_{x\to a}[f(x)\cdot g(x)] = L \cdot M$</td></tr>
+            <tr><td>Quotient</td><td>$\lim_{x\to a}\dfrac{f(x)}{g(x)} = \dfrac{L}{M}$, provided $M \ne 0$</td></tr>
+            <tr><td>Power</td><td>$\lim_{x\to a}[f(x)]^n = L^n$</td></tr>
+            <tr><td>Root</td><td>$\lim_{x\to a}\sqrt[n]{f(x)} = \sqrt[n]{L}$ (when defined)</td></tr>
+          </table>
+        </div>
+
+        <h3>Direct Substitution</h3>
+        <p>For <strong>polynomial</strong> and <strong>rational</strong> functions (where the denominator is non-zero at $a$), you can simply substitute:</p>
+        <div class="math-block">$$\lim_{x \to 3}(x^2 + 2x - 1) = 9 + 6 - 1 = 14$$</div>
+
+        <h3>Indeterminate Form $\frac{0}{0}$</h3>
+        <p>When direct substitution gives $\frac{0}{0}$, try algebraic manipulation:</p>
+
+        <div class="callout callout-note">
+          <div class="callout-title">🛠 Techniques for $\frac{0}{0}$</div>
+          <ul>
+            <li><strong>Factor and cancel</strong> — factor numerator and denominator, cancel the common factor.</li>
+            <li><strong>Multiply by conjugate</strong> — useful when radicals are involved.</li>
+            <li><strong>Trig identities</strong> — use $\dfrac{\sin\theta}{\theta} \to 1$ and $\dfrac{1-\cos\theta}{\theta} \to 0$ as $\theta \to 0$.</li>
+          </ul>
+        </div>
+
+        <p><strong>Key trig limits (memorize):</strong></p>
+        <div class="math-block">
+          $$\lim_{\theta \to 0} \frac{\sin\theta}{\theta} = 1 \qquad \lim_{\theta \to 0} \frac{1-\cos\theta}{\theta} = 0 \qquad \lim_{\theta \to 0} \frac{\tan\theta}{\theta} = 1$$
+        </div>
+      </section>
+
+      <!-- =============================================
+           1.4 Limits at Infinity
+           ============================================= -->
+      <section id="sec-infinity">
+        <h2>1.4 Limits at Infinity &amp; Horizontal Asymptotes</h2>
+
+        <div class="callout callout-definition">
+          <div class="callout-title">📐 Definition</div>
+          $\displaystyle\lim_{x \to \infty} f(x) = L$ means $f(x)$ approaches $L$ as $x$ grows without bound. When this equals $L$, the line $y = L$ is a <strong>horizontal asymptote</strong>.
+        </div>
+
+        <h3>Rational Functions at Infinity</h3>
+        <p>Divide numerator and denominator by the highest power of $x$ in the denominator:</p>
+        <div class="math-block">
+          $$\lim_{x \to \infty} \frac{3x^2 - 5x}{2x^2 + 1} = \lim_{x \to \infty} \frac{3 - \frac{5}{x}}{2 + \frac{1}{x^2}} = \frac{3-0}{2+0} = \frac{3}{2}$$
+        </div>
+
+        <div class="callout callout-theorem">
+          <div class="callout-title">✅ Degree Rules for Rational Functions</div>
+          For $\displaystyle\lim_{x\to\infty}\frac{p(x)}{q(x)}$ where $\deg p = m$, $\deg q = n$:
+          <ul>
+            <li>If $m &lt; n$: limit $= 0$ (horizontal asymptote $y = 0$)</li>
+            <li>If $m = n$: limit $= \dfrac{\text{leading coeff of }p}{\text{leading coeff of }q}$</li>
+            <li>If $m &gt; n$: limit $= \pm\infty$ (no horizontal asymptote)</li>
+          </ul>
+        </div>
+
+        <h3>Vertical Asymptotes</h3>
+        <p>A vertical asymptote at $x = a$ occurs when $\displaystyle\lim_{x \to a^+} f(x) = \pm\infty$ or $\displaystyle\lim_{x \to a^-} f(x) = \pm\infty$.</p>
+        <p>Example: $f(x) = \dfrac{1}{x-3}$ has a vertical asymptote at $x=3$ because as $x \to 3^+$, $f(x) \to +\infty$.</p>
+      </section>
+
+      <!-- =============================================
+           1.5 Squeeze Theorem
+           ============================================= -->
+      <section id="sec-squeeze">
+        <h2>1.5 The Squeeze Theorem</h2>
+
+        <div class="callout callout-theorem">
+          <div class="callout-title">✅ Squeeze Theorem (Sandwich Theorem)</div>
+          If $g(x) \le f(x) \le h(x)$ for all $x$ near $a$ (except possibly at $a$), and
+          $$\lim_{x \to a} g(x) = \lim_{x \to a} h(x) = L,$$
+          then $\displaystyle\lim_{x \to a} f(x) = L$.
+        </div>
+
+        <p><strong>Classic application:</strong></p>
+        <div class="math-block">
+          $$\lim_{x \to 0} x^2 \sin\!\left(\frac{1}{x}\right) = 0$$
+        </div>
+        <p>Since $-1 \le \sin(1/x) \le 1$, we have $-x^2 \le x^2\sin(1/x) \le x^2$. Both $\pm x^2 \to 0$ as $x\to 0$, so by the Squeeze Theorem, the limit is $0$.</p>
+
+        <!-- Diagram -->
+        <div class="diagram-container">
+          <svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" width="480" height="220">
+            <line x1="40" y1="10" x2="40" y2="210" class="svg-axis"/>
+            <line x1="40" y1="110" x2="470" y2="110" class="svg-axis"/>
+            <polygon points="40,10 35,24 45,24" class="svg-arrow"/>
+            <polygon points="470,110 456,105 456,115" class="svg-arrow"/>
+            <!-- Upper bound: x^2 -->
+            <path d="M40,110 Q180,70 320,20 L460,0" class="svg-curve-2" stroke-dasharray="6,3"/>
+            <!-- Lower bound: -x^2 -->
+            <path d="M40,110 Q180,150 320,200 L460,220" class="svg-curve-3" stroke-dasharray="6,3"/>
+            <!-- The squeezed function (wavy) -->
+            <path d="M50,110 C80,95 100,125 130,108 C160,92 180,128 210,110 C240,92 260,130 290,110 C310,97 330,122 360,108 C380,100 410,115 440,107" class="svg-curve"/>
+            <!-- Labels -->
+            <text x="460" y="18" class="svg-label" fill="var(--color-accent)">h(x)</text>
+            <text x="460" y="218" class="svg-label" fill="var(--color-warning)">g(x)</text>
+            <text x="360" y="88" class="svg-label" fill="var(--color-primary)">f(x)</text>
+            <text x="35" y="125" class="svg-label" text-anchor="end">L</text>
+            <text x="44" y="8" class="svg-label">y</text>
+            <text x="466" y="108" class="svg-label">x</text>
+            <line x1="40" y1="110" x2="70" y2="110" stroke="var(--color-text-muted)" stroke-width="1" stroke-dasharray="3,2"/>
+          </svg>
+          <p class="diagram-caption">Figure 1.2 — The Squeeze Theorem: $f$ is "squeezed" between $g$ and $h$, both of which approach $L$.</p>
+        </div>
+      </section>
+
+      <!-- =============================================
+           1.6 Continuity
+           ============================================= -->
+      <section id="sec-continuity">
+        <h2>1.6 Continuity</h2>
+
+        <div class="callout callout-definition">
+          <div class="callout-title">📐 Definition — Continuity at a Point</div>
+          $f$ is <strong>continuous at $x = a$</strong> if ALL THREE conditions hold:
+          <ol>
+            <li>$f(a)$ is defined</li>
+            <li>$\displaystyle\lim_{x \to a} f(x)$ exists</li>
+            <li>$\displaystyle\lim_{x \to a} f(x) = f(a)$</li>
+          </ol>
+          Failure of any condition produces a <strong>discontinuity</strong>.
+        </div>
+
+        <h3>Types of Discontinuities</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-4);margin:var(--space-5) 0;">
+          <div class="card" style="margin:0;">
+            <strong style="color:var(--color-accent-2)">Removable</strong>
+            <p style="font-size:0.85rem;margin-top:var(--space-2);">The limit exists but $f(a) \ne \lim f$ or $f(a)$ undefined. A "hole" in the graph.</p>
+            <p style="font-size:0.8rem;color:var(--color-text-muted);">$f(x) = \dfrac{x^2-1}{x-1}$ at $x=1$</p>
+          </div>
+          <div class="card" style="margin:0;">
+            <strong style="color:var(--color-warning)">Jump</strong>
+            <p style="font-size:0.85rem;margin-top:var(--space-2);">Left and right limits both exist but are not equal.</p>
+            <p style="font-size:0.8rem;color:var(--color-text-muted);">$f(x) = \lfloor x \rfloor$ (floor function) at any integer</p>
+          </div>
+          <div class="card" style="margin:0;">
+            <strong style="color:var(--color-incorrect)">Infinite</strong>
+            <p style="font-size:0.85rem;margin-top:var(--space-2);">The function approaches $\pm\infty$ at a point (vertical asymptote).</p>
+            <p style="font-size:0.8rem;color:var(--color-text-muted);">$f(x) = \dfrac{1}{x}$ at $x=0$</p>
+          </div>
+        </div>
+
+        <h3>Continuity on an Interval</h3>
+        <p>$f$ is <strong>continuous on an open interval</strong> $(a,b)$ if it is continuous at every point in $(a,b)$.</p>
+        <p>$f$ is <strong>continuous on a closed interval</strong> $[a,b]$ if it is continuous on $(a,b)$, the right-hand limit at $a$ equals $f(a)$, and the left-hand limit at $b$ equals $f(b)$.</p>
+
+        <div class="callout callout-note">
+          <div class="callout-title">📌 Continuous Function Families</div>
+          These function types are continuous everywhere on their domains:
+          Polynomials, rational functions (where denominator $\ne 0$), radical functions (where defined), trigonometric functions (where defined), exponential functions $a^x$ ($a>0$), and logarithmic functions (where $x > 0$).
+        </div>
+      </section>
+
+      <!-- =============================================
+           1.7 IVT
+           ============================================= -->
+      <section id="sec-ivt">
+        <h2>1.7 Intermediate Value Theorem (IVT)</h2>
+
+        <div class="callout callout-theorem">
+          <div class="callout-title">✅ Intermediate Value Theorem</div>
+          If $f$ is continuous on the closed interval $[a, b]$ and $N$ is any number strictly between $f(a)$ and $f(b)$, then there exists at least one number $c$ in $(a, b)$ such that $f(c) = N$.
+        </div>
+
+        <p>Intuitively: a continuous function cannot "jump over" a value — it must pass through every intermediate value.</p>
+
+        <!-- Diagram: IVT -->
+        <div class="diagram-container">
+          <svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" width="480" height="260">
+            <line x1="60" y1="20" x2="60" y2="240" class="svg-axis"/>
+            <line x1="60" y1="240" x2="460" y2="240" class="svg-axis"/>
+            <polygon points="60,20 55,34 65,34" class="svg-arrow"/>
+            <polygon points="460,240 446,235 446,245" class="svg-arrow"/>
+            <!-- Continuous curve -->
+            <path d="M100,200 C140,190 160,170 200,140 C240,110 270,85 310,75 C340,70 370,80 410,60" class="svg-curve"/>
+            <!-- f(a) and f(b) -->
+            <circle cx="100" cy="200" r="4" class="svg-point"/>
+            <circle cx="410" cy="60" r="4" class="svg-point"/>
+            <!-- N value -->
+            <line x1="60" y1="120" x2="460" y2="120" stroke="var(--color-warning)" stroke-width="1.2" stroke-dasharray="5,4"/>
+            <!-- c value -->
+            <line x1="245" y1="120" x2="245" y2="240" stroke="var(--color-accent)" stroke-width="1.2" stroke-dasharray="5,4"/>
+            <circle cx="245" cy="120" r="4" fill="var(--color-warning)" stroke="var(--color-bg)" stroke-width="2"/>
+            <!-- Labels -->
+            <text x="95" y="220" class="svg-label" fill="var(--color-accent)">a</text>
+            <text x="405" y="257" class="svg-label" fill="var(--color-accent)">b</text>
+            <text x="240" y="257" class="svg-label" fill="var(--color-accent)">c</text>
+            <text x="48" y="124" class="svg-label" text-anchor="end" fill="var(--color-warning)">N</text>
+            <text x="48" y="204" class="svg-label" text-anchor="end">f(a)</text>
+            <text x="48" y="64" class="svg-label" text-anchor="end">f(b)</text>
+            <line x1="55" y1="200" x2="100" y2="200" stroke="var(--color-text-muted)" stroke-width="1" stroke-dasharray="3,2"/>
+            <line x1="55" y1="60" x2="410" y2="60" stroke="var(--color-text-muted)" stroke-width="1" stroke-dasharray="3,2"/>
+            <text x="64" y="18" class="svg-label">y</text>
+            <text x="455" y="244" class="svg-label">x</text>
+            <text x="270" y="108" class="svg-value" fill="var(--color-warning)">f(c) = N</text>
+          </svg>
+          <p class="diagram-caption">Figure 1.3 — IVT guarantees a $c$ where $f(c) = N$ for any $N$ between $f(a)$ and $f(b)$.</p>
+        </div>
+
+        <div class="callout callout-example">
+          <div class="callout-title">📝 Application — Showing a Root Exists</div>
+          Show that $f(x) = x^3 - x - 1$ has a root in $(1, 2)$.<br><br>
+          $f(1) = 1 - 1 - 1 = -1 &lt; 0$ and $f(2) = 8 - 2 - 1 = 5 &gt; 0$. Since $f$ is a polynomial (continuous everywhere), and $0$ is between $f(1) = -1$ and $f(2) = 5$, the IVT guarantees a $c \in (1,2)$ with $f(c) = 0$.
+        </div>
+      </section>
+
+      <!-- =============================================
+           Worked Examples
+           ============================================= -->
+      <section id="sec-examples">
+        <h2>Worked Examples</h2>
+
+        <!-- Example 1 -->
+        <div class="example-box">
+          <div class="example-header">
+            <span class="example-number">Example 1</span>
+            <span class="example-title">Factoring to Evaluate a Limit</span>
+          </div>
+          <div class="example-body">
+            <p class="example-problem">Evaluate $\displaystyle\lim_{x \to 3} \frac{x^2 - 9}{x - 3}$.</p>
+            <button class="solution-toggle">▶ Show Solution</button>
+            <div class="solution-body">
+              <div class="solution-step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                  <strong>Try direct substitution:</strong> Plug $x=3$: $\dfrac{9-9}{3-3} = \dfrac{0}{0}$ — indeterminate form.
+                </div>
+              </div>
+              <div class="solution-step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                  <strong>Factor:</strong>
+                  $$\frac{x^2 - 9}{x - 3} = \frac{(x-3)(x+3)}{x-3}$$
+                </div>
+              </div>
+              <div class="solution-step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                  <strong>Cancel the common factor</strong> (valid since $x \ne 3$ in a limit):
+                  $$= x + 3$$
+                </div>
+              </div>
+              <div class="solution-step">
+                <div class="step-num">4</div>
+                <div class="step-content">
+                  <strong>Substitute:</strong>
+                  $$\lim_{x \to 3}(x+3) = 3+3 = \boxed{6}$$
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 2 -->
+        <div class="example-box">
+          <div class="example-header">
+            <span class="example-number">Example 2</span>
+            <span class="example-title">Conjugate Technique with Radicals</span>
+          </div>
+          <div class="example-body">
+            <p class="example-problem">Evaluate $\displaystyle\lim_{x \to 4} \frac{\sqrt{x} - 2}{x - 4}$.</p>
+            <button class="solution-toggle">▶ Show Solution</button>
+            <div class="solution-body">
+              <div class="solution-step">
+                <div class="step-num">1</div>
+                <div class="step-content">Direct substitution gives $\dfrac{0}{0}$ — indeterminate.</div>
+              </div>
+              <div class="solution-step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                  Multiply numerator and denominator by the conjugate $(\sqrt{x}+2)$:
+                  $$\frac{\sqrt{x}-2}{x-4} \cdot \frac{\sqrt{x}+2}{\sqrt{x}+2} = \frac{x - 4}{(x-4)(\sqrt{x}+2)}$$
+                </div>
+              </div>
+              <div class="solution-step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                  Cancel $(x-4)$:
+                  $$= \frac{1}{\sqrt{x}+2}$$
+                </div>
+              </div>
+              <div class="solution-step">
+                <div class="step-num">4</div>
+                <div class="step-content">
+                  Substitute $x = 4$:
+                  $$\frac{1}{\sqrt{4}+2} = \frac{1}{4} = \boxed{\tfrac{1}{4}}$$
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 3 -->
+        <div class="example-box">
+          <div class="example-header">
+            <span class="example-number">Example 3</span>
+            <span class="example-title">Trig Limit</span>
+          </div>
+          <div class="example-body">
+            <p class="example-problem">Evaluate $\displaystyle\lim_{x \to 0} \frac{\sin(3x)}{5x}$.</p>
+            <button class="solution-toggle">▶ Show Solution</button>
+            <div class="solution-body">
+              <div class="solution-step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                  Use the known result $\displaystyle\lim_{\theta\to 0}\frac{\sin\theta}{\theta} = 1$. Rewrite:
+                  $$\frac{\sin(3x)}{5x} = \frac{3}{5} \cdot \frac{\sin(3x)}{3x}$$
+                </div>
+              </div>
+              <div class="solution-step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                  As $x \to 0$, also $3x \to 0$, so $\dfrac{\sin(3x)}{3x} \to 1$.
+                </div>
+              </div>
+              <div class="solution-step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                  $$\lim_{x \to 0}\frac{\sin(3x)}{5x} = \frac{3}{5} \cdot 1 = \boxed{\dfrac{3}{5}}$$
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 4 -->
+        <div class="example-box">
+          <div class="example-header">
+            <span class="example-number">Example 4</span>
+            <span class="example-title">Limit at Infinity</span>
+          </div>
+          <div class="example-body">
+            <p class="example-problem">Find $\displaystyle\lim_{x \to \infty} \frac{4x^3 - 2x}{6x^3 + x^2 + 5}$.</p>
+            <button class="solution-toggle">▶ Show Solution</button>
+            <div class="solution-body">
+              <div class="solution-step">
+                <div class="step-num">1</div>
+                <div class="step-content">Divide every term by $x^3$ (the highest degree in denominator):
+                $$\frac{4 - \tfrac{2}{x^2}}{6 + \tfrac{1}{x} + \tfrac{5}{x^3}}$$</div>
+              </div>
+              <div class="solution-step">
+                <div class="step-num">2</div>
+                <div class="step-content">As $x \to \infty$, all terms with $x$ in the denominator → 0:
+                $$\frac{4 - 0}{6 + 0 + 0} = \boxed{\dfrac{2}{3}}$$</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 5 -->
+        <div class="example-box">
+          <div class="example-header">
+            <span class="example-number">Example 5</span>
+            <span class="example-title">Identifying Discontinuities</span>
+          </div>
+          <div class="example-body">
+            <p class="example-problem">Classify all discontinuities of $f(x) = \dfrac{x^2 - x - 6}{x^2 - 4}$.</p>
+            <button class="solution-toggle">▶ Show Solution</button>
+            <div class="solution-body">
+              <div class="solution-step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                  Factor: $\dfrac{(x-3)(x+2)}{(x-2)(x+2)}$. Denominator is zero at $x = 2$ and $x = -2$.
+                </div>
+              </div>
+              <div class="solution-step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                  At $x = -2$: factor $(x+2)$ appears in both — cancel it. The limit exists:
+                  $$\lim_{x\to -2}\frac{x-3}{x-2} = \frac{-5}{-4} = \frac{5}{4}$$
+                  But $f(-2)$ is undefined → <strong>removable discontinuity</strong> at $x = -2$.
+                </div>
+              </div>
+              <div class="solution-step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                  At $x = 2$: after canceling, $f(x) \to \dfrac{x-3}{x-2}$, and as $x\to 2$, numerator $\to -1$, denominator $\to 0$ → $f(x) \to \pm\infty$.
+                  <strong>Infinite (vertical asymptote) discontinuity</strong> at $x = 2$.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 6 -->
+        <div class="example-box">
+          <div class="example-header">
+            <span class="example-number">Example 6</span>
+            <span class="example-title">Piecewise Function — Does the Limit Exist?</span>
+          </div>
+          <div class="example-body">
+            <p class="example-problem">
+              Let $f(x) = \begin{cases} 2x + 1 & x &lt; 1 \\ 4 & x = 1 \\ x^2 + 2 & x &gt; 1 \end{cases}$.
+              Does $\displaystyle\lim_{x\to 1} f(x)$ exist? Is $f$ continuous at $x=1$?
+            </p>
+            <button class="solution-toggle">▶ Show Solution</button>
+            <div class="solution-body">
+              <div class="solution-step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                  Left-hand limit: $\lim_{x\to 1^-}(2x+1) = 2(1)+1 = 3$
+                </div>
+              </div>
+              <div class="solution-step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                  Right-hand limit: $\lim_{x\to 1^+}(x^2+2) = 1+2 = 3$
+                </div>
+              </div>
+              <div class="solution-step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                  Both one-sided limits equal 3, so $\lim_{x\to 1}f(x) = 3$ exists.
+                </div>
+              </div>
+              <div class="solution-step">
+                <div class="step-num">4</div>
+                <div class="step-content">
+                  But $f(1) = 4 \ne 3$. So the third condition of continuity fails. The function has a <strong>removable discontinuity</strong> at $x=1$.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section><!-- /worked examples -->
+
+      <!-- Chapter Navigation -->
+      <div class="chapter-nav">
+        <a href="../index.html" class="chapter-nav-card prev">
+          <span class="nav-card-arrow">←</span>
+          <div>
+            <div class="nav-card-label">Back to</div>
+            <div class="nav-card-title">Course Overview</div>
+          </div>
+        </a>
+        <a href="ch02-derivatives-basic.html" class="chapter-nav-card next">
+          <span class="nav-card-arrow">→</span>
+          <div>
+            <div class="nav-card-label">Next Chapter</div>
+            <div class="nav-card-title">Differentiation: Basic Rules</div>
+          </div>
+        </a>
+      </div>
+
+    </div><!-- /content-inner -->
+  </main>
+</div><!-- /page-wrapper -->
+
+<footer class="site-footer">
+  <p>© 2024 <a href="https://avinashai.com">AvinashAI</a> · AP Calculus AB &amp; BC Tutorial · Chapter 1: Limits &amp; Continuity</p>
+</footer>
+
+<script src="../js/nav.js" id="navScript" data-root=".."></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

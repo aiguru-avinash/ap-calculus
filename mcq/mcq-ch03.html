@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ Chapter 3: Advanced Differentiation | AP Calculus</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+<div id="topNav"></div>
+<div class="page-wrapper">
+<div id="sidebarNav"></div>
+<main class="main-content"><div class="content-inner">
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow"><span class="chapter-badge ab">AB</span><span class="chapter-badge bc">BC</span></div>
+  <h1>Chapter 3 — Advanced Differentiation: 20 MCQs</h1>
+  <p class="page-hero-subtitle">Chain rule, implicit differentiation, inverse trig, higher-order derivatives.</p>
+</div>
+
+<div class="quiz-controls">
+  <div class="quiz-score">
+    <div><div class="score-display" id="scoreDisplay">0/20</div><div class="score-label">Score</div></div>
+  </div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+  <span class="text-muted" id="answeredCount">0 answered</span>
+  <button class="btn btn-secondary btn-sm" id="resetQuiz">Reset</button>
+</div>
+
+<div class="mcq-container">
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">1</div>
+  <div class="mcq-question">$\dfrac{d}{dx}[\sin(3x^2)] =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\cos(3x^2)$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $6x\cos(3x^2)$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $3x^2\cos(3x^2)$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $6x\sin(3x^2)$</div>
+  </div>
+  <div class="mcq-explanation">Chain rule: outer = $\sin(u)$, inner $u=3x^2$. $\dfrac{d}{du}[\sin u]\cdot u' = \cos(3x^2)\cdot 6x$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">2</div>
+  <div class="mcq-question">$\dfrac{d}{dx}[e^{5x}] =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $e^{5x}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $xe^{5x-1}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $5e^{5x}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $5e^x$</div>
+  </div>
+  <div class="mcq-explanation">Chain rule: $e^{5x}\cdot(5x)' = 5e^{5x}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">3</div>
+  <div class="mcq-question">If $y = (x^2+1)^{10}$, then $y' =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $20x(x^2+1)^{9}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $10(x^2+1)^{9}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $10x(x^2+1)^{9}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $20x(x^2+1)^{10}$</div>
+  </div>
+  <div class="mcq-explanation">Chain rule: $10(x^2+1)^9\cdot 2x = 20x(x^2+1)^9$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">4</div>
+  <div class="mcq-question">Given $x^2+y^2=25$, find $\dfrac{dy}{dx}$ by implicit differentiation.</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\dfrac{y}{x}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $-\dfrac{y}{x}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\dfrac{x}{y}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $-\dfrac{x}{y}$</div>
+  </div>
+  <div class="mcq-explanation">Differentiate: $2x + 2y\dfrac{dy}{dx}=0 \Rightarrow \dfrac{dy}{dx}=-\dfrac{x}{y}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">5</div>
+  <div class="mcq-question">$\dfrac{d}{dx}[\ln(x^2+4)] =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\dfrac{1}{x^2+4}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\dfrac{2x}{x^2+4}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\ln(2x)$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\dfrac{2}{x^2+4}$</div>
+  </div>
+  <div class="mcq-explanation">$\dfrac{d}{dx}[\ln u] = \dfrac{u'}{u}$. Here $u=x^2+4$, $u'=2x$, so $\dfrac{2x}{x^2+4}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">6</div>
+  <div class="mcq-question">$\dfrac{d}{dx}[\arctan x] =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\dfrac{-1}{\sqrt{1-x^2}}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\dfrac{1}{\sqrt{1-x^2}}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\dfrac{1}{1+x^2}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $-\dfrac{1}{1+x^2}$</div>
+  </div>
+  <div class="mcq-explanation">Standard result: $\dfrac{d}{dx}[\arctan x] = \dfrac{1}{1+x^2}$. (Option B is $\dfrac{d}{dx}[\arcsin x]$.)</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">7</div>
+  <div class="mcq-question">If $y = \cos^3(x)$, then $y' =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $-3\cos^2(x)\sin(x)$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $3\cos^2(x)$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $3\cos^2(x)\sin(x)$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $-3\cos^2(x)$</div>
+  </div>
+  <div class="mcq-explanation">Chain rule: $3\cos^2(x)\cdot(-\sin x) = -3\cos^2(x)\sin x$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">8</div>
+  <div class="mcq-question">For $y = xe^{x^2}$, $\dfrac{dy}{dx} =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $e^{x^2}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $2x^2e^{x^2}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $xe^{x^2} + e^{x^2}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $e^{x^2}(1+2x^2)$</div>
+  </div>
+  <div class="mcq-explanation">Product rule + chain rule: $e^{x^2} + x\cdot(2x)e^{x^2} = e^{x^2}(1+2x^2)$.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">9</div>
+  <div class="mcq-question">If $f$ and $g$ are differentiable and $h(x) = f(g(x))$, then $h'(x) =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $f'(x)g'(x)$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $f'(g(x))\cdot g'(x)$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $f'(g'(x))$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $f(g'(x))$</div>
+  </div>
+  <div class="mcq-explanation">This is the chain rule: $h'(x) = f'(g(x))\cdot g'(x)$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">10</div>
+  <div class="mcq-question">The second derivative of $f(x) = 4x^4$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $16x^2$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $48x^2$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $48x^2$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $16x^3$</div>
+  </div>
+  <div class="mcq-explanation">$f'(x) = 16x^3$; $f''(x) = 48x^2$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">11</div>
+  <div class="mcq-question">Find $\dfrac{dy}{dx}$ if $\sin(xy) = x$.</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\dfrac{1-y\cos(xy)}{x\cos(xy)}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\dfrac{\cos(xy)-1}{x}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\dfrac{1}{\cos(xy)}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\dfrac{y\cos(xy)-1}{x\cos(xy)}$</div>
+  </div>
+  <div class="mcq-explanation">Differentiate: $\cos(xy)(y+x\dfrac{dy}{dx})=1$. Solve: $x\cos(xy)\dfrac{dy}{dx}=1-y\cos(xy)$, so $\dfrac{dy}{dx}=\dfrac{1-y\cos(xy)}{x\cos(xy)}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">12</div>
+  <div class="mcq-question">If $f(x) = \arcsin(x)$, then $f'(1/2) =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $2$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $1$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\dfrac{2}{\sqrt{3}}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\dfrac{2}{\sqrt{3}}$</div>
+  </div>
+  <div class="mcq-explanation">$f'(x)=\dfrac{1}{\sqrt{1-x^2}}$. At $x=1/2$: $\dfrac{1}{\sqrt{1-1/4}}=\dfrac{1}{\sqrt{3/4}}=\dfrac{2}{\sqrt{3}}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">13</div>
+  <div class="mcq-question">$\dfrac{d}{dx}\!\left[\ln(\sin x)\right] =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\sin x$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\cot x$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\tan x$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $-\cot x$</div>
+  </div>
+  <div class="mcq-explanation">$\dfrac{\cos x}{\sin x} = \cot x$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">14</div>
+  <div class="mcq-question">If $f(x) = \sin x$, then $f^{(100)}(x) =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\cos x$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $-\cos x$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\sin x$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $-\sin x$</div>
+  </div>
+  <div class="mcq-explanation">Derivatives of $\sin x$ cycle with period 4: $\sin, \cos, -\sin, -\cos, \sin,\ldots$ $100 = 4\times25$, so $f^{(100)}=\sin x$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">15</div>
+  <div class="mcq-question">If $f'(3) = 4$ and $g(x) = f^{-1}(x)$, then $g'(f(3)) =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $1/4$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $4$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $-4$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $3$</div>
+  </div>
+  <div class="mcq-explanation">By the inverse function theorem: $(f^{-1})'(f(3)) = \dfrac{1}{f'(3)} = \dfrac{1}{4}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">16</div>
+  <div class="mcq-question">$\dfrac{d}{dx}[\arctan(2x)] =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\dfrac{1}{1+4x^2}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\dfrac{1}{1+2x^2}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\dfrac{4x}{1+4x^2}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\dfrac{2}{1+4x^2}$</div>
+  </div>
+  <div class="mcq-explanation">Chain rule: $\dfrac{1}{1+(2x)^2}\cdot 2 = \dfrac{2}{1+4x^2}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">17</div>
+  <div class="mcq-question">If $y = \sqrt{\tan x}$, then $y' =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\dfrac{1}{2\sqrt{\sec^2 x}}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\dfrac{\sec^2 x}{2\sqrt{\tan x}}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\sqrt{\sec^2 x}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\dfrac{1}{2\sqrt{\tan x}}$</div>
+  </div>
+  <div class="mcq-explanation">$y=(\tan x)^{1/2}$. Chain rule: $\dfrac{1}{2}(\tan x)^{-1/2}\cdot\sec^2 x = \dfrac{\sec^2 x}{2\sqrt{\tan x}}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">18</div>
+  <div class="mcq-question">For $y^3 + 3y = x^2$, what is $\dfrac{dy}{dx}$?</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\dfrac{1}{3y^2}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $3y^2+3$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\dfrac{2x}{3y^2+3}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\dfrac{2x}{3y^2}$</div>
+  </div>
+  <div class="mcq-explanation">Differentiate: $(3y^2+3)\dfrac{dy}{dx} = 2x \Rightarrow \dfrac{dy}{dx} = \dfrac{2x}{3y^2+3} = \dfrac{2x}{3(y^2+1)}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">19</div>
+  <div class="mcq-question">$\dfrac{d}{dx}[x^x]$ (using logarithmic differentiation) $=$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $x^x(\ln x + 1)$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $x\cdot x^{x-1}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $x^x\ln x$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $x^x/x$</div>
+  </div>
+  <div class="mcq-explanation">Let $y=x^x$. $\ln y = x\ln x$. Differentiate: $\dfrac{y'}{y}=\ln x+1$. So $y'=x^x(\ln x+1)$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">20</div>
+  <div class="mcq-question">If $g(x) = f(3x+1)$ and $f'(4) = 5$, then $g'(1) =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $5$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $3$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\dfrac{5}{3}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $15$</div>
+  </div>
+  <div class="mcq-explanation">Chain rule: $g'(x) = f'(3x+1)\cdot 3$. At $x=1$: $g'(1) = f'(4)\cdot 3 = 5\cdot 3 = 15$.</div>
+</div>
+
+</div>
+
+<div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+  <a href="mcq-ch02.html" class="btn btn-secondary">← Ch 2 MCQs</a>
+  <a href="mcq-ch04.html" class="btn btn-primary">Chapter 4 MCQs →</a>
+  <a href="../answers/answer-key.html" class="btn btn-ghost">Full Answer Key</a>
+</div>
+
+</div></main></div>
+<footer class="site-footer"><p>© 2024 <a href="https://avinashai.com">AvinashAI</a> · MCQ — Chapter 3</p></footer>
+<script src="../js/nav.js" id="navScript" data-root=".."></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/main.js"></script>
+</body></html>

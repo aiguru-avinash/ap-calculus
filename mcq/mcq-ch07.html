@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ Chapter 7: Differential Equations | AP Calculus</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+<div id="topNav"></div>
+<div class="page-wrapper">
+<div id="sidebarNav"></div>
+<main class="main-content"><div class="content-inner">
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow"><span class="chapter-badge ab">AB</span><span class="chapter-badge bc">BC</span></div>
+  <h1>Chapter 7 — Differential Equations: 20 MCQs</h1>
+  <p class="page-hero-subtitle">Slope fields, separation of variables, Euler's method, exponential and logistic growth.</p>
+</div>
+
+<div class="quiz-controls">
+  <div class="quiz-score">
+    <div><div class="score-display" id="scoreDisplay">0/20</div><div class="score-label">Score</div></div>
+  </div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+  <span class="text-muted" id="answeredCount">0 answered</span>
+  <button class="btn btn-secondary btn-sm" id="resetQuiz">Reset</button>
+</div>
+
+<div class="mcq-container">
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">1</div>
+  <div class="mcq-question">The solution to $\dfrac{dy}{dx} = 2y$ with $y(0)=3$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $y=2e^{3x}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $y=3e^{2x}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $y=e^{6x}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $y=3e^x$</div>
+  </div>
+  <div class="mcq-explanation">Separate: $\int\dfrac{dy}{y}=\int 2\,dx\Rightarrow\ln|y|=2x+C$. With $y(0)=3$: $C=\ln 3$. So $y=3e^{2x}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">2</div>
+  <div class="mcq-question">A population grows at rate $\dfrac{dP}{dt}=0.04P$. If $P(0)=500$, then $P(25)=$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 1000</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $500e$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $500e^1$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $500e^{0.04}$</div>
+  </div>
+  <div class="mcq-explanation">$P(t)=500e^{0.04t}$. $P(25)=500e^{0.04\cdot25}=500e^1=500e$. (Options B and C are the same; $500e$=C.)</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">3</div>
+  <div class="mcq-question">The slope field for $\dfrac{dy}{dx} = x$ has segments with slope 0 along</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> the $y$-axis ($x=0$)</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> the $x$-axis ($y=0$)</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> the line $y=x$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> everywhere</div>
+  </div>
+  <div class="mcq-explanation">$dy/dx=x=0$ when $x=0$ — the $y$-axis. At any point on the $y$-axis the slope segment is horizontal.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">4</div>
+  <div class="mcq-question">Euler's method uses the update formula</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $y_{n+1} = y_n + h\cdot f(x_n,y_n)^2$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $y_{n+1} = y_n - hf(x_n,y_n)$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $y_{n+1} = x_n + hf(x_n,y_n)$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $y_{n+1} = y_n + hf(x_n,y_n)$</div>
+  </div>
+  <div class="mcq-explanation">Euler's method: $y_{n+1}=y_n+h\cdot f(x_n,y_n)$ where $h$ is the step size and $f(x,y)=dy/dx$.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">5</div>
+  <div class="mcq-question">Using Euler's method with $h=0.1$: $\dfrac{dy}{dx}=x+y$, $y(0)=1$. Estimate $y(0.1)$.</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 1.0</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 1.1</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 1.2</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 1.01</div>
+  </div>
+  <div class="mcq-explanation">$y_1=y_0+h\cdot f(x_0,y_0)=1+0.1(0+1)=1+0.1=1.1$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">6</div>
+  <div class="mcq-question">The half-life of a substance decaying as $y=y_0 e^{-kt}$ ($k>0$) is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\ln 2$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $1/k$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\dfrac{\ln 2}{k}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $k\ln 2$</div>
+  </div>
+  <div class="mcq-explanation">Set $y=y_0/2$: $e^{-kt_{1/2}}=1/2\Rightarrow kt_{1/2}=\ln 2\Rightarrow t_{1/2}=\dfrac{\ln 2}{k}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">7</div>
+  <div class="mcq-question">The logistic DE $\dfrac{dP}{dt}=kP\!\left(1-\dfrac{P}{M}\right)$ has maximum rate of change when</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $P = M/2$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $P = M$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $P = 0$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $P = 2M$</div>
+  </div>
+  <div class="mcq-explanation">$f(P)=P(1-P/M)$ is maximized by $f'(P)=1-2P/M=0\Rightarrow P=M/2$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">8</div>
+  <div class="mcq-question">The carrying capacity of the logistic model is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 0</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $k$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $k/M$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $M$</div>
+  </div>
+  <div class="mcq-explanation">In $dP/dt=kP(1-P/M)$, $P\to M$ as $t\to\infty$. $M$ is the carrying capacity (maximum sustainable population).</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">9</div>
+  <div class="mcq-question">The general solution of $\dfrac{dy}{dx} = \dfrac{x}{y}$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $y = x^2/2 + C$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $y = x + C$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $y^2 = x^2 + C$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $y^2 = x + C$</div>
+  </div>
+  <div class="mcq-explanation">Separate: $y\,dy=x\,dx\Rightarrow\dfrac{y^2}{2}=\dfrac{x^2}{2}+K\Rightarrow y^2=x^2+C$ (absorbing factor of 2).</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">10</div>
+  <div class="mcq-question">A sample of 100g decays with $k=0.02$/year. When does it reach 50g?</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 25 years</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\approx$ 34.7 years</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 50 years</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 100 years</div>
+  </div>
+  <div class="mcq-explanation">$t_{1/2}=\dfrac{\ln 2}{0.02}=\dfrac{0.6931}{0.02}\approx34.7$ years.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">11</div>
+  <div class="mcq-question">What does the direction field (slope field) for a DE visually represent?</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> Short line segments showing slopes of solution curves</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> The graph of a single solution</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> The second derivative at each point</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> The antiderivative surface</div>
+  </div>
+  <div class="mcq-explanation">A slope field displays short line segments at grid points $(x,y)$, each with slope $dy/dx=f(x,y)$. Together they show the family of solution curves.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">12</div>
+  <div class="mcq-question">The particular solution to $\dfrac{dy}{dx}=3x^2$, $y(1)=4$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $y=x^3$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $y=x^3+4$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $y=3x^3+C$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $y=x^3+3$</div>
+  </div>
+  <div class="mcq-explanation">$y=\int 3x^2\,dx=x^3+C$. $y(1)=1+C=4\Rightarrow C=3$. So $y=x^3+3$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">13</div>
+  <div class="mcq-question">For the logistic model, as $P\to M$, the growth rate $dP/dt$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> approaches $kM$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> increases without bound</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> approaches 0</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> becomes negative</div>
+  </div>
+  <div class="mcq-explanation">$dP/dt=kP(1-P/M)\to kM(1-1)=0$ as $P\to M$. The population growth slows to zero.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">14</div>
+  <div class="mcq-question">If $\dfrac{dT}{dt}=-k(T-70)$ (Newton's law of cooling) and $T(0)=170$, $k=0.1$, then $T(t)=$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $70e^{-0.1t}+100$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $100e^{-0.1t}+70$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $170e^{-0.1t}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $100e^{0.1t}+70$</div>
+  </div>
+  <div class="mcq-explanation">Let $u=T-70$: $du/dt=-ku\Rightarrow u=Ce^{-kt}$. $u(0)=100\Rightarrow C=100$. $T=100e^{-0.1t}+70$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">15</div>
+  <div class="mcq-question">$\dfrac{dy}{dx} = \dfrac{y^2}{x}$ is separable. Its general solution is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $-1/y = \ln|x|+C$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $y = x^2/2+C$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $y^2 = \ln|x|+C$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $y = Ce^{\ln x}$</div>
+  </div>
+  <div class="mcq-explanation">$\int y^{-2}dy=\int x^{-1}dx\Rightarrow-1/y=\ln|x|+C$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">16</div>
+  <div class="mcq-question">Using Euler's method with $h=0.1$, $dy/dx=y$, $y(0)=1$: $y(0.2)\approx$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 1.2</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 1.1</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 1.22</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 1.21</div>
+  </div>
+  <div class="mcq-explanation">$y_1=1+0.1(1)=1.1$; $y_2=1.1+0.1(1.1)=1.1+0.11=1.21$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">17</div>
+  <div class="mcq-question">An exponential model $y=y_0 e^{kt}$ has $k<0$ if the quantity is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> growing</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> constant</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> decaying</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> oscillating</div>
+  </div>
+  <div class="mcq-explanation">$k<0\Rightarrow e^{kt}\to 0$ as $t\to\infty$: exponential decay. $k>0$ gives growth.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">18</div>
+  <div class="mcq-question">The order of the DE $\dfrac{d^2y}{dx^2}+3\dfrac{dy}{dx}-y=0$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 1st order</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 2nd order</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 3rd order</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 0th order</div>
+  </div>
+  <div class="mcq-explanation">The order equals the highest derivative present. Here $d^2y/dx^2$ is a 2nd derivative → 2nd order.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">19</div>
+  <div class="mcq-question">A solution curve through $(0,1)$ for $dy/dx=xy$ passes through which region when $x>0$?</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> increasing (slopes are positive)</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> decreasing (slopes are negative)</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> concave down</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> constant</div>
+  </div>
+  <div class="mcq-explanation">For $x>0$ and $y>0$ (near $(0,1)$): $dy/dx=xy>0$, so the solution is increasing.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">20</div>
+  <div class="mcq-question">The equilibria (constant solutions) of $\dfrac{dP}{dt}=0.1P(1-P/500)$ are</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $P=500$ only</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $P=250$ only</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $P=0.1$ only</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $P=0$ and $P=500$</div>
+  </div>
+  <div class="mcq-explanation">$dP/dt=0$ when $P=0$ or $1-P/500=0\Rightarrow P=500$. Both are equilibrium solutions.</div>
+</div>
+
+</div>
+
+<div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+  <a href="mcq-ch06.html" class="btn btn-secondary">← Ch 6 MCQs</a>
+  <a href="mcq-ch08.html" class="btn btn-primary">Chapter 8 MCQs →</a>
+  <a href="../answers/answer-key.html" class="btn btn-ghost">Full Answer Key</a>
+</div>
+
+</div></main></div>
+<footer class="site-footer"><p>© 2024 <a href="https://avinashai.com">AvinashAI</a> · MCQ — Chapter 7</p></footer>
+<script src="../js/nav.js" id="navScript" data-root=".."></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/main.js"></script>
+</body></html>

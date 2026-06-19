@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ Chapter 10: Sequences &amp; Series | AP Calculus BC</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+<div id="topNav"></div>
+<div class="page-wrapper">
+<div id="sidebarNav"></div>
+<main class="main-content"><div class="content-inner">
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow"><span class="chapter-badge bc">BC Only</span></div>
+  <h1>Chapter 10 — Sequences &amp; Series: 20 MCQs</h1>
+  <p class="page-hero-subtitle">Convergence tests, power series, Taylor/Maclaurin series, Lagrange error.</p>
+</div>
+
+<div class="quiz-controls">
+  <div class="quiz-score">
+    <div><div class="score-display" id="scoreDisplay">0/20</div><div class="score-label">Score</div></div>
+  </div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+  <span class="text-muted" id="answeredCount">0 answered</span>
+  <button class="btn btn-secondary btn-sm" id="resetQuiz">Reset</button>
+</div>
+
+<div class="mcq-container">
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">1</div>
+  <div class="mcq-question">The geometric series $\displaystyle\sum_{n=0}^{\infty}\left(\dfrac{1}{3}\right)^n$ converges to</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $1$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $2$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $3/2$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $3$</div>
+  </div>
+  <div class="mcq-explanation">$S=\dfrac{a}{1-r}=\dfrac{1}{1-1/3}=\dfrac{1}{2/3}=\dfrac{3}{2}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">2</div>
+  <div class="mcq-question">The Divergence Test says: if $\lim_{n\to\infty}a_n \ne 0$, then $\sum a_n$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> diverges</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> converges</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> may or may not converge</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> converges absolutely</div>
+  </div>
+  <div class="mcq-explanation">If $\lim a_n\ne0$, the series diverges. But $\lim a_n=0$ does NOT guarantee convergence (e.g., harmonic series).</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">3</div>
+  <div class="mcq-question">The $p$-series $\displaystyle\sum_{n=1}^{\infty}\dfrac{1}{n^p}$ converges if and only if</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $p < 1$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $p \le 1$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $p \ge 1$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $p > 1$</div>
+  </div>
+  <div class="mcq-explanation">$\sum 1/n^p$ converges $\Leftrightarrow p>1$. The harmonic series ($p=1$) diverges.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">4</div>
+  <div class="mcq-question">The Ratio Test for $\displaystyle\sum a_n$: if $\lim_{n\to\infty}\left|\dfrac{a_{n+1}}{a_n}\right| = L < 1$, then</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> the series diverges</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> the series converges absolutely</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> the test is inconclusive</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> the series conditionally converges</div>
+  </div>
+  <div class="mcq-explanation">Ratio Test: $L<1\Rightarrow$ absolute convergence; $L>1\Rightarrow$ divergence; $L=1\Rightarrow$ inconclusive.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">5</div>
+  <div class="mcq-question">The Maclaurin series for $e^x$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\displaystyle\sum_{n=0}^{\infty}\dfrac{(-1)^n x^n}{n!}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $1+x+\dfrac{x^2}{2}+\dfrac{x^3}{6}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\displaystyle\sum_{n=0}^{\infty}\dfrac{x^n}{n!}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\displaystyle\sum_{n=1}^{\infty}\dfrac{x^n}{n}$</div>
+  </div>
+  <div class="mcq-explanation">$e^x=\displaystyle\sum_{n=0}^\infty\dfrac{x^n}{n!}=1+x+\dfrac{x^2}{2!}+\cdots$ for all $x$. (Option B is just a partial sum, not the full series.)</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">6</div>
+  <div class="mcq-question">The Alternating Series Test requires: terms decrease in absolute value AND</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\lim_{n\to\infty}b_n = 0$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $b_n$ is increasing</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $b_n > 1$ for all $n$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> the series is geometric</div>
+  </div>
+  <div class="mcq-explanation">Alternating Series Test (Leibniz): $\sum(-1)^n b_n$ converges if (1) $b_{n+1}\le b_n$ (decreasing) and (2) $\lim b_n=0$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">7</div>
+  <div class="mcq-question">The interval of convergence of $\displaystyle\sum_{n=0}^\infty x^n$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $(-\infty,\infty)$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $[-1,1]$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $(-1,1]$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $(-1,1)$</div>
+  </div>
+  <div class="mcq-explanation">$\sum x^n$ is geometric with $r=x$. Converges when $|x|<1$, i.e., $x\in(-1,1)$. Diverges at both endpoints.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">8</div>
+  <div class="mcq-question">The radius of convergence of $\displaystyle\sum_{n=0}^\infty\dfrac{n!}{2^n}x^n$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\infty$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $0$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $2$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $1/2$</div>
+  </div>
+  <div class="mcq-explanation">Ratio Test: $\left|\dfrac{(n+1)!x^{n+1}/2^{n+1}}{n!x^n/2^n}\right|=\dfrac{(n+1)|x|}{2}\to\infty$ for any $x\ne0$. So $R=0$ (converges only at $x=0$).</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">9</div>
+  <div class="mcq-question">The Maclaurin series for $\sin x$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\displaystyle\sum_{n=0}^{\infty}\dfrac{x^{2n}}{(2n)!}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\displaystyle\sum_{n=0}^{\infty}\dfrac{(-1)^n x^{2n}}{(2n)!}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\displaystyle\sum_{n=0}^{\infty}\dfrac{(-1)^n x^{2n+1}}{(2n+1)!}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\displaystyle\sum_{n=0}^{\infty}\dfrac{x^{2n+1}}{(2n+1)!}$</div>
+  </div>
+  <div class="mcq-explanation">$\sin x=x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\cdots=\displaystyle\sum_{n=0}^\infty\dfrac{(-1)^n x^{2n+1}}{(2n+1)!}$. (Option B is $\cos x$.)</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">10</div>
+  <div class="mcq-question">$e^{0.1}\approx 1 + 0.1 + 0.005 + 0.000167 = ?$ (using Maclaurin, 3 terms after 1)</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $1.10517$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $1.1$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $1.105$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $1.115$</div>
+  </div>
+  <div class="mcq-explanation">$e^{0.1}=1+0.1+\frac{(0.1)^2}{2}+\frac{(0.1)^3}{6}+\cdots\approx1+0.1+0.005+0.000167\approx1.10517$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">11</div>
+  <div class="mcq-question">The harmonic series $\displaystyle\sum_{n=1}^{\infty}\dfrac{1}{n}$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> converges to 1</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> converges to $\ln 2$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> converges to $e$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> diverges</div>
+  </div>
+  <div class="mcq-explanation">The harmonic series diverges (shown by integral test or grouping argument). It is the classic $p=1$ divergent $p$-series.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">12</div>
+  <div class="mcq-question">For the power series $\displaystyle\sum_{n=0}^\infty\dfrac{(x-2)^n}{3^n}$, the radius of convergence is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 1</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 2</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 3</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $1/3$</div>
+  </div>
+  <div class="mcq-explanation">Ratio Test: $\left|\dfrac{(x-2)^{n+1}/3^{n+1}}{(x-2)^n/3^n}\right|=\dfrac{|x-2|}{3}<1\Rightarrow|x-2|<3$. Radius $R=3$.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">13</div>
+  <div class="mcq-question">To find the Maclaurin series for $e^{-x^2}$, substitute into $e^x$'s series. The result is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\displaystyle\sum_{n=0}^\infty\dfrac{x^{2n}}{n!}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\displaystyle\sum_{n=0}^\infty\dfrac{(-1)^n x^{2n}}{n!}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\displaystyle\sum_{n=0}^\infty\dfrac{(-x)^n}{n!}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\displaystyle\sum_{n=0}^\infty\dfrac{x^n}{n!}$</div>
+  </div>
+  <div class="mcq-explanation">Replace $x$ with $-x^2$ in $\sum x^n/n!$: $\sum\dfrac{(-x^2)^n}{n!}=\sum\dfrac{(-1)^n x^{2n}}{n!}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">14</div>
+  <div class="mcq-question">$\displaystyle\sum_{n=1}^\infty(-1)^{n+1}\dfrac{1}{n} = 1 - \dfrac{1}{2}+\dfrac{1}{3}-\cdots$ converges to</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\ln 2$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $1$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $e-1$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\pi/4$</div>
+  </div>
+  <div class="mcq-explanation">From $\ln(1+x)=x-x^2/2+x^3/3-\cdots$ at $x=1$: $\ln 2=1-1/2+1/3-\cdots$</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">15</div>
+  <div class="mcq-question">The Lagrange error bound for $|f(x)-T_n(x)|$ uses the formula</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\dfrac{M|x-a|^n}{n!}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $M|x-a|^{n+1}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\dfrac{M}{(n+1)!}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\dfrac{M|x-a|^{n+1}}{(n+1)!}$</div>
+  </div>
+  <div class="mcq-explanation">Lagrange error: $|R_n(x)|\le\dfrac{M|x-a|^{n+1}}{(n+1)!}$, where $M$ bounds $|f^{(n+1)}|$ on the interval.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">16</div>
+  <div class="mcq-question">The series $\displaystyle\sum_{n=1}^\infty\dfrac{1}{n^2}$ converges by the</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> Divergence Test</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> Ratio Test</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $p$-series Test ($p=2>1$)</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> Geometric Series Test</div>
+  </div>
+  <div class="mcq-explanation">$\sum 1/n^2$ is a $p$-series with $p=2>1$, so it converges.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">17</div>
+  <div class="mcq-question">The Taylor series for $\cos x$ centered at $0$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\displaystyle\sum_{n=0}^\infty\dfrac{(-1)^n x^{2n+1}}{(2n+1)!}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\displaystyle\sum_{n=0}^\infty\dfrac{(-1)^n x^{2n}}{(2n)!}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\displaystyle\sum_{n=0}^\infty\dfrac{x^{2n}}{(2n)!}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $1 - x^2 + x^4$</div>
+  </div>
+  <div class="mcq-explanation">$\cos x=1-\dfrac{x^2}{2!}+\dfrac{x^4}{4!}-\cdots=\displaystyle\sum_{n=0}^\infty\dfrac{(-1)^n x^{2n}}{(2n)!}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">18</div>
+  <div class="mcq-question">The series $\displaystyle\sum_{n=0}^\infty\dfrac{(-1)^n}{2n+1} = 1-\dfrac{1}{3}+\dfrac{1}{5}-\cdots$ converges to</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\pi/4$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\pi/2$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\pi$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $1$</div>
+  </div>
+  <div class="mcq-explanation">From $\arctan x=x-x^3/3+x^5/5-\cdots$ at $x=1$: $\arctan(1)=\pi/4=1-1/3+1/5-\cdots$</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">19</div>
+  <div class="mcq-question">If a series converges absolutely, it also</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> converges conditionally only</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> diverges</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> may or may not converge</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> converges</div>
+  </div>
+  <div class="mcq-explanation">Absolute convergence implies convergence. The converse is false (conditionally convergent series converge but not absolutely).</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">20</div>
+  <div class="mcq-question">Use $T_2(x)=1-\dfrac{x^2}{2}$ for $\cos x$. Estimate error of $\cos(0.3)$ using Lagrange error.</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> less than $0.005$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> less than $0.1$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> less than $0.00034$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> exactly $0$</div>
+  </div>
+  <div class="mcq-explanation">$|R_2|\le\dfrac{M(0.3)^3}{3!}=\dfrac{1\cdot0.027}{6}=0.0045$... The next term is $\dfrac{(0.3)^4}{4!}=\dfrac{0.0081}{24}\approx0.0003375<0.00034$. ✓</div>
+</div>
+
+</div>
+
+<div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+  <a href="mcq-ch09.html" class="btn btn-secondary">← Ch 9 MCQs</a>
+  <a href="../answers/answer-key.html" class="btn btn-primary">Full Answer Key →</a>
+  <a href="../frq/frq-ab.html" class="btn btn-ghost">AB Free Response →</a>
+</div>
+
+</div></main></div>
+<footer class="site-footer"><p>© 2024 <a href="https://avinashai.com">AvinashAI</a> · MCQ — Chapter 10</p></footer>
+<script src="../js/nav.js" id="navScript" data-root=".."></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/main.js"></script>
+</body></html>

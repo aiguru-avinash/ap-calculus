@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 10: Sequences & Series | AP Calculus BC</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+<div id="topNav"></div>
+<div class="page-wrapper">
+<div id="sidebarNav"></div>
+<main class="main-content"><div class="content-inner">
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow">
+    <span class="chapter-badge bc">BC Only</span>
+    <span class="chapter-num">Chapter 10 of 10</span>
+  </div>
+  <h1>Infinite Sequences &amp; Series</h1>
+  <p class="page-hero-subtitle">Convergence tests, power series, Taylor and Maclaurin series, and the Lagrange error bound.</p>
+  <div class="hero-meta">
+    <span class="hero-meta-item">📖 ~75 min read</span>
+    <span class="hero-meta-item">✏️ 8 worked examples</span>
+    <span class="hero-meta-item"><a href="../mcq/mcq-ch10.html">→ 20 MCQs</a></span>
+  </div>
+</div>
+
+<div class="toc-box">
+  <div class="toc-title">In This Chapter</div>
+  <ul class="toc-list">
+    <li><a href="#sec-sequences">10.1 Sequences</a></li>
+    <li><a href="#sec-series">10.2 Series and Partial Sums</a></li>
+    <li><a href="#sec-tests">10.3 Convergence Tests</a></li>
+    <li><a href="#sec-alternating">10.4 Alternating Series</a></li>
+    <li><a href="#sec-power">10.5 Power Series &amp; Radius of Convergence</a></li>
+    <li><a href="#sec-taylor">10.6 Taylor and Maclaurin Series</a></li>
+    <li><a href="#sec-error">10.7 Lagrange Error Bound</a></li>
+    <li><a href="#sec-examples">Worked Examples</a></li>
+  </ul>
+</div>
+
+<!-- 10.1 Sequences -->
+<section id="sec-sequences">
+  <h2>10.1 Sequences</h2>
+  <p>An infinite <strong>sequence</strong> is an ordered list $\{a_n\}_{n=1}^\infty$. We say $\{a_n\}$ <strong>converges</strong> to $L$ if $\displaystyle\lim_{n\to\infty} a_n = L$; otherwise it <strong>diverges</strong>.</p>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Sequence Limit Theorems</div>
+    <ul>
+      <li>If $\lim_{n\to\infty} |a_n| = 0$, then $\lim_{n\to\infty} a_n = 0$.</li>
+      <li>$\lim_{n\to\infty} r^n = 0$ if $|r| < 1$; diverges if $|r| > 1$.</li>
+      <li>Squeeze theorem applies to sequences.</li>
+      <li>$\lim_{n\to\infty} n^{1/n} = 1$, $\;\lim_{n\to\infty}\dfrac{\ln n}{n} = 0$.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 10.2 Series -->
+<section id="sec-series">
+  <h2>10.2 Series and Partial Sums</h2>
+  <p>An infinite <strong>series</strong> is $\displaystyle\sum_{n=1}^\infty a_n = a_1 + a_2 + a_3 + \cdots$. The $N$-th <strong>partial sum</strong> is $S_N = \displaystyle\sum_{n=1}^N a_n$. The series <strong>converges</strong> to $S$ if $\lim_{N\to\infty} S_N = S$.</p>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Geometric Series</div>
+    $$\sum_{n=0}^\infty ar^n = \frac{a}{1-r} \quad \text{if } |r| < 1, \quad \text{diverges if } |r| \ge 1$$
+    This is the most important series to know.
+  </div>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ p-Series</div>
+    $$\sum_{n=1}^\infty \frac{1}{n^p} \begin{cases} \text{converges} & p > 1 \\ \text{diverges} & p \le 1 \end{cases}$$
+    Special case $p=1$: the <strong>harmonic series</strong> $\sum 1/n$ diverges.
+  </div>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Divergence Test (Test for Divergence)</div>
+    If $\lim_{n\to\infty} a_n \ne 0$ (or doesn't exist), then $\sum a_n$ <strong>diverges</strong>.
+    <br><em>Warning: If $\lim a_n = 0$, the series may converge OR diverge — this test is inconclusive.</em>
+  </div>
+</section>
+
+<!-- 10.3 Convergence Tests -->
+<section id="sec-tests">
+  <h2>10.3 Convergence Tests</h2>
+
+  <table class="data-table">
+    <tr><th>Test</th><th>Conditions</th><th>Conclusion</th></tr>
+    <tr><td><strong>Integral Test</strong></td><td>$f(n) = a_n$, $f$ positive, decreasing, continuous</td><td>$\sum a_n$ and $\int_1^\infty f(x)\,dx$ both converge or both diverge</td></tr>
+    <tr><td><strong>Comparison Test (BCT)</strong></td><td>$0 \le a_n \le b_n$</td><td>$\sum b_n$ conv. $\Rightarrow$ $\sum a_n$ conv.; $\sum a_n$ div. $\Rightarrow$ $\sum b_n$ div.</td></tr>
+    <tr><td><strong>Limit Comparison Test (LCT)</strong></td><td>$a_n, b_n > 0$; $L = \lim \dfrac{a_n}{b_n}$, $0 < L < \infty$</td><td>$\sum a_n$ and $\sum b_n$ either both converge or both diverge</td></tr>
+    <tr><td><strong>Ratio Test</strong></td><td>$L = \lim\left|\dfrac{a_{n+1}}{a_n}\right|$</td><td>$L < 1$: converge; $L > 1$: diverge; $L=1$: inconclusive</td></tr>
+    <tr><td><strong>Root Test</strong></td><td>$L = \lim\sqrt[n]{|a_n|}$</td><td>Same conclusion as ratio test</td></tr>
+  </table>
+</section>
+
+<!-- 10.4 Alternating Series -->
+<section id="sec-alternating">
+  <h2>10.4 Alternating Series</h2>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Alternating Series Test (Leibniz Test)</div>
+    If $\sum (-1)^n b_n$ (with $b_n > 0$) satisfies:
+    <ol>
+      <li>$b_{n+1} \le b_n$ (decreasing)</li>
+      <li>$\lim_{n\to\infty} b_n = 0$</li>
+    </ol>
+    then the series <strong>converges</strong>.
+  </div>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Absolute vs. Conditional Convergence</div>
+    <ul>
+      <li><strong>Absolutely convergent</strong>: $\sum |a_n|$ converges. (Absolute convergence implies convergence.)</li>
+      <li><strong>Conditionally convergent</strong>: $\sum a_n$ converges but $\sum |a_n|$ diverges.</li>
+    </ul>
+    Example: $\sum \dfrac{(-1)^{n+1}}{n}$ converges conditionally (alternating harmonic series).
+  </div>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Alternating Series Estimation Theorem</div>
+    For a convergent alternating series, the error from using $S_N$ to approximate $S$ satisfies:
+    $$|S - S_N| \le b_{N+1}$$
+    The error is bounded by the first omitted term.
+  </div>
+</section>
+
+<!-- 10.5 Power Series -->
+<section id="sec-power">
+  <h2>10.5 Power Series &amp; Radius of Convergence</h2>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Power Series</div>
+    $$\sum_{n=0}^\infty c_n(x-a)^n = c_0 + c_1(x-a) + c_2(x-a)^2 + \cdots$$
+    Centered at $x = a$.
+  </div>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Radius and Interval of Convergence</div>
+    <ul>
+      <li><strong>Radius of convergence $R$</strong>: found using the ratio test: $R = \lim_{n\to\infty}\left|\dfrac{c_n}{c_{n+1}}\right|$.</li>
+      <li>Converges absolutely for $|x-a| < R$, diverges for $|x-a| > R$.</li>
+      <li>Must <strong>check endpoints</strong> separately (not covered by ratio test).</li>
+      <li><strong>Interval of convergence</strong>: the set of all $x$ for which the series converges.</li>
+    </ul>
+  </div>
+
+  <div class="callout callout-note">
+    <div class="callout-title">📌 Operations on Power Series</div>
+    Within the radius of convergence, a power series can be differentiated and integrated term by term:
+    $$\frac{d}{dx}\left[\sum_{n=0}^\infty c_n x^n\right] = \sum_{n=1}^\infty n c_n x^{n-1} \qquad \int \sum_{n=0}^\infty c_n x^n\,dx = \sum_{n=0}^\infty \frac{c_n x^{n+1}}{n+1} + C$$
+  </div>
+</section>
+
+<!-- 10.6 Taylor/Maclaurin -->
+<section id="sec-taylor">
+  <h2>10.6 Taylor and Maclaurin Series</h2>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Taylor Series</div>
+    If $f$ has derivatives of all orders at $x = a$:
+    $$f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n = f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \cdots$$
+    When $a = 0$: <strong>Maclaurin series</strong>.
+  </div>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Key Maclaurin Series (Memorize)</div>
+    <table class="data-table">
+      <tr><th>Function</th><th>Maclaurin Series</th><th>Converges for</th></tr>
+      <tr><td>$e^x$</td><td>$\displaystyle\sum_{n=0}^\infty \dfrac{x^n}{n!} = 1 + x + \dfrac{x^2}{2!} + \dfrac{x^3}{3!}+\cdots$</td><td>all $x$</td></tr>
+      <tr><td>$\sin x$</td><td>$\displaystyle\sum_{n=0}^\infty \dfrac{(-1)^n x^{2n+1}}{(2n+1)!} = x - \dfrac{x^3}{6}+\dfrac{x^5}{120}-\cdots$</td><td>all $x$</td></tr>
+      <tr><td>$\cos x$</td><td>$\displaystyle\sum_{n=0}^\infty \dfrac{(-1)^n x^{2n}}{(2n)!} = 1 - \dfrac{x^2}{2}+\dfrac{x^4}{24}-\cdots$</td><td>all $x$</td></tr>
+      <tr><td>$\ln(1+x)$</td><td>$\displaystyle\sum_{n=1}^\infty \dfrac{(-1)^{n+1}x^n}{n} = x - \dfrac{x^2}{2}+\dfrac{x^3}{3}-\cdots$</td><td>$-1 < x \le 1$</td></tr>
+      <tr><td>$\dfrac{1}{1-x}$</td><td>$\displaystyle\sum_{n=0}^\infty x^n = 1+x+x^2+x^3+\cdots$</td><td>$|x|<1$</td></tr>
+      <tr><td>$\arctan x$</td><td>$\displaystyle\sum_{n=0}^\infty \dfrac{(-1)^n x^{2n+1}}{2n+1} = x - \dfrac{x^3}{3}+\dfrac{x^5}{5}-\cdots$</td><td>$|x| \le 1$</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- 10.7 Lagrange Error -->
+<section id="sec-error">
+  <h2>10.7 Lagrange Error Bound</h2>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Lagrange Error Bound</div>
+    If $T_n(x)$ is the $n$-th degree Taylor polynomial of $f$ centered at $a$, then the remainder $R_n(x) = f(x) - T_n(x)$ satisfies:
+    $$|R_n(x)| \le \frac{M}{(n+1)!}|x-a|^{n+1}$$
+    where $M$ is the maximum value of $|f^{(n+1)}(t)|$ for $t$ between $a$ and $x$.
+  </div>
+
+  <div class="callout callout-note">
+    <div class="callout-title">📌 Strategy for Finding $M$</div>
+    <ol>
+      <li>Find $f^{(n+1)}(x)$ (one more derivative than the polynomial degree).</li>
+      <li>Find the maximum of $|f^{(n+1)}(t)|$ on the relevant interval. For trig/exp functions, this is often simply the maximum value of the function on the interval.</li>
+      <li>Plug into the formula.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- Worked Examples -->
+<section id="sec-examples">
+  <h2>Worked Examples</h2>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 1</span><span class="example-title">Geometric Series Sum</span></div>
+    <div class="example-body">
+      <p class="example-problem">Find the sum of $\displaystyle\sum_{n=1}^\infty \frac{3}{2^n}$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Rewrite: $\displaystyle\sum_{n=1}^\infty 3\cdot\left(\frac{1}{2}\right)^n = 3\sum_{n=1}^\infty\left(\frac{1}{2}\right)^n = 3\cdot\frac{1/2}{1-1/2} = 3\cdot 1 = \boxed{3}$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 2</span><span class="example-title">Ratio Test</span></div>
+    <div class="example-body">
+      <p class="example-problem">Determine convergence of $\displaystyle\sum_{n=1}^\infty \frac{n!}{3^n}$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">$\left|\dfrac{a_{n+1}}{a_n}\right| = \dfrac{(n+1)!/3^{n+1}}{n!/3^n} = \dfrac{n+1}{3} \to \infty > 1$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">By Ratio Test, the series <strong>diverges</strong>.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 3</span><span class="example-title">Interval of Convergence</span></div>
+    <div class="example-body">
+      <p class="example-problem">Find the interval of convergence of $\displaystyle\sum_{n=1}^\infty \frac{(-1)^n x^n}{n}$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Ratio test: $\lim\left|\dfrac{x^{n+1}/(n+1)}{x^n/n}\right| = |x|\cdot\dfrac{n}{n+1} \to |x|$. Converges when $|x| < 1$, i.e., $-1 < x < 1$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">Check endpoints:
+          $x=1$: $\sum \dfrac{(-1)^n}{n}$ — alternating harmonic series, converges.
+          $x=-1$: $\sum \dfrac{(-1)^n(-1)^n}{n} = \sum \dfrac{1}{n}$ — harmonic series, diverges.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">Interval of convergence: $\boxed{-1 < x \le 1}$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 4</span><span class="example-title">Maclaurin Series for $e^x$</span></div>
+    <div class="example-body">
+      <p class="example-problem">Derive the Maclaurin series for $f(x) = e^x$ and use it to approximate $e^{0.1}$ to 4 decimal places.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">$f^{(n)}(x) = e^x$ for all $n$. $f^{(n)}(0) = 1$. Series: $e^x = \displaystyle\sum_{n=0}^\infty\dfrac{x^n}{n!}$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">$e^{0.1} \approx 1 + 0.1 + \dfrac{(0.1)^2}{2} + \dfrac{(0.1)^3}{6} + \dfrac{(0.1)^4}{24} = 1 + 0.1 + 0.005 + 0.0001\overline{6} + 0.0000041\overline{6} \approx \boxed{1.1052}$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 5</span><span class="example-title">Taylor Polynomial for $\cos x$</span></div>
+    <div class="example-body">
+      <p class="example-problem">Write the 4th-degree Maclaurin polynomial for $\cos x$ and use it to estimate $\cos(0.2)$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">$T_4(x) = 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} = 1 - \dfrac{x^2}{2} + \dfrac{x^4}{24}$</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">$T_4(0.2) = 1 - \dfrac{0.04}{2} + \dfrac{0.0016}{24} = 1 - 0.02 + 0.0000\overline{6} \approx \boxed{0.9800}$. (Actual: $\cos 0.2 \approx 0.9801$)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 6</span><span class="example-title">Taylor Series by Substitution</span></div>
+    <div class="example-body">
+      <p class="example-problem">Find the Maclaurin series for $f(x) = e^{-x^2}$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Replace $x$ with $-x^2$ in $e^x = \sum x^n/n!$:
+          $$e^{-x^2} = \sum_{n=0}^\infty \frac{(-x^2)^n}{n!} = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{n!} = \boxed{1 - x^2 + \frac{x^4}{2} - \frac{x^6}{6} + \cdots}$$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 7</span><span class="example-title">Lagrange Error Bound</span></div>
+    <div class="example-body">
+      <p class="example-problem">Use the 3rd-degree Maclaurin polynomial for $\sin x$ to approximate $\sin(0.3)$ and bound the error.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">$T_3(x) = x - \dfrac{x^3}{6}$. So $T_3(0.3) = 0.3 - \dfrac{0.027}{6} = 0.3 - 0.0045 = 0.2955$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">Next term: $n+1 = 4$, so $f^{(4)}(x) = \sin x$. Max $|f^{(4)}(t)|$ on $[0, 0.3]$: $M = \sin(0.3) < 1$. Use $M=1$ (safe upper bound).</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">$|R_3(0.3)| \le \dfrac{1}{4!}(0.3)^4 = \dfrac{0.0081}{24} = 0.0003375 < \boxed{0.00034}$. Error is less than 0.034%.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 8</span><span class="example-title">Series from Integration</span></div>
+    <div class="example-body">
+      <p class="example-problem">Use the series for $\dfrac{1}{1-x}$ to find the series for $\ln(1+x)$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">$\dfrac{1}{1+x} = \dfrac{1}{1-(-x)} = \sum_{n=0}^\infty (-x)^n = \sum_{n=0}^\infty (-1)^n x^n$ for $|x|<1$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">Integrate: $\displaystyle\int_0^x \frac{dt}{1+t} = \ln(1+x)$. So:
+          $$\ln(1+x) = \int_0^x \sum_{n=0}^\infty(-1)^n t^n\,dt = \sum_{n=0}^\infty(-1)^n\frac{x^{n+1}}{n+1} = \boxed{x - \frac{x^2}{2}+\frac{x^3}{3}-\cdots}$$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="chapter-nav">
+  <a href="ch09-parametric-polar-vectors.html" class="chapter-nav-card prev">
+    <span class="nav-card-arrow">←</span>
+    <div><div class="nav-card-label">Previous</div><div class="nav-card-title">Parametric, Polar &amp; Vectors</div></div>
+  </a>
+  <a href="../frq/frq-ab.html" class="chapter-nav-card next">
+    <span class="nav-card-arrow">→</span>
+    <div><div class="nav-card-label">Practice</div><div class="nav-card-title">FRQ Practice — AB</div></div>
+  </a>
+</div>
+
+</div></main></div>
+<footer class="site-footer"><p>© 2024 <a href="https://avinashai.com">AvinashAI</a> · Chapter 10: Sequences &amp; Series (BC)</p></footer>
+<script src="../js/nav.js" id="navScript" data-root=".."></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/main.js"></script>
+</body></html>

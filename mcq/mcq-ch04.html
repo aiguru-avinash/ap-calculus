@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ Chapter 4: Contextual Applications | AP Calculus</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+<div id="topNav"></div>
+<div class="page-wrapper">
+<div id="sidebarNav"></div>
+<main class="main-content"><div class="content-inner">
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow"><span class="chapter-badge ab">AB</span><span class="chapter-badge bc">BC</span></div>
+  <h1>Chapter 4 — Contextual Applications: 20 MCQs</h1>
+  <p class="page-hero-subtitle">Motion, related rates, linearization, and L'Hôpital's Rule.</p>
+</div>
+
+<div class="quiz-controls">
+  <div class="quiz-score">
+    <div><div class="score-display" id="scoreDisplay">0/20</div><div class="score-label">Score</div></div>
+  </div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+  <span class="text-muted" id="answeredCount">0 answered</span>
+  <button class="btn btn-secondary btn-sm" id="resetQuiz">Reset</button>
+</div>
+
+<div class="mcq-container">
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">1</div>
+  <div class="mcq-question">A particle moves along a line with position $s(t) = t^3 - 6t^2$. At $t=2$, the particle is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> moving right and speeding up</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> moving right and slowing down</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> moving left and slowing down</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> moving left and speeding up</div>
+  </div>
+  <div class="mcq-explanation">$v(t)=3t^2-12t$; $v(2)=12-24=-12<0$ (moving left). $a(t)=6t-12$; $a(2)=0$. At $t=2$ acceleration is 0, but just after $t=2$: $a>0$ and $v<0$, meaning $|v|$ is decreasing — slowing down.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">2</div>
+  <div class="mcq-question">$\displaystyle\lim_{x\to 0}\dfrac{\sin 4x}{x} =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 4</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 1</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 0</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\infty$</div>
+  </div>
+  <div class="mcq-explanation">L'Hôpital (0/0): $\dfrac{4\cos 4x}{1}\Big|_{x=0}=4$. Or multiply and divide by 4: $4\cdot\dfrac{\sin4x}{4x}\to4\cdot1=4$.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">3</div>
+  <div class="mcq-question">The linearization of $f(x) = \sqrt{x}$ at $x=9$ is $L(x) =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $3 + 3(x-9)$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $3 + \dfrac{1}{6}(x-9)$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $3 + \dfrac{1}{3}(x-9)$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $9 + \dfrac{1}{6}(x-9)$</div>
+  </div>
+  <div class="mcq-explanation">$f(9)=3$; $f'(x)=\dfrac{1}{2\sqrt{x}}$; $f'(9)=\dfrac{1}{6}$. $L(x)=3+\dfrac{1}{6}(x-9)$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">4</div>
+  <div class="mcq-question">A ladder 10 ft long leans against a wall. When the base is 6 ft from the wall and sliding away at 2 ft/s, the top of the ladder slides down at</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $3/2$ ft/s</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $4$ ft/s</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $1$ ft/s</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $3/2$ ft/s</div>
+  </div>
+  <div class="mcq-explanation">$x^2+y^2=100$. When $x=6$, $y=8$. Differentiate: $2x\dfrac{dx}{dt}+2y\dfrac{dy}{dt}=0$. $6(2)+8\dfrac{dy}{dt}=0\Rightarrow\dfrac{dy}{dt}=-\dfrac{3}{2}$ ft/s (downward).</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">5</div>
+  <div class="mcq-question">$\displaystyle\lim_{x\to\infty}\dfrac{3x^2-5}{2x^2+1} =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 0</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\infty$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $3/2$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $5$</div>
+  </div>
+  <div class="mcq-explanation">Divide by $x^2$: $\dfrac{3-5/x^2}{2+1/x^2}\to\dfrac{3}{2}$ as $x\to\infty$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">6</div>
+  <div class="mcq-question">$\displaystyle\lim_{x\to 0}\dfrac{x - \sin x}{x^3} =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $1/6$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $1/3$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $0$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $1$</div>
+  </div>
+  <div class="mcq-explanation">L'Hôpital 3×: $\dfrac{1-\cos x}{3x^2}\to\dfrac{\sin x}{6x}\to\dfrac{\cos x}{6}\Big|_{x=0}=\dfrac{1}{6}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">7</div>
+  <div class="mcq-question">A spherical balloon is inflated at $4\pi$ cm³/s. When the radius is 3 cm, the radius is growing at</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $4/9$ cm/s</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $1/9$ cm/s</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $4\pi/3$ cm/s</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $1/3$ cm/s</div>
+  </div>
+  <div class="mcq-explanation">$V=\dfrac{4}{3}\pi r^3$; $\dfrac{dV}{dt}=4\pi r^2\dfrac{dr}{dt}$. $4\pi=4\pi(9)\dfrac{dr}{dt}\Rightarrow\dfrac{dr}{dt}=\dfrac{1}{9}$ cm/s.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">8</div>
+  <div class="mcq-question">The acceleration of a particle with position $s(t) = e^{2t}$ at $t=0$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 1</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 2</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $e^2$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 4</div>
+  </div>
+  <div class="mcq-explanation">$v(t)=2e^{2t}$; $a(t)=4e^{2t}$; $a(0)=4e^0=4$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">9</div>
+  <div class="mcq-question">$\displaystyle\lim_{x\to 0^+}x\ln x =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $1$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $-1$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $0$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\infty$</div>
+  </div>
+  <div class="mcq-explanation">Form $0\cdot(-\infty)$. Rewrite: $\dfrac{\ln x}{1/x}$. L'Hôpital: $\dfrac{1/x}{-1/x^2}=-x\to0$.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">10</div>
+  <div class="mcq-question">Using linearization, approximate $\sqrt{4.08}$.</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 2.04</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 2.02</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 2.10</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 2.08</div>
+  </div>
+  <div class="mcq-explanation">$L(x)=2+\dfrac{1}{4}(x-4)$ (since $f'(4)=\dfrac{1}{2\sqrt{4}}=\dfrac{1}{4}$). $L(4.08)=2+\dfrac{0.08}{4}=2+0.02=2.02$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">11</div>
+  <div class="mcq-question">A particle is at rest when $v(t)=0$. If $v(t) = t^2 - 4t + 3$, the particle is at rest at $t =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $1$ and $3$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $2$ only</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $3$ only</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $0$ and $4$</div>
+  </div>
+  <div class="mcq-explanation">$t^2-4t+3=(t-1)(t-3)=0\Rightarrow t=1$ or $t=3$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">12</div>
+  <div class="mcq-question">$\displaystyle\lim_{x\to\infty}\dfrac{\ln x}{x} =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $1$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $e$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\infty$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $0$</div>
+  </div>
+  <div class="mcq-explanation">L'Hôpital ($\infty/\infty$): $\dfrac{1/x}{1}=\dfrac{1}{x}\to 0$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">13</div>
+  <div class="mcq-question">Two cars start from the same point. Car A goes north at 60 mph; car B goes east at 80 mph. After 1 hour, the rate at which the distance between them increases is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 70 mph</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 140 mph</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 100 mph</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 7200 mph</div>
+  </div>
+  <div class="mcq-explanation">After 1 hr: $a=60$, $b=80$, $d=100$. $d^2=a^2+b^2$; $2d\dfrac{dd}{dt}=2a\dfrac{da}{dt}+2b\dfrac{db}{dt}$. $100\dfrac{dd}{dt}=60(60)+80(80)=3600+6400=10000\Rightarrow\dfrac{dd}{dt}=100$ mph.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">14</div>
+  <div class="mcq-question">$\displaystyle\lim_{x\to 0}\dfrac{e^x - 1 - x}{x^2} =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 0</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $1/2$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 1</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $e$</div>
+  </div>
+  <div class="mcq-explanation">L'Hôpital twice: $\dfrac{e^x-1}{2x}\to\dfrac{e^x}{2}\Big|_{x=0}=\dfrac{1}{2}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">15</div>
+  <div class="mcq-question">$\displaystyle\lim_{x\to\infty}\left(1+\dfrac{1}{x}\right)^x =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $e$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 1</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\infty$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 0</div>
+  </div>
+  <div class="mcq-explanation">This is the definition of $e$: $\lim_{x\to\infty}\!\left(1+\dfrac{1}{x}\right)^x=e$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">16</div>
+  <div class="mcq-question">The displacement of a particle from $t=0$ to $t=3$ with velocity $v(t) = t^2$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $6$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $6t$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $27$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $9$</div>
+  </div>
+  <div class="mcq-explanation">Displacement $=\displaystyle\int_0^3 t^2\,dt = \left[\dfrac{t^3}{3}\right]_0^3 = 9$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">17</div>
+  <div class="mcq-question">Water flows into a conical tank (vertex down, half-angle 30°) at $2$ m³/min. When depth is 3 m, the depth is rising at</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\dfrac{2}{3\pi}$ m/min</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\dfrac{2}{9\pi}$ m/min</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\dfrac{2}{3\pi}$ m/min</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\dfrac{1}{3\pi}$ m/min</div>
+  </div>
+  <div class="mcq-explanation">$r=h\tan30°=h/\sqrt{3}$. $V=\dfrac{\pi}{3}r^2h=\dfrac{\pi h^3}{9}$. $\dfrac{dV}{dt}=\dfrac{\pi h^2}{3}\dfrac{dh}{dt}$. $2=\dfrac{9\pi}{3}\dfrac{dh}{dt}\Rightarrow\dfrac{dh}{dt}=\dfrac{2}{3\pi}$ m/min.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">18</div>
+  <div class="mcq-question">Which form is NOT a valid indeterminate form for L'Hôpital's Rule?</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $0/0$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $0/\infty$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\infty/\infty$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $0\cdot\infty$</div>
+  </div>
+  <div class="mcq-explanation">$0/\infty$ is NOT indeterminate — it evaluates to 0 directly. L'Hôpital applies to $0/0$ and $\infty/\infty$. $0\cdot\infty$ can be converted to one of those forms.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">19</div>
+  <div class="mcq-question">A particle moves so that $v(t)>0$ and $a(t)<0$ for $t>0$. The particle is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> moving right and slowing down</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> moving right and speeding up</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> moving left and speeding up</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> moving left and slowing down</div>
+  </div>
+  <div class="mcq-explanation">$v>0$ means moving right. $v$ and $a$ have opposite signs, so speed $|v|$ is decreasing — slowing down.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">20</div>
+  <div class="mcq-question">$\displaystyle\lim_{x\to 0^+} x^x =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $0$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $e$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\infty$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $1$</div>
+  </div>
+  <div class="mcq-explanation">$\ln(x^x)=x\ln x\to 0$ (as shown earlier). So $x^x=e^{x\ln x}\to e^0=1$.</div>
+</div>
+
+</div>
+
+<div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+  <a href="mcq-ch03.html" class="btn btn-secondary">← Ch 3 MCQs</a>
+  <a href="mcq-ch05.html" class="btn btn-primary">Chapter 5 MCQs →</a>
+  <a href="../answers/answer-key.html" class="btn btn-ghost">Full Answer Key</a>
+</div>
+
+</div></main></div>
+<footer class="site-footer"><p>© 2024 <a href="https://avinashai.com">AvinashAI</a> · MCQ — Chapter 4</p></footer>
+<script src="../js/nav.js" id="navScript" data-root=".."></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/main.js"></script>
+</body></html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ Chapter 5: Analytical Applications | AP Calculus</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+<div id="topNav"></div>
+<div class="page-wrapper">
+<div id="sidebarNav"></div>
+<main class="main-content"><div class="content-inner">
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow"><span class="chapter-badge ab">AB</span><span class="chapter-badge bc">BC</span></div>
+  <h1>Chapter 5 — Analytical Applications: 20 MCQs</h1>
+  <p class="page-hero-subtitle">MVT, EVT, critical numbers, optimization, curve sketching.</p>
+</div>
+
+<div class="quiz-controls">
+  <div class="quiz-score">
+    <div><div class="score-display" id="scoreDisplay">0/20</div><div class="score-label">Score</div></div>
+  </div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+  <span class="text-muted" id="answeredCount">0 answered</span>
+  <button class="btn btn-secondary btn-sm" id="resetQuiz">Reset</button>
+</div>
+
+<div class="mcq-container">
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">1</div>
+  <div class="mcq-question">The Mean Value Theorem guarantees a $c \in (a,b)$ such that $f'(c) = \dfrac{f(b)-f(a)}{b-a}$ provided $f$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> differentiable on $[a,b]$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> continuous on $[a,b]$ and differentiable on $(a,b)$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> increasing on $[a,b]$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> continuous on $(a,b)$</div>
+  </div>
+  <div class="mcq-explanation">MVT requires: continuous on $[a,b]$ AND differentiable on $(a,b)$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">2</div>
+  <div class="mcq-question">The absolute maximum of $f(x) = -x^2 + 4x$ on $[0, 5]$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 0</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 3</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 4</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 5</div>
+  </div>
+  <div class="mcq-explanation">$f'(x)=-2x+4=0\Rightarrow x=2$. Check: $f(0)=0$, $f(2)=4$, $f(5)=-5$. Max is $4$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">3</div>
+  <div class="mcq-question">If $f'(x) > 0$ on $(a,b)$ and $f'(x) < 0$ on $(b,c)$, then $f$ has a local</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> maximum at $x=b$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> minimum at $x=b$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> inflection point at $x=b$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> neither max nor min at $x=b$</div>
+  </div>
+  <div class="mcq-explanation">First Derivative Test: $f'$ changes from $+$ to $-$ at $b$ → local maximum.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">4</div>
+  <div class="mcq-question">$f(x) = x^3 - 3x$ has inflection points at</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $x = \pm 1$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $x = 1$ only</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $x = -1$ only</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $x = 0$</div>
+  </div>
+  <div class="mcq-explanation">$f''(x)=6x=0\Rightarrow x=0$. $f''$ changes sign at $x=0$ (negative left, positive right), confirming an inflection point.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">5</div>
+  <div class="mcq-question">If $f''(c) > 0$, then $f$ is _____ at $x=c$.</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> decreasing</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> concave up</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> concave down</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> at a local max</div>
+  </div>
+  <div class="mcq-explanation">$f''>0$ means concave up (bowl-shaped opening upward).</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">6</div>
+  <div class="mcq-question">For $f(x) = x^3$, at $x=0$: $f'(0)=0$ and $f''(0)=0$. The Second Derivative Test is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> shows a local min</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> shows a local max</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> inconclusive</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> shows an inflection point</div>
+  </div>
+  <div class="mcq-explanation">When $f''(c)=0$, the Second Derivative Test is inconclusive. Use First Derivative Test: $f'$ doesn't change sign at 0, confirming an inflection point.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">7</div>
+  <div class="mcq-question">The critical numbers of $f(x) = x^4 - 4x^3$ are</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $x=0$ and $x=3$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $x=3$ only</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $x=0, 1, 3$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $x=0$ only</div>
+  </div>
+  <div class="mcq-explanation">$f'(x)=4x^3-12x^2=4x^2(x-3)=0\Rightarrow x=0$ or $x=3$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">8</div>
+  <div class="mcq-question">A farmer has 200 m of fence to enclose a rectangular field against a barn (one side free). The maximum area is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 2500 m²</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 4000 m²</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 10000 m²</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 5000 m²</div>
+  </div>
+  <div class="mcq-explanation">Let $x$ = width (both sides). Constraint: $2x+L=200$, so $L=200-2x$. $A=xL=x(200-2x)$. $A'=200-4x=0\Rightarrow x=50$. $A_{max}=50(100)=5000$ m².</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">9</div>
+  <div class="mcq-question">Rolle's Theorem requires</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $f(a)=0$ and $f(b)=0$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> continuous on $[a,b]$, differentiable on $(a,b)$, and $f(a)=f(b)$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $f$ is increasing on $[a,b]$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> differentiable on $[a,b]$ only</div>
+  </div>
+  <div class="mcq-explanation">Rolle's: continuous on $[a,b]$, differentiable on $(a,b)$, and $f(a)=f(b)$ (equal, not necessarily zero). Then $\exists c\in(a,b)$ with $f'(c)=0$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">10</div>
+  <div class="mcq-question">The absolute minimum of $f(x) = 2x^3 - 3x^2$ on $[-1, 2]$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $4$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $-1$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $-5$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $0$</div>
+  </div>
+  <div class="mcq-explanation">$f'=6x^2-6x=6x(x-1)=0\Rightarrow x=0,1$. $f(-1)=-2-3=-5$; $f(0)=0$; $f(1)=-1$; $f(2)=4$. Min = $-5$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">11</div>
+  <div class="mcq-question">If $f'(x) > 0$ for all $x$ on $(a,b)$, then $f$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> increasing on $(a,b)$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> concave up on $(a,b)$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> at a local min on $(a,b)$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> decreasing on $(a,b)$</div>
+  </div>
+  <div class="mcq-explanation">$f'>0\Rightarrow f$ is strictly increasing. Concavity is determined by $f''$, not $f'$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">12</div>
+  <div class="mcq-question">For $f(x) = xe^{-x}$, the local maximum value is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $0$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $e$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $e^{-1}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $e^{-1}$</div>
+  </div>
+  <div class="mcq-explanation">$f'(x)=(1-x)e^{-x}=0\Rightarrow x=1$. $f''(x)=(x-2)e^{-x}$; $f''(1)=-e^{-1}<0$: local max. $f(1)=e^{-1}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">13</div>
+  <div class="mcq-question">$f(x) = x^3 - 3x + 2$ is decreasing on the interval</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $(-\infty, -1)$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $(1, \infty)$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $(-1, 1)$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $(-\infty, 0)$</div>
+  </div>
+  <div class="mcq-explanation">$f'=3x^2-3=3(x^2-1)=3(x-1)(x+1)<0$ on $(-1,1)$.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">14</div>
+  <div class="mcq-question">At a critical point where $f'(c)=0$ and $f''(c) > 0$, the function has a</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> local maximum</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> local minimum</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> inflection point</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> saddle point</div>
+  </div>
+  <div class="mcq-explanation">Second Derivative Test: $f'(c)=0$ and $f''(c)>0\Rightarrow$ local minimum (concave up at that point).</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">15</div>
+  <div class="mcq-question">The Extreme Value Theorem guarantees absolute extrema when $f$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> continuous on a closed interval $[a,b]$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> differentiable on an open interval $(a,b)$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> defined on all of $\mathbb{R}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> monotone on $[a,b]$</div>
+  </div>
+  <div class="mcq-explanation">EVT: if $f$ is continuous on $[a,b]$, then $f$ attains both an absolute max and min on $[a,b]$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">16</div>
+  <div class="mcq-question">A function is concave down on an interval when</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $f' > 0$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $f'' > 0$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $f' < 0$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $f'' < 0$</div>
+  </div>
+  <div class="mcq-explanation">Concave down $\Leftrightarrow$ $f'' < 0$ (the graph curves downward, like an inverted bowl).</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">17</div>
+  <div class="mcq-question">Which function has a horizontal asymptote at $y=0$?</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $f(x)=e^x$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $f(x)=\ln x$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $f(x)=e^{-x}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $f(x)=x^2$</div>
+  </div>
+  <div class="mcq-explanation">$\lim_{x\to\infty}e^{-x}=0$, so $y=0$ is a horizontal asymptote of $e^{-x}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">18</div>
+  <div class="mcq-question">To minimize a product $P = xy$ subject to $x + y = 20$, the minimum occurs at</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $x=10, y=10$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> boundary values</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $x=5, y=15$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $x=y=0$</div>
+  </div>
+  <div class="mcq-explanation">$P=x(20-x)=-x^2+20x$. This has a maximum at $x=10$. There is no minimum on an open domain — minimum occurs at boundaries.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">19</div>
+  <div class="mcq-question">The value of $c$ guaranteed by MVT for $f(x) = x^2$ on $[1, 3]$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $2$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\sqrt{3}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $1$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $3$</div>
+  </div>
+  <div class="mcq-explanation">$\dfrac{f(3)-f(1)}{3-1}=\dfrac{9-1}{2}=4$. $f'(c)=2c=4\Rightarrow c=2\in(1,3)$. ✓</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">20</div>
+  <div class="mcq-question">A box with no top is made from a square sheet of cardboard 12 cm per side by cutting equal squares from corners and folding up sides. The side length of the cut squares that maximizes volume is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 1 cm</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 3 cm</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 4 cm</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 2 cm</div>
+  </div>
+  <div class="mcq-explanation">$V=x(12-2x)^2$. $V'=(12-2x)^2+x\cdot2(12-2x)(-2)=(12-2x)(12-6x)=0$. So $x=6$ (invalid) or $x=2$. Max volume at $x=2$ cm.</div>
+</div>
+
+</div>
+
+<div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+  <a href="mcq-ch04.html" class="btn btn-secondary">← Ch 4 MCQs</a>
+  <a href="mcq-ch06.html" class="btn btn-primary">Chapter 6 MCQs →</a>
+  <a href="../answers/answer-key.html" class="btn btn-ghost">Full Answer Key</a>
+</div>
+
+</div></main></div>
+<footer class="site-footer"><p>© 2024 <a href="https://avinashai.com">AvinashAI</a> · MCQ — Chapter 5</p></footer>
+<script src="../js/nav.js" id="navScript" data-root=".."></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/main.js"></script>
+</body></html>

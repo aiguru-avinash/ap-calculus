@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 7: Differential Equations | AP Calculus</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+<div id="topNav"></div>
+<div class="page-wrapper">
+<div id="sidebarNav"></div>
+<main class="main-content"><div class="content-inner">
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow">
+    <span class="chapter-badge ab">AB</span><span class="chapter-badge bc">BC</span>
+    <span class="chapter-num">Chapter 7 of 10</span>
+  </div>
+  <h1>Differential Equations</h1>
+  <p class="page-hero-subtitle">Slope fields, Euler's method, separation of variables, and exponential growth/decay models.</p>
+  <div class="hero-meta">
+    <span class="hero-meta-item">📖 ~45 min read</span>
+    <span class="hero-meta-item">✏️ 6 worked examples</span>
+    <span class="hero-meta-item"><a href="../mcq/mcq-ch07.html">→ 20 MCQs</a></span>
+  </div>
+</div>
+
+<div class="toc-box">
+  <div class="toc-title">In This Chapter</div>
+  <ul class="toc-list">
+    <li><a href="#sec-intro">7.1 Introduction to Differential Equations</a></li>
+    <li><a href="#sec-slope">7.2 Slope Fields</a></li>
+    <li><a href="#sec-euler">7.3 Euler's Method (BC)</a></li>
+    <li><a href="#sec-separation">7.4 Separation of Variables</a></li>
+    <li><a href="#sec-growth">7.5 Exponential Growth and Decay</a></li>
+    <li><a href="#sec-logistic">7.6 Logistic Growth (BC)</a></li>
+    <li><a href="#sec-examples">Worked Examples</a></li>
+  </ul>
+</div>
+
+<!-- 7.1 -->
+<section id="sec-intro">
+  <h2>7.1 Introduction to Differential Equations</h2>
+  <p>A <strong>differential equation (DE)</strong> is an equation involving an unknown function and one or more of its derivatives.</p>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Terminology</div>
+    <ul>
+      <li><strong>Order</strong>: the order of the highest derivative in the equation.</li>
+      <li><strong>General solution</strong>: a family of solutions containing arbitrary constants.</li>
+      <li><strong>Particular solution</strong>: a specific solution satisfying an initial condition.</li>
+      <li><strong>Initial condition</strong>: a specified value $y(x_0) = y_0$ used to determine the constant.</li>
+    </ul>
+  </div>
+
+  <div class="callout callout-example">
+    <div class="callout-title">📝 Example</div>
+    $\dfrac{dy}{dx} = 2x$ is a first-order DE. General solution: $y = x^2 + C$. With $y(0)=3$: particular solution $y = x^2 + 3$.
+  </div>
+</section>
+
+<!-- 7.2 Slope Fields -->
+<section id="sec-slope">
+  <h2>7.2 Slope Fields</h2>
+  <p>A <strong>slope field</strong> (direction field) is a visual representation of a DE $\dfrac{dy}{dx} = f(x,y)$. At each point $(x,y)$, draw a short line segment with slope $f(x,y)$.</p>
+
+  <!-- Slope Field Diagram for dy/dx = y -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg" width="400" height="360">
+      <!-- Axes -->
+      <line x1="200" y1="10" x2="200" y2="350" class="svg-axis"/>
+      <line x1="10" y1="180" x2="390" y2="180" class="svg-axis"/>
+      <!-- Axis labels -->
+      <text x="390" y="177" class="svg-label">x</text>
+      <text x="202" y="14" class="svg-label">y</text>
+      <!-- Tick marks -->
+      <line x1="260" y1="177" x2="260" y2="183" stroke="#4a5080" stroke-width="1"/><text x="256" y="194" class="svg-label">1</text>
+      <line x1="320" y1="177" x2="320" y2="183" stroke="#4a5080" stroke-width="1"/><text x="316" y="194" class="svg-label">2</text>
+      <line x1="140" y1="177" x2="140" y2="183" stroke="#4a5080" stroke-width="1"/><text x="132" y="194" class="svg-label">-1</text>
+      <line x1="80" y1="177" x2="80" y2="183" stroke="#4a5080" stroke-width="1"/><text x="72" y="194" class="svg-label">-2</text>
+      <line x1="197" y1="120" x2="203" y2="120" stroke="#4a5080" stroke-width="1"/><text x="183" y="124" class="svg-label">1</text>
+      <line x1="197" y1="60" x2="203" y2="60" stroke="#4a5080" stroke-width="1"/><text x="183" y="64" class="svg-label">2</text>
+      <line x1="197" y1="240" x2="203" y2="240" stroke="#4a5080" stroke-width="1"/><text x="177" y="244" class="svg-label">-1</text>
+      <line x1="197" y1="300" x2="203" y2="300" stroke="#4a5080" stroke-width="1"/><text x="177" y="304" class="svg-label">-2</text>
+      <!-- Slope segments for dy/dx = y (slope = y-value at each point) -->
+      <!-- y=2 row (y_screen=60): slopes=2 -->
+      <line x1="50" y1="54" x2="110" y2="66" class="svg-tangent" opacity="0.8"/>
+      <line x1="110" y1="54" x2="170" y2="66" class="svg-tangent" opacity="0.8"/>
+      <line x1="170" y1="54" x2="230" y2="66" class="svg-tangent" opacity="0.8"/>
+      <line x1="230" y1="54" x2="290" y2="66" class="svg-tangent" opacity="0.8"/>
+      <line x1="290" y1="54" x2="350" y2="66" class="svg-tangent" opacity="0.8"/>
+      <!-- y=1 row (y_screen=120): slopes=1 -->
+      <line x1="50" y1="117" x2="110" y2="123" stroke="var(--color-primary)" stroke-width="1.5" stroke-dasharray="none"/>
+      <line x1="110" y1="117" x2="170" y2="123" stroke="var(--color-primary)" stroke-width="1.5"/>
+      <line x1="170" y1="117" x2="230" y2="123" stroke="var(--color-primary)" stroke-width="1.5"/>
+      <line x1="230" y1="117" x2="290" y2="123" stroke="var(--color-primary)" stroke-width="1.5"/>
+      <line x1="290" y1="117" x2="350" y2="123" stroke="var(--color-primary)" stroke-width="1.5"/>
+      <!-- y=0 row: slopes=0 -->
+      <line x1="50" y1="180" x2="110" y2="180" stroke="#4a5080" stroke-width="1.5"/>
+      <line x1="110" y1="180" x2="170" y2="180" stroke="#4a5080" stroke-width="1.5"/>
+      <line x1="170" y1="180" x2="230" y2="180" stroke="#4a5080" stroke-width="1.5"/>
+      <line x1="230" y1="180" x2="290" y2="180" stroke="#4a5080" stroke-width="1.5"/>
+      <line x1="290" y1="180" x2="350" y2="180" stroke="#4a5080" stroke-width="1.5"/>
+      <!-- y=-1 row (y_screen=240): slopes=-1 -->
+      <line x1="50" y1="243" x2="110" y2="237" stroke="var(--color-accent-2)" stroke-width="1.5"/>
+      <line x1="110" y1="243" x2="170" y2="237" stroke="var(--color-accent-2)" stroke-width="1.5"/>
+      <line x1="170" y1="243" x2="230" y2="237" stroke="var(--color-accent-2)" stroke-width="1.5"/>
+      <line x1="230" y1="243" x2="290" y2="237" stroke="var(--color-accent-2)" stroke-width="1.5"/>
+      <line x1="290" y1="243" x2="350" y2="237" stroke="var(--color-accent-2)" stroke-width="1.5"/>
+      <!-- y=-2 row: slopes=-2 -->
+      <line x1="50" y1="306" x2="110" y2="294" class="svg-tangent" opacity="0.8"/>
+      <line x1="110" y1="306" x2="170" y2="294" class="svg-tangent" opacity="0.8"/>
+      <line x1="170" y1="306" x2="230" y2="294" class="svg-tangent" opacity="0.8"/>
+      <line x1="230" y1="306" x2="290" y2="294" class="svg-tangent" opacity="0.8"/>
+      <line x1="290" y1="306" x2="350" y2="294" class="svg-tangent" opacity="0.8"/>
+      <!-- Solution curve: y = e^x -->
+      <path d="M60,175 C100,168 140,155 180,135 C220,115 260,80 300,40" stroke="var(--color-accent)" stroke-width="2" fill="none"/>
+      <text x="305" y="38" class="svg-value" fill="var(--color-accent)" font-size="11">y = e^x</text>
+      <text x="50" y="345" class="svg-label" font-size="11" fill="var(--color-text-muted)">Slope field for dy/dx = y</text>
+    </svg>
+    <p class="diagram-caption">Figure 7.1 — Slope field for $\dfrac{dy}{dx} = y$. Slope at each point equals its $y$-value. Solution curves are exponentials $y = Ce^x$.</p>
+  </div>
+</section>
+
+<!-- 7.3 Euler's Method -->
+<section id="sec-euler">
+  <h2>7.3 Euler's Method <span class="chapter-badge bc" style="font-size:0.65rem;vertical-align:middle;">BC</span></h2>
+  <p>Euler's method numerically approximates a solution to $\dfrac{dy}{dx} = f(x,y)$ with initial condition $y(x_0) = y_0$ using step size $h$:</p>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Euler's Method</div>
+    $$x_{n+1} = x_n + h \qquad y_{n+1} = y_n + h \cdot f(x_n, y_n)$$
+    Each step follows the tangent line at the current point.
+  </div>
+
+  <div class="callout callout-warning">
+    <div class="callout-title">⚠️ Accuracy</div>
+    Smaller step size $h$ gives more accuracy. Euler's method overestimates on concave-down portions and underestimates on concave-up portions.
+  </div>
+</section>
+
+<!-- 7.4 Separation of Variables -->
+<section id="sec-separation">
+  <h2>7.4 Separation of Variables</h2>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Separable Differential Equation</div>
+    A DE of the form $\dfrac{dy}{dx} = g(x)h(y)$ can be solved by:
+    <ol>
+      <li>Separate: $\dfrac{dy}{h(y)} = g(x)\,dx$</li>
+      <li>Integrate both sides: $\displaystyle\int \frac{dy}{h(y)} = \int g(x)\,dx$</li>
+      <li>Solve for $y$ (if possible); apply initial condition to find $C$.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- 7.5 Exponential Growth/Decay -->
+<section id="sec-growth">
+  <h2>7.5 Exponential Growth and Decay</h2>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Exponential Growth/Decay Model</div>
+    The DE $\dfrac{dy}{dt} = ky$ (where $k$ is a constant) has general solution:
+    $$y(t) = y_0 e^{kt}$$
+    where $y_0 = y(0)$ is the initial value.
+    <ul>
+      <li>$k > 0$: exponential <strong>growth</strong></li>
+      <li>$k < 0$: exponential <strong>decay</strong></li>
+    </ul>
+  </div>
+
+  <h3>Half-Life and Doubling Time</h3>
+  <div class="callout callout-note">
+    <div class="callout-title">📌 Formulas</div>
+    <strong>Half-life</strong> $T_{1/2}$: time for quantity to halve. $e^{kT_{1/2}} = \dfrac{1}{2} \Rightarrow T_{1/2} = \dfrac{\ln 2}{|k|}$<br><br>
+    <strong>Doubling time</strong> $T_2$: $e^{kT_2} = 2 \Rightarrow T_2 = \dfrac{\ln 2}{k}$ ($k > 0$).
+  </div>
+</section>
+
+<!-- 7.6 Logistic Growth -->
+<section id="sec-logistic">
+  <h2>7.6 Logistic Growth <span class="chapter-badge bc" style="font-size:0.65rem;vertical-align:middle;">BC</span></h2>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Logistic Differential Equation</div>
+    $$\frac{dP}{dt} = kP\!\left(1 - \frac{P}{M}\right)$$
+    where $M$ is the <strong>carrying capacity</strong> (maximum sustainable population).
+    Solution: $P(t) = \dfrac{M}{1 + Ae^{-kt}}$ where $A = \dfrac{M - P_0}{P_0}$.
+  </div>
+
+  <div class="callout callout-note">
+    <div class="callout-title">📌 Key Features of Logistic Growth</div>
+    <ul>
+      <li>Growth is fastest when $P = M/2$ (inflection point of the solution curve).</li>
+      <li>$P \to M$ as $t \to \infty$ (approaches carrying capacity asymptotically).</li>
+      <li>$\dfrac{dP}{dt}$ is maximized when $P = M/2$, giving max rate $= kM/4$.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Worked Examples -->
+<section id="sec-examples">
+  <h2>Worked Examples</h2>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 1</span><span class="example-title">Separable DE with Initial Condition</span></div>
+    <div class="example-body">
+      <p class="example-problem">Solve $\dfrac{dy}{dx} = xy^2$ with $y(0) = 2$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Separate: $\dfrac{dy}{y^2} = x\,dx$, i.e., $y^{-2}\,dy = x\,dx$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">Integrate: $-\dfrac{1}{y} = \dfrac{x^2}{2} + C$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">Apply $y(0)=2$: $-\dfrac{1}{2} = 0 + C$, so $C = -\dfrac{1}{2}$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">4</div>
+          <div class="step-content">Solve for $y$: $-\dfrac{1}{y} = \dfrac{x^2}{2} - \dfrac{1}{2} = \dfrac{x^2-1}{2}$, so $\boxed{y = \dfrac{-2}{x^2-1} = \dfrac{2}{1-x^2}}$ (for $|x|<1$).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 2</span><span class="example-title">Exponential Decay — Radioactive</span></div>
+    <div class="example-body">
+      <p class="example-problem">A radioactive substance has a half-life of 10 years. Starting with 200 grams, how much remains after 25 years?</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">$T_{1/2} = 10 \Rightarrow k = -\dfrac{\ln 2}{10}$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">$y(t) = 200\,e^{-(\ln 2/10)t}$. At $t=25$:
+          $$y(25) = 200\,e^{-2.5\ln 2} = 200 \cdot 2^{-2.5} = \frac{200}{4\sqrt{2}} = \frac{50}{\sqrt{2}} \approx \boxed{35.4 \text{ grams}}$$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 3</span><span class="example-title">Euler's Method (BC)</span></div>
+    <div class="example-body">
+      <p class="example-problem">Use Euler's method with $h=0.1$ and two steps to approximate $y(0.2)$ for $\dfrac{dy}{dx} = x + y$, $y(0) = 1$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content"><strong>Step 1:</strong> $(x_0, y_0) = (0, 1)$. $f(0,1) = 0+1=1$.
+          $x_1 = 0.1$, $y_1 = 1 + 0.1(1) = 1.1$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content"><strong>Step 2:</strong> $(x_1, y_1) = (0.1, 1.1)$. $f(0.1, 1.1) = 0.1+1.1=1.2$.
+          $x_2 = 0.2$, $y_2 = 1.1 + 0.1(1.2) = 1.1 + 0.12 = \boxed{1.22}$.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 4</span><span class="example-title">Slope Field Matching</span></div>
+    <div class="example-body">
+      <p class="example-problem">Explain how to identify the slope field for $\dfrac{dy}{dx} = x - y$ and sketch a solution through $(0, 0)$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">At $(0,0)$: slope $= 0-0 = 0$ (horizontal). At $(1,0)$: slope $= 1-0 = 1$. At $(0,1)$: slope $= 0-1 = -1$. Slopes are zero along the line $y=x$ (the isocline for slope 0).</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">The solution through $(0,0)$: The DE $\dfrac{dy}{dx} + y = x$ is linear. Solution is $y = x - 1 + e^{-x}$. At $x=0$: $y = 0-1+1=0$ ✓. Near origin, the curve rises at slope 0, then follows $y \approx x-1$ for large $x$.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 5</span><span class="example-title">Logistic Growth (BC)</span></div>
+    <div class="example-body">
+      <p class="example-problem">A population satisfies $\dfrac{dP}{dt} = 0.04P\!\left(1 - \dfrac{P}{1000}\right)$ with $P(0) = 100$. When is growth fastest? What is the carrying capacity?</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Carrying capacity $M = \boxed{1000}$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">Growth is fastest when $P = M/2 = \boxed{500}$. Maximum rate $= 0.04 \cdot 500\!\left(1 - \dfrac{500}{1000}\right) = 0.04 \cdot 500 \cdot 0.5 = 10$ per unit time.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 6</span><span class="example-title">Newton's Law of Cooling</span></div>
+    <div class="example-body">
+      <p class="example-problem">A cup of coffee at 90°C cools in a 20°C room. After 5 minutes it's 70°C. When will it reach 40°C?</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Newton's law: $\dfrac{dT}{dt} = k(T-20)$. Solution: $T - 20 = (T_0 - 20)e^{kt} = 70e^{kt}$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">At $t=5$, $T=70$: $50 = 70e^{5k} \Rightarrow e^{5k} = 5/7 \Rightarrow k = \dfrac{\ln(5/7)}{5} \approx -0.0673$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">For $T=40$: $20 = 70e^{kt} \Rightarrow e^{kt} = \dfrac{2}{7} \Rightarrow t = \dfrac{\ln(2/7)}{k} = \dfrac{\ln(2/7)}{\ln(5/7)/5} = \dfrac{5\ln(2/7)}{\ln(5/7)} \approx \boxed{19.4 \text{ min}}$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="chapter-nav">
+  <a href="ch06-integration.html" class="chapter-nav-card prev">
+    <span class="nav-card-arrow">←</span>
+    <div><div class="nav-card-label">Previous</div><div class="nav-card-title">Integration &amp; Accumulation</div></div>
+  </a>
+  <a href="ch08-applications-integration.html" class="chapter-nav-card next">
+    <span class="nav-card-arrow">→</span>
+    <div><div class="nav-card-label">Next Chapter</div><div class="nav-card-title">Applications of Integration</div></div>
+  </a>
+</div>
+
+</div></main></div>
+<footer class="site-footer"><p>© 2024 <a href="https://avinashai.com">AvinashAI</a> · Chapter 7: Differential Equations</p></footer>
+<script src="../js/nav.js" id="navScript" data-root=".."></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/main.js"></script>
+</body></html>

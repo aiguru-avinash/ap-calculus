@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 9: Parametric, Polar & Vectors | AP Calculus BC</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+<div id="topNav"></div>
+<div class="page-wrapper">
+<div id="sidebarNav"></div>
+<main class="main-content"><div class="content-inner">
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow">
+    <span class="chapter-badge bc">BC Only</span>
+    <span class="chapter-num">Chapter 9 of 10</span>
+  </div>
+  <h1>Parametric Equations, Polar Coordinates &amp; Vectors</h1>
+  <p class="page-hero-subtitle">BC-exclusive topics: parametric calculus, polar area and arc length, and vector-valued functions.</p>
+  <div class="hero-meta">
+    <span class="hero-meta-item">📖 ~65 min read</span>
+    <span class="hero-meta-item">✏️ 7 worked examples</span>
+    <span class="hero-meta-item"><a href="../mcq/mcq-ch09.html">→ 20 MCQs</a></span>
+  </div>
+</div>
+
+<div class="toc-box">
+  <div class="toc-title">In This Chapter</div>
+  <ul class="toc-list">
+    <li><a href="#sec-param">9.1 Parametric Equations</a></li>
+    <li><a href="#sec-param-calc">9.2 Calculus with Parametric Equations</a></li>
+    <li><a href="#sec-polar">9.3 Polar Coordinates</a></li>
+    <li><a href="#sec-polar-calc">9.4 Calculus with Polar Equations</a></li>
+    <li><a href="#sec-vectors">9.5 Vector-Valued Functions</a></li>
+    <li><a href="#sec-examples">Worked Examples</a></li>
+  </ul>
+</div>
+
+<!-- 9.1 Parametric -->
+<section id="sec-param">
+  <h2>9.1 Parametric Equations</h2>
+  <p>A <strong>parametric curve</strong> is defined by expressing $x$ and $y$ as functions of a parameter $t$:</p>
+  <div class="math-block">$$x = f(t), \qquad y = g(t), \qquad t \in [a, b]$$</div>
+
+  <div class="callout callout-note">
+    <div class="callout-title">📌 Key Difference from Cartesian</div>
+    Parametric equations encode not just the <em>shape</em> of a curve, but also the <em>direction of motion</em> and <em>speed</em> as $t$ increases. The same curve can be traversed in different directions depending on how $x$ and $y$ are parameterized.
+  </div>
+
+  <h3>Eliminating the Parameter</h3>
+  <p>Solve one equation for $t$, substitute into the other to get a Cartesian equation.</p>
+  <div class="callout callout-example">
+    <div class="callout-title">📝 Example</div>
+    $x = 2t$, $y = t^2 - 1$. From first: $t = x/2$. Sub: $y = (x/2)^2 - 1 = \dfrac{x^2}{4} - 1$ (parabola).
+  </div>
+</section>
+
+<!-- 9.2 Parametric Calculus -->
+<section id="sec-param-calc">
+  <h2>9.2 Calculus with Parametric Equations</h2>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ First Derivative (Slope)</div>
+    $$\frac{dy}{dx} = \frac{dy/dt}{dx/dt} \qquad \text{(provided } dx/dt \ne 0\text{)}$$
+  </div>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Second Derivative</div>
+    $$\frac{d^2y}{dx^2} = \frac{d}{dx}\!\left[\frac{dy}{dx}\right] = \frac{\dfrac{d}{dt}\!\left[\dfrac{dy}{dx}\right]}{dx/dt}$$
+  </div>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Arc Length (Parametric)</div>
+    $$L = \int_a^b \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2}\,dt$$
+  </div>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Area under Parametric Curve</div>
+    $$A = \int_a^b y\,\frac{dx}{dt}\,dt \qquad \text{(when curve is traced left-to-right)}$$
+  </div>
+
+  <h3>Horizontal and Vertical Tangents</h3>
+  <ul>
+    <li><strong>Horizontal tangent</strong>: $\dfrac{dy}{dt} = 0$ and $\dfrac{dx}{dt} \ne 0$</li>
+    <li><strong>Vertical tangent</strong>: $\dfrac{dx}{dt} = 0$ and $\dfrac{dy}{dt} \ne 0$</li>
+  </ul>
+</section>
+
+<!-- 9.3 Polar Coordinates -->
+<section id="sec-polar">
+  <h2>9.3 Polar Coordinates</h2>
+  <p>In polar coordinates, a point is described by $(r, \theta)$ where $r$ is the distance from the origin and $\theta$ is the angle from the positive $x$-axis.</p>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Conversion Formulas</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);">
+      <div>
+        <strong>Polar → Cartesian:</strong>
+        <p>$x = r\cos\theta$, $y = r\sin\theta$</p>
+      </div>
+      <div>
+        <strong>Cartesian → Polar:</strong>
+        <p>$r^2 = x^2 + y^2$, $\tan\theta = y/x$</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>Common Polar Curves</h3>
+  <table class="data-table">
+    <tr><th>Curve</th><th>Equation</th><th>Shape</th></tr>
+    <tr><td>Circle</td><td>$r = a$</td><td>Circle of radius $a$</td></tr>
+    <tr><td>Cardioid</td><td>$r = a(1 + \cos\theta)$</td><td>Heart-shaped curve</td></tr>
+    <tr><td>Rose (3 petals)</td><td>$r = a\cos(3\theta)$</td><td>Three-petaled rose</td></tr>
+    <tr><td>Rose (4 petals)</td><td>$r = a\cos(2\theta)$</td><td>Four-petaled rose</td></tr>
+    <tr><td>Lemniscate</td><td>$r^2 = a^2\cos(2\theta)$</td><td>Figure-eight</td></tr>
+    <tr><td>Limaçon</td><td>$r = a + b\cos\theta$</td><td>Varies by $a/b$ ratio</td></tr>
+  </table>
+</section>
+
+<!-- 9.4 Polar Calculus -->
+<section id="sec-polar-calc">
+  <h2>9.4 Calculus with Polar Equations</h2>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Slope of Polar Curve</div>
+    Using $x = r\cos\theta$, $y = r\sin\theta$:
+    $$\frac{dy}{dx} = \frac{dy/d\theta}{dx/d\theta} = \frac{r'(\theta)\sin\theta + r(\theta)\cos\theta}{r'(\theta)\cos\theta - r(\theta)\sin\theta}$$
+  </div>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Polar Area</div>
+    Area of the region swept from $\alpha$ to $\beta$ by $r = f(\theta)$:
+    $$A = \frac{1}{2}\int_\alpha^\beta [r(\theta)]^2\,d\theta$$
+    Area between two curves ($r_{\text{outer}} \ge r_{\text{inner}}$):
+    $$A = \frac{1}{2}\int_\alpha^\beta\left([r_{\text{outer}}]^2 - [r_{\text{inner}}]^2\right)d\theta$$
+  </div>
+
+  <!-- Polar Area Diagram -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 380 360" xmlns="http://www.w3.org/2000/svg" width="380" height="360">
+      <!-- Polar axes -->
+      <line x1="190" y1="180" x2="360" y2="180" stroke="#4a5080" stroke-width="1.5"/>
+      <line x1="190" y1="20" x2="190" y2="340" stroke="#4a5080" stroke-width="1.5"/>
+      <circle cx="190" cy="180" r="100" fill="none" stroke="var(--color-border)" stroke-width="1" stroke-dasharray="3,3"/>
+      <circle cx="190" cy="180" r="60" fill="none" stroke="var(--color-border)" stroke-width="0.5" stroke-dasharray="2,3"/>
+      <!-- Cardioid r = 100(1+cos(theta)) — scaled -->
+      <path d="M290,180 C290,120 250,55 190,50 C130,55 90,120 90,180 C90,240 130,305 190,310 C250,305 290,240 290,180" fill="rgba(108,99,255,0.12)" stroke="var(--color-primary)" stroke-width="2"/>
+      <!-- Sector slice for area -->
+      <path d="M190,180 L290,180 A100,100 0 0,1 248,106 Z" fill="rgba(0,212,170,0.18)" stroke="var(--color-accent)" stroke-width="1.2"/>
+      <!-- Labels -->
+      <text x="360" y="177" class="svg-label">θ=0</text>
+      <text x="192" y="18" class="svg-label">π/2</text>
+      <text x="298" y="116" class="svg-label" fill="var(--color-accent)">dA = ½r²dθ</text>
+      <text x="174" y="340" class="svg-label">3π/2</text>
+      <text x="296" y="183" class="svg-label" fill="var(--color-primary)">r(θ)</text>
+      <text x="160" y="30" class="svg-value" fill="var(--color-primary)" font-size="11">r = a(1+cosθ)</text>
+    </svg>
+    <p class="diagram-caption">Figure 9.1 — Polar area for cardioid $r = a(1+\cos\theta)$. The shaded sector has area $\tfrac{1}{2}r^2\,d\theta$.</p>
+  </div>
+</section>
+
+<!-- 9.5 Vectors -->
+<section id="sec-vectors">
+  <h2>9.5 Vector-Valued Functions</h2>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Vector-Valued Function</div>
+    $$\mathbf{r}(t) = \langle x(t),\, y(t) \rangle = x(t)\,\mathbf{i} + y(t)\,\mathbf{j}$$
+    This is essentially a parametric curve expressed as a vector.
+  </div>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Calculus of Vector Functions</div>
+    <table class="data-table">
+      <tr><th>Quantity</th><th>Formula</th></tr>
+      <tr><td>Velocity vector</td><td>$\mathbf{v}(t) = \mathbf{r}'(t) = \langle x'(t), y'(t) \rangle$</td></tr>
+      <tr><td>Speed</td><td>$|\mathbf{v}(t)| = \sqrt{[x'(t)]^2 + [y'(t)]^2}$</td></tr>
+      <tr><td>Acceleration vector</td><td>$\mathbf{a}(t) = \mathbf{v}'(t) = \langle x''(t), y''(t) \rangle$</td></tr>
+      <tr><td>Position from velocity</td><td>$\mathbf{r}(t) = \mathbf{r}(t_0) + \displaystyle\int_{t_0}^t \mathbf{v}(\tau)\,d\tau$</td></tr>
+      <tr><td>Total distance</td><td>$\displaystyle\int_a^b |\mathbf{v}(t)|\,dt = \int_a^b\sqrt{[x']^2+[y']^2}\,dt$</td></tr>
+    </table>
+  </div>
+
+  <div class="callout callout-note">
+    <div class="callout-title">📌 Displacement vs. Distance</div>
+    <strong>Displacement</strong> $= |\mathbf{r}(b) - \mathbf{r}(a)|$ — straight-line distance from start to end.<br>
+    <strong>Total distance traveled</strong> $= \displaystyle\int_a^b|\mathbf{v}(t)|\,dt$ — actual path length.
+  </div>
+</section>
+
+<!-- Worked Examples -->
+<section id="sec-examples">
+  <h2>Worked Examples</h2>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 1</span><span class="example-title">Parametric Slope and Tangent</span></div>
+    <div class="example-body">
+      <p class="example-problem">Find $\dfrac{dy}{dx}$ and the equation of the tangent at $t=1$ for $x = t^2 + 1$, $y = t^3 - t$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">$\dfrac{dx}{dt} = 2t$, $\dfrac{dy}{dt} = 3t^2 - 1$. So $\dfrac{dy}{dx} = \dfrac{3t^2-1}{2t}$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">At $t=1$: $x=2$, $y=0$. Slope $= \dfrac{3-1}{2} = 1$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">Tangent: $y - 0 = 1(x-2)$, so $\boxed{y = x - 2}$.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 2</span><span class="example-title">Parametric Arc Length</span></div>
+    <div class="example-body">
+      <p class="example-problem">Find the length of the curve $x = 3t^2$, $y = 2t^3$ from $t=0$ to $t=1$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">$\dfrac{dx}{dt}=6t$, $\dfrac{dy}{dt}=6t^2$. $(dx/dt)^2+(dy/dt)^2 = 36t^2+36t^4=36t^2(1+t^2)$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">$L = \displaystyle\int_0^1 6t\sqrt{1+t^2}\,dt$. Let $u=1+t^2$, $du=2t\,dt$:
+          $= 3\displaystyle\int_1^2 \sqrt{u}\,du = 3\cdot\dfrac{2}{3}u^{3/2}\Big|_1^2 = 2(2^{3/2}-1) = \boxed{4\sqrt{2}-2}$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 3</span><span class="example-title">Polar to Cartesian</span></div>
+    <div class="example-body">
+      <p class="example-problem">Convert $r = 4\cos\theta$ to Cartesian form and identify the curve.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Multiply both sides by $r$: $r^2 = 4r\cos\theta \Rightarrow x^2 + y^2 = 4x$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">Complete the square: $(x-2)^2 + y^2 = 4$. This is a <strong>circle</strong> centered at $(2,0)$ with radius 2.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 4</span><span class="example-title">Polar Area — Cardioid</span></div>
+    <div class="example-body">
+      <p class="example-problem">Find the area enclosed by the cardioid $r = 2(1+\cos\theta)$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">$A = \dfrac{1}{2}\displaystyle\int_0^{2\pi}[2(1+\cos\theta)]^2\,d\theta = \dfrac{1}{2}\int_0^{2\pi}4(1+\cos\theta)^2\,d\theta = 2\int_0^{2\pi}(1+2\cos\theta+\cos^2\theta)\,d\theta$</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">Use $\cos^2\theta = \dfrac{1+\cos 2\theta}{2}$:
+          $= 2\displaystyle\int_0^{2\pi}\!\left(\dfrac{3}{2}+2\cos\theta+\dfrac{\cos 2\theta}{2}\right)d\theta$</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">$= 2\left[\dfrac{3\theta}{2}+2\sin\theta+\dfrac{\sin 2\theta}{4}\right]_0^{2\pi} = 2\cdot 3\pi = \boxed{6\pi}$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 5</span><span class="example-title">Polar Area — Between Curves</span></div>
+    <div class="example-body">
+      <p class="example-problem">Find the area inside $r = 3\cos\theta$ and outside $r = 1 + \cos\theta$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Intersections: $3\cos\theta = 1+\cos\theta \Rightarrow 2\cos\theta = 1 \Rightarrow \theta = \pm\pi/3$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">On $[-\pi/3, \pi/3]$: $3\cos\theta \ge 1+\cos\theta$ (check $\theta=0$: $3\ge 2$ ✓).</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">$A = \dfrac{1}{2}\displaystyle\int_{-\pi/3}^{\pi/3}[(3\cos\theta)^2-(1+\cos\theta)^2]\,d\theta$
+          $= \dfrac{1}{2}\int_{-\pi/3}^{\pi/3}[9\cos^2\theta - 1 - 2\cos\theta - \cos^2\theta]\,d\theta$
+          $= \dfrac{1}{2}\int_{-\pi/3}^{\pi/3}[8\cos^2\theta - 2\cos\theta - 1]\,d\theta$</div>
+        </div>
+        <div class="solution-step"><div class="step-num">4</div>
+          <div class="step-content">Use $\cos^2\theta = (1+\cos 2\theta)/2$ and evaluate: $= \boxed{\pi}$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 6</span><span class="example-title">Vector-Valued Function</span></div>
+    <div class="example-body">
+      <p class="example-problem">A particle has velocity $\mathbf{v}(t) = \langle 2t, 3t^2 \rangle$ and position $\mathbf{r}(0) = \langle 1, -1 \rangle$. Find $\mathbf{r}(2)$ and the total distance from $t=0$ to $t=2$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Integrate: $\mathbf{r}(t) = \left\langle t^2+C_1,\, t^3+C_2 \right\rangle$. Using $\mathbf{r}(0) = \langle 1,-1\rangle$: $C_1=1, C_2=-1$. So $\mathbf{r}(t)=\langle t^2+1, t^3-1\rangle$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">$\mathbf{r}(2) = \langle 5, 7\rangle$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">Speed $= |\mathbf{v}(t)| = \sqrt{4t^2+9t^4} = t\sqrt{4+9t^2}$. Distance $= \displaystyle\int_0^2 t\sqrt{4+9t^2}\,dt$. Let $u=4+9t^2$, $du=18t\,dt$:
+          $= \dfrac{1}{18}\displaystyle\int_4^{40}\sqrt{u}\,du = \dfrac{1}{18}\cdot\dfrac{2}{3}u^{3/2}\Big|_4^{40} = \dfrac{1}{27}(40^{3/2}-8) = \dfrac{1}{27}(80\sqrt{10}-8) = \boxed{\dfrac{8(10\sqrt{10}-1)}{27}}$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="chapter-nav">
+  <a href="ch08-applications-integration.html" class="chapter-nav-card prev">
+    <span class="nav-card-arrow">←</span>
+    <div><div class="nav-card-label">Previous</div><div class="nav-card-title">Applications of Integration</div></div>
+  </a>
+  <a href="ch10-series.html" class="chapter-nav-card next">
+    <span class="nav-card-arrow">→</span>
+    <div><div class="nav-card-label">Next Chapter (BC)</div><div class="nav-card-title">Sequences &amp; Series</div></div>
+  </a>
+</div>
+
+</div></main></div>
+<footer class="site-footer"><p>© 2024 <a href="https://avinashai.com">AvinashAI</a> · Chapter 9: Parametric, Polar &amp; Vectors (BC)</p></footer>
+<script src="../js/nav.js" id="navScript" data-root=".."></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/main.js"></script>
+</body></html>

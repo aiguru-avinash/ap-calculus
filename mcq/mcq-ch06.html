@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ Chapter 6: Integration | AP Calculus</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+<div id="topNav"></div>
+<div class="page-wrapper">
+<div id="sidebarNav"></div>
+<main class="main-content"><div class="content-inner">
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow"><span class="chapter-badge ab">AB</span><span class="chapter-badge bc">BC</span></div>
+  <h1>Chapter 6 — Integration: 20 MCQs</h1>
+  <p class="page-hero-subtitle">Antiderivatives, FTC, Riemann sums, u-substitution, IBP.</p>
+</div>
+
+<div class="quiz-controls">
+  <div class="quiz-score">
+    <div><div class="score-display" id="scoreDisplay">0/20</div><div class="score-label">Score</div></div>
+  </div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+  <span class="text-muted" id="answeredCount">0 answered</span>
+  <button class="btn btn-secondary btn-sm" id="resetQuiz">Reset</button>
+</div>
+
+<div class="mcq-container">
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">1</div>
+  <div class="mcq-question">$\displaystyle\int 6x^2\,dx =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $12x$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $2x^3 + C$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $3x^3 + C$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $6x^3 + C$</div>
+  </div>
+  <div class="mcq-explanation">$\int 6x^2\,dx = 6\cdot\dfrac{x^3}{3}+C = 2x^3+C$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">2</div>
+  <div class="mcq-question">$\displaystyle\int_0^{\pi} \sin x\,dx =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $0$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $-2$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $2$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $1$</div>
+  </div>
+  <div class="mcq-explanation">$[-\cos x]_0^\pi = -\cos\pi+\cos 0 = 1+1 = 2$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">3</div>
+  <div class="mcq-question">If $g(x) = \displaystyle\int_1^x \sqrt{t^3+1}\,dt$, then $g'(x) =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\sqrt{x^3+1}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\sqrt{t^3+1}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $3x^2/\sqrt{x^3+1}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\sqrt{x^3+1} - \sqrt{2}$</div>
+  </div>
+  <div class="mcq-explanation">FTC Part 1: $g'(x) = \sqrt{x^3+1}$ (the integrand evaluated at the upper limit).</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">4</div>
+  <div class="mcq-question">$\displaystyle\int_1^4 \dfrac{1}{\sqrt{x}}\,dx =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 1</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\dfrac{3}{2}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 3</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 2</div>
+  </div>
+  <div class="mcq-explanation">$\int x^{-1/2}dx=2\sqrt{x}$. $\Big[2\sqrt{x}\Big]_1^4=2(2)-2(1)=4-2=2$.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">5</div>
+  <div class="mcq-question">$\displaystyle\int 2x\cos(x^2)\,dx =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $-2\sin(x^2)+C$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\sin(x^2)+C$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $2\cos(x^2)+C$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $x^2\sin(x^2)+C$</div>
+  </div>
+  <div class="mcq-explanation">$u=x^2$, $du=2x\,dx$. $\int\cos u\,du = \sin u+C=\sin(x^2)+C$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">6</div>
+  <div class="mcq-question">$\displaystyle\int e^{3x}\,dx =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $e^{3x}+C$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $3e^{3x}+C$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\dfrac{1}{3}e^{3x}+C$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $e^{3x}/x + C$</div>
+  </div>
+  <div class="mcq-explanation">$u=3x$, $du=3\,dx$. $\int e^u\dfrac{du}{3}=\dfrac{1}{3}e^u+C=\dfrac{1}{3}e^{3x}+C$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">7</div>
+  <div class="mcq-question">FTC Part 2 states: $\displaystyle\int_a^b f(x)\,dx =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $F(b)-F(a)$ where $F'=f$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $f(b)-f(a)$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $F'(b)-F'(a)$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\int_a^b F(x)\,dx$</div>
+  </div>
+  <div class="mcq-explanation">FTC Part 2 (Evaluation Theorem): $\displaystyle\int_a^b f(x)\,dx = F(b)-F(a)$ where $F$ is any antiderivative of $f$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">8</div>
+  <div class="mcq-question">$\displaystyle\int_0^2 (3x^2+2x)\,dx =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 10</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 8</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 14</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 12</div>
+  </div>
+  <div class="mcq-explanation">$\Big[x^3+x^2\Big]_0^2 = (8+4)-(0)=12$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">9</div>
+  <div class="mcq-question">$\displaystyle\int \dfrac{1}{x}\,dx =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $x^{-2}/(-2)+C$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\ln x$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\ln|x|+C$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $1/x^2+C$</div>
+  </div>
+  <div class="mcq-explanation">$\displaystyle\int\dfrac{1}{x}\,dx=\ln|x|+C$. The absolute value is necessary for $x<0$.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">10</div>
+  <div class="mcq-question">If $h(x) = \displaystyle\int_0^{x^2} \sin t\,dt$, then $h'(x) =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\sin(x^2)$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $2x\sin(x^2)$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $-\cos(x^2)+1$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\sin(t)$</div>
+  </div>
+  <div class="mcq-explanation">FTC Part 1 + chain rule: $h'(x)=\sin(x^2)\cdot 2x$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">11</div>
+  <div class="mcq-question">$\displaystyle\int_0^1 xe^{x^2}\,dx =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\dfrac{e-1}{2}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $e-1$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\dfrac{e}{2}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $1$</div>
+  </div>
+  <div class="mcq-explanation">$u=x^2$, $du=2x\,dx$. $\dfrac{1}{2}\int_0^1 e^u\,du=\dfrac{1}{2}[e^u]_0^1=\dfrac{e-1}{2}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">12</div>
+  <div class="mcq-question">$\displaystyle\int \sec^2 x\,dx =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $2\sec x\tan x+C$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\sec x+C$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $-\cot x+C$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\tan x+C$</div>
+  </div>
+  <div class="mcq-explanation">Standard antiderivative: $\int\sec^2 x\,dx=\tan x+C$ (since $\dfrac{d}{dx}[\tan x]=\sec^2 x$).</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">13</div>
+  <div class="mcq-question">Using integration by parts with $u=x$ and $dv=e^x\,dx$, $\displaystyle\int xe^x\,dx =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $xe^x+C$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $e^x+C$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $xe^x - e^x+C$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $x^2e^x/2+C$</div>
+  </div>
+  <div class="mcq-explanation">IBP: $uv-\int v\,du = xe^x - \int e^x\,dx = xe^x-e^x+C$.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">14</div>
+  <div class="mcq-question">$\displaystyle\int_0^3 |x-1|\,dx =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 2</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $5/2$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 3</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 4</div>
+  </div>
+  <div class="mcq-explanation">Split: $\int_0^1(1-x)dx+\int_1^3(x-1)dx=\Big[x-\dfrac{x^2}{2}\Big]_0^1+\Big[\dfrac{x^2}{2}-x\Big]_1^3=\dfrac{1}{2}+2=\dfrac{5}{2}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">15</div>
+  <div class="mcq-question">$\displaystyle\int \dfrac{1}{1+x^2}\,dx =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\arctan x+C$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\arcsin x+C$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\ln(1+x^2)+C$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $-\arctan x+C$</div>
+  </div>
+  <div class="mcq-explanation">Standard: $\int\dfrac{dx}{1+x^2}=\arctan x+C$ (since $\dfrac{d}{dx}[\arctan x]=\dfrac{1}{1+x^2}$).</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">16</div>
+  <div class="mcq-question">$\displaystyle\int \ln x\,dx =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $1/x+C$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $(\ln x)^2/2+C$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $x/\ln x+C$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $x\ln x - x+C$</div>
+  </div>
+  <div class="mcq-explanation">IBP: $u=\ln x$, $dv=dx$. $v=x$, $du=1/x\,dx$. $x\ln x-\int x\cdot\dfrac{1}{x}dx=x\ln x-x+C$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">17</div>
+  <div class="mcq-question">If $\displaystyle\int_1^5 f(x)\,dx = 10$ and $\displaystyle\int_1^3 f(x)\,dx = 4$, then $\displaystyle\int_3^5 f(x)\,dx =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 14</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 4</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 6</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 40</div>
+  </div>
+  <div class="mcq-explanation">Additivity: $\int_1^3+\int_3^5=\int_1^5\Rightarrow\int_3^5=10-4=6$.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">18</div>
+  <div class="mcq-question">$\displaystyle\int_0^1 \dfrac{x}{x^2+1}\,dx =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\dfrac{\pi}{4}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\dfrac{\ln 2}{2}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\ln 2$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\dfrac{1}{2}$</div>
+  </div>
+  <div class="mcq-explanation">$u=x^2+1$, $du=2x\,dx$. $\dfrac{1}{2}\int_1^2\dfrac{du}{u}=\dfrac{1}{2}[\ln u]_1^2=\dfrac{\ln 2}{2}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">19</div>
+  <div class="mcq-question">Which Riemann sum uses the left endpoint of each subinterval?</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> Left Riemann Sum</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> Right Riemann Sum</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> Midpoint Sum</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> Trapezoidal Rule</div>
+  </div>
+  <div class="mcq-explanation">The Left Riemann Sum evaluates $f$ at the left endpoint $x_{i-1}$ of each subinterval. The Right sum uses $x_i$; the Midpoint uses $\overline{x}_i=(x_{i-1}+x_i)/2$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">20</div>
+  <div class="mcq-question">$\displaystyle\int_0^{\pi/4}\tan x\,dx =$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\ln 2$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $-\ln 2$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $1$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\dfrac{\ln 2}{2}$</div>
+  </div>
+  <div class="mcq-explanation">$\int\tan x\,dx=-\ln|\cos x|+C$. $\Big[-\ln|\cos x|\Big]_0^{\pi/4}=-\ln\tfrac{\sqrt{2}}{2}+\ln 1=\tfrac{1}{2}\ln 2$.</div>
+</div>
+
+</div>
+
+<div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+  <a href="mcq-ch05.html" class="btn btn-secondary">← Ch 5 MCQs</a>
+  <a href="mcq-ch07.html" class="btn btn-primary">Chapter 7 MCQs →</a>
+  <a href="../answers/answer-key.html" class="btn btn-ghost">Full Answer Key</a>
+</div>
+
+</div></main></div>
+<footer class="site-footer"><p>© 2024 <a href="https://avinashai.com">AvinashAI</a> · MCQ — Chapter 6</p></footer>
+<script src="../js/nav.js" id="navScript" data-root=".."></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/main.js"></script>
+</body></html>

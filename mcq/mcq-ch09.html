@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ Chapter 9: Parametric, Polar, Vectors | AP Calculus BC</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+<div id="topNav"></div>
+<div class="page-wrapper">
+<div id="sidebarNav"></div>
+<main class="main-content"><div class="content-inner">
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow"><span class="chapter-badge bc">BC Only</span></div>
+  <h1>Chapter 9 — Parametric, Polar &amp; Vectors: 20 MCQs</h1>
+  <p class="page-hero-subtitle">Parametric calculus, polar area, vector-valued functions, motion.</p>
+</div>
+
+<div class="quiz-controls">
+  <div class="quiz-score">
+    <div><div class="score-display" id="scoreDisplay">0/20</div><div class="score-label">Score</div></div>
+  </div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+  <span class="text-muted" id="answeredCount">0 answered</span>
+  <button class="btn btn-secondary btn-sm" id="resetQuiz">Reset</button>
+</div>
+
+<div class="mcq-container">
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">1</div>
+  <div class="mcq-question">If $x=t^2$, $y=t^3$, then $\dfrac{dy}{dx}=$</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\dfrac{3t^2}{2}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\dfrac{3t}{2}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\dfrac{2}{3t}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $3t^2$</div>
+  </div>
+  <div class="mcq-explanation">$\dfrac{dy}{dx}=\dfrac{dy/dt}{dx/dt}=\dfrac{3t^2}{2t}=\dfrac{3t}{2}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">2</div>
+  <div class="mcq-question">The polar point $(3, \pi/2)$ in Cartesian coordinates is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $(3, 0)$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $(0, -3)$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $(0, 3)$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $(3, 3)$</div>
+  </div>
+  <div class="mcq-explanation">$x=r\cos\theta=3\cos(\pi/2)=0$; $y=r\sin\theta=3\sin(\pi/2)=3$. So $(0,3)$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">3</div>
+  <div class="mcq-question">The area enclosed by the polar curve $r=2$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $4\pi$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $2\pi$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $8\pi$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\pi$</div>
+  </div>
+  <div class="mcq-explanation">$A=\dfrac{1}{2}\int_0^{2\pi}r^2\,d\theta=\dfrac{1}{2}\int_0^{2\pi}4\,d\theta=4\pi$. (Circle of radius 2: $\pi r^2=4\pi$. ✓)</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">4</div>
+  <div class="mcq-question">For the parametric curve $x=\cos t$, $y=\sin t$, the curve traces</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> a parabola</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> a line</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> an ellipse</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> a circle</div>
+  </div>
+  <div class="mcq-explanation">$x^2+y^2=\cos^2t+\sin^2t=1$: the unit circle.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">5</div>
+  <div class="mcq-question">The arc length of the parametric curve $x=3t$, $y=4t$ on $0\le t\le1$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 7</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $3+4$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 5</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 12</div>
+  </div>
+  <div class="mcq-explanation">$L=\int_0^1\sqrt{(dx/dt)^2+(dy/dt)^2}\,dt=\int_0^1\sqrt{9+16}\,dt=5\cdot1=5$.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">6</div>
+  <div class="mcq-question">The polar curve $r=1+\cos\theta$ is called a</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> lemniscate</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> cardioid</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> rose curve</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> limaçon with inner loop</div>
+  </div>
+  <div class="mcq-explanation">$r=1+\cos\theta$ is a cardioid (heart-shaped), since the additive constant equals the coefficient of the trig term.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">7</div>
+  <div class="mcq-question">For a vector-valued function $\mathbf{r}(t) = \langle t^2, e^t\rangle$, the velocity vector is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\langle 2t, e^t\rangle$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\langle t^2, e^t\rangle$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\langle 2, e^t\rangle$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\langle t^3/3, e^t\rangle$</div>
+  </div>
+  <div class="mcq-explanation">$\mathbf{v}(t)=\mathbf{r}'(t)=\langle 2t, e^t\rangle$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">8</div>
+  <div class="mcq-question">The speed of $\mathbf{r}(t)=\langle 3\cos t,\, 3\sin t\rangle$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 0</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $3$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\sqrt{9\cos^2t+9\sin^2t}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $3$</div>
+  </div>
+  <div class="mcq-explanation">$\mathbf{v}=\langle-3\sin t, 3\cos t\rangle$. Speed$=|\mathbf{v}|=\sqrt{9\sin^2t+9\cos^2t}=3$. (Both C and D equal 3; D is the simplified numerical answer.)</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">9</div>
+  <div class="mcq-question">Area enclosed by one petal of $r=\sin(2\theta)$ (a 4-petal rose) is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\pi/2$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\pi/4$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\pi/8$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\pi$</div>
+  </div>
+  <div class="mcq-explanation">First petal: $0\le\theta\le\pi/2$. $A=\dfrac{1}{2}\int_0^{\pi/2}\sin^2(2\theta)d\theta=\dfrac{1}{2}\cdot\dfrac{\pi/2}{2}=\dfrac{\pi}{8}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">10</div>
+  <div class="mcq-question">A parametric curve has a horizontal tangent when</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $dx/dt = 0$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $dy/dt = 0$ (provided $dx/dt\ne 0$)</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $dy/dx = 1$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $d^2y/dx^2 = 0$</div>
+  </div>
+  <div class="mcq-explanation">Horizontal tangent: $dy/dx=0\Leftrightarrow dy/dt=0$ (and $dx/dt\ne0$). Vertical tangent: $dx/dt=0$ (and $dy/dt\ne0$).</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">11</div>
+  <div class="mcq-question">Converting $r=3\sin\theta$ to rectangular form gives</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $x^2+(y-3/2)^2=9/4$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $x^2+y^2=3$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $y=3x$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $(x-3)^2+y^2=9$</div>
+  </div>
+  <div class="mcq-explanation">$r=3\sin\theta\Rightarrow r^2=3r\sin\theta\Rightarrow x^2+y^2=3y\Rightarrow x^2+y^2-3y=0\Rightarrow x^2+(y-3/2)^2=9/4$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">12</div>
+  <div class="mcq-question">The acceleration vector of $\mathbf{r}(t)=\langle t^2, t^3\rangle$ at $t=1$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\langle 1, 1\rangle$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\langle 2, 3\rangle$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\langle 4, 9\rangle$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\langle 2, 6\rangle$</div>
+  </div>
+  <div class="mcq-explanation">$\mathbf{a}(t)=\mathbf{r}''(t)=\langle 2, 6t\rangle$. At $t=1$: $\mathbf{a}(1)=\langle 2,6\rangle$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">13</div>
+  <div class="mcq-question">Total distance traveled by $\mathbf{r}(t)=\langle 3t, 4t\rangle$ from $t=0$ to $t=2$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 7</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 14</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 10</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $5\sqrt{2}$</div>
+  </div>
+  <div class="mcq-explanation">Speed $= |\mathbf{v}|=\sqrt{9+16}=5$. Distance $=\int_0^2 5\,dt=10$.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">14</div>
+  <div class="mcq-question">For polar area between $r=3$ and $r=1$ (outer minus inner) on $[0, 2\pi]$:</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $4\pi$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $8\pi$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $10\pi$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $2\pi$</div>
+  </div>
+  <div class="mcq-explanation">$A=\dfrac{1}{2}\int_0^{2\pi}(9-1)d\theta=\dfrac{1}{2}(8)(2\pi)=8\pi$.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">15</div>
+  <div class="mcq-question">The slope $dy/dx$ of the polar curve $r=f(\theta)$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\dfrac{f'(\theta)\sin\theta+f(\theta)\cos\theta}{f'(\theta)\cos\theta-f(\theta)\sin\theta}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $f'(\theta)$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\dfrac{f(\theta)}{f'(\theta)}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\dfrac{\cos\theta}{\sin\theta}$</div>
+  </div>
+  <div class="mcq-explanation">Using $x=r\cos\theta$, $y=r\sin\theta$: $\dfrac{dy}{dx}=\dfrac{dy/d\theta}{dx/d\theta}=\dfrac{r'\sin\theta+r\cos\theta}{r'\cos\theta-r\sin\theta}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">16</div>
+  <div class="mcq-question">Eliminating the parameter from $x=t+1$, $y=t^2-1$ gives</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $y=x^2$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $y=x^2+1$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $y=(x+1)^2-1$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $y=(x-1)^2-1$</div>
+  </div>
+  <div class="mcq-explanation">$t=x-1$. $y=(x-1)^2-1=x^2-2x$.</div>
+</div>
+
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header"><div class="mcq-num">17</div>
+  <div class="mcq-question">The position of a particle at $t=2$ if $\mathbf{v}(t)=\langle 2,3\rangle$ and $\mathbf{r}(0)=\langle 1,0\rangle$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\langle 2,3\rangle$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\langle 4,6\rangle$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\langle 5,6\rangle$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\langle 3,6\rangle$</div>
+  </div>
+  <div class="mcq-explanation">$\mathbf{r}(t)=\langle 2t,3t\rangle+\mathbf{r}(0)=\langle 2t+1, 3t\rangle$. At $t=2$: $\langle 5, 6\rangle$.</div>
+</div>
+
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header"><div class="mcq-num">18</div>
+  <div class="mcq-question">The parametric arc length formula is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\displaystyle\int_a^b\sqrt{x+y}\,dt$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\displaystyle\int_a^b\sqrt{\left(\tfrac{dx}{dt}\right)^2+\left(\tfrac{dy}{dt}\right)^2}\,dt$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\displaystyle\int_a^b\left(\tfrac{dy}{dt}/\tfrac{dx}{dt}\right)\,dt$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\displaystyle\int_a^b x'(t)y'(t)\,dt$</div>
+  </div>
+  <div class="mcq-explanation">Arc length: $L=\int_a^b\sqrt{(x')^2+(y')^2}\,dt$, the integral of the speed.</div>
+</div>
+
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header"><div class="mcq-num">19</div>
+  <div class="mcq-question">The area enclosed by the cardioid $r=1+\sin\theta$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $3\pi/2$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $2\pi$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\pi$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $3\pi$</div>
+  </div>
+  <div class="mcq-explanation">$A=\dfrac{1}{2}\int_0^{2\pi}(1+\sin\theta)^2d\theta=\dfrac{1}{2}\int_0^{2\pi}(1+2\sin\theta+\sin^2\theta)d\theta=\dfrac{1}{2}(2\pi+0+\pi)=\dfrac{3\pi}{2}$.</div>
+</div>
+
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header"><div class="mcq-num">20</div>
+  <div class="mcq-question">The displacement of a particle from $t=0$ to $t=3$ with $\mathbf{v}(t)=\langle t, t^2\rangle$ is</div></div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\langle 3, 9\rangle$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\langle 3, 27\rangle$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\langle 4.5, 8\rangle$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\langle 9/2, 9\rangle$</div>
+  </div>
+  <div class="mcq-explanation">$\displaystyle\int_0^3\langle t, t^2\rangle dt=\left\langle\dfrac{t^2}{2}, \dfrac{t^3}{3}\right\rangle_0^3=\left\langle\dfrac{9}{2}, 9\right\rangle$.</div>
+</div>
+
+</div>
+
+<div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+  <a href="mcq-ch08.html" class="btn btn-secondary">← Ch 8 MCQs</a>
+  <a href="mcq-ch10.html" class="btn btn-primary">Chapter 10 MCQs →</a>
+  <a href="../answers/answer-key.html" class="btn btn-ghost">Full Answer Key</a>
+</div>
+
+</div></main></div>
+<footer class="site-footer"><p>© 2024 <a href="https://avinashai.com">AvinashAI</a> · MCQ — Chapter 9</p></footer>
+<script src="../js/nav.js" id="navScript" data-root=".."></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/main.js"></script>
+</body></html>

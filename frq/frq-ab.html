@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AB Free Response Questions | AP Calculus</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+<div id="topNav"></div>
+<div class="page-wrapper">
+<div id="sidebarNav"></div>
+<main class="main-content"><div class="content-inner">
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow"><span class="chapter-badge ab">AB</span></div>
+  <h1>AP Calculus AB — 25 Free Response Questions</h1>
+  <p class="page-hero-subtitle">Full solutions, scoring rubrics, and diagrams. Each problem targets a key AB skill.</p>
+</div>
+
+<div class="callout callout-note">
+  <strong>Exam Tip:</strong> On the AP exam, show all work clearly. Answers without supporting work receive no credit. Each solution here models the level of detail expected for full marks.
+</div>
+
+<!-- FRQ 1 -->
+<div class="frq-item" id="frq-1">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 1</span>
+    <span class="frq-topic">Limits — Algebraic Evaluation</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>Evaluate $\displaystyle\lim_{x\to 3}\dfrac{x^2-9}{x-3}$ and justify your answer. Then determine whether $f(x)=\dfrac{x^2-9}{x-3}$ is continuous at $x=3$. If not, classify the discontinuity.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (9 points total)</div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Factor numerator: $x^2-9=(x-3)(x+3)$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Cancel $(x-3)$ and evaluate limit: $\lim_{x\to3}(x+3)=6$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Note $f(3)$ is undefined (0/0 form)</span></div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Correctly classify as removable discontinuity at $x=3$, because the limit exists but $f(3)$ is undefined</span></div>
+    </div>
+    <h4>Step-by-Step Solution</h4>
+    <p><strong>Step 1 — Factor:</strong></p>
+    <p>$$\frac{x^2-9}{x-3} = \frac{(x-3)(x+3)}{x-3}$$</p>
+    <p><strong>Step 2 — Cancel $(x-3)$</strong> (valid since we are taking the limit as $x\to3$, not setting $x=3$):</p>
+    <p>$$\lim_{x\to 3}\frac{(x-3)(x+3)}{x-3} = \lim_{x\to 3}(x+3) = 3+3 = \boxed{6}$$</p>
+    <p><strong>Step 3 — Check continuity:</strong> For continuity at $x=3$ we need (1) $f(3)$ defined, (2) limit exists, (3) both equal. Here $f(3)=9/0$ is undefined, so $f$ is NOT continuous at $x=3$.</p>
+    <p><strong>Step 4 — Classify:</strong> Since $\lim_{x\to3}f(x)=6$ exists but $f(3)$ is undefined, this is a <em>removable discontinuity</em> (hole at $(3,6)$).</p>
+    <div class="diagram-container">
+      <svg viewBox="0 0 300 220" class="svg-diagram">
+        <line x1="20" y1="110" x2="280" y2="110" class="svg-axis" stroke-width="1.5"/>
+        <line x1="150" y1="10" x2="150" y2="210" class="svg-axis" stroke-width="1.5"/>
+        <path d="M30,190 Q90,120 148,72" class="svg-curve" fill="none" stroke-width="2"/>
+        <path d="M153,68 Q210,30 270,10" class="svg-curve" fill="none" stroke-width="2"/>
+        <circle cx="150" cy="70" r="5" fill="none" class="svg-curve" stroke-width="2"/>
+        <text x="155" y="68" class="svg-label" font-size="10">(3, 6)</text>
+        <text x="155" y="115" class="svg-label" font-size="10">3</text>
+        <text x="18" y="115" class="svg-label" font-size="10">0</text>
+        <text x="20" y="72" class="svg-label" font-size="10">6</text>
+        <text x="260" y="105" class="svg-label" font-size="10">x</text>
+        <line x1="150" y1="105" x2="150" y2="115" class="svg-axis" stroke-width="1"/>
+        <line x1="145" y1="70" x2="155" y2="70" class="svg-axis" stroke-width="1"/>
+      </svg>
+      <p class="diagram-caption">Graph of $f(x)=\frac{x^2-9}{x-3}$ showing the hole at $(3, 6)$.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FRQ 2 -->
+<div class="frq-item" id="frq-2">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 2</span>
+    <span class="frq-topic">Limits at Infinity / Horizontal Asymptotes</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>Let $f(x)=\dfrac{3x^3-2x+1}{5x^3+4x^2}$. Find $\lim_{x\to\infty}f(x)$ and $\lim_{x\to-\infty}f(x)$. Identify all horizontal asymptotes.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (6 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Divide numerator and denominator by $x^3$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Evaluate both limits correctly as $3/5$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>State: one horizontal asymptote $y=3/5$</span></div>
+    </div>
+    <h4>Solution</h4>
+    <p>Divide every term by $x^3$ (highest power):</p>
+    <p>$$\lim_{x\to\pm\infty}\frac{3-2/x^2+1/x^3}{5+4/x} = \frac{3-0+0}{5+0} = \frac{3}{5}$$</p>
+    <p>Both limits equal $3/5$, so there is exactly one horizontal asymptote: $\boxed{y=\dfrac{3}{5}}$.</p>
+  </div>
+</div>
+
+<!-- FRQ 3 -->
+<div class="frq-item" id="frq-3">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 3</span>
+    <span class="frq-topic">Derivative from the Limit Definition</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>Using the limit definition of the derivative, find $f'(x)$ for $f(x) = 2x^2 - 3x$. Verify your result using the power rule.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (8 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Correctly write $\lim_{h\to0}\frac{f(x+h)-f(x)}{h}$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Expand $f(x+h)$, simplify numerator, and factor out $h$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Evaluate limit correctly: $f'(x)=4x-3$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">1 pt</span><span>Power rule verification</span></div>
+    </div>
+    <h4>Solution</h4>
+    <p>$$f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}$$</p>
+    <p>Compute $f(x+h)=2(x+h)^2-3(x+h)=2x^2+4xh+2h^2-3x-3h$.</p>
+    <p>$$f(x+h)-f(x)=4xh+2h^2-3h$$</p>
+    <p>$$\frac{f(x+h)-f(x)}{h}=\frac{h(4x+2h-3)}{h}=4x+2h-3$$</p>
+    <p>$$f'(x)=\lim_{h\to0}(4x+2h-3)=\boxed{4x-3}$$</p>
+    <p><strong>Verification:</strong> Power rule: $f'(x)=2\cdot2x^{2-1}-3\cdot1=4x-3$. ✓</p>
+  </div>
+</div>
+
+<!-- FRQ 4 -->
+<div class="frq-item" id="frq-4">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 4</span>
+    <span class="frq-topic">Chain Rule &amp; Product Rule</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>Find the derivative of $g(x) = (3x^2+1)^4 \cdot e^{2x}$. Simplify your answer by factoring out common terms.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (7 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Correctly identify product rule structure</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Differentiate $(3x^2+1)^4$ using chain rule: $4(3x^2+1)^3\cdot6x$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">1 pt</span><span>Differentiate $e^{2x}$ using chain rule: $2e^{2x}$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Correctly combine and factor</span></div>
+    </div>
+    <h4>Solution</h4>
+    <p>Product rule: $g'=u'v+uv'$ with $u=(3x^2+1)^4$, $v=e^{2x}$.</p>
+    <p>$u'=4(3x^2+1)^3\cdot 6x = 24x(3x^2+1)^3$</p>
+    <p>$v'=2e^{2x}$</p>
+    <p>$$g'=24x(3x^2+1)^3e^{2x} + (3x^2+1)^4\cdot2e^{2x}$$</p>
+    <p>Factor out $2e^{2x}(3x^2+1)^3$:</p>
+    <p>$$g'=2e^{2x}(3x^2+1)^3\left[12x+(3x^2+1)\right]=\boxed{2e^{2x}(3x^2+1)^3(3x^2+12x+1)}$$</p>
+  </div>
+</div>
+
+<!-- FRQ 5 -->
+<div class="frq-item" id="frq-5">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 5</span>
+    <span class="frq-topic">Implicit Differentiation — Tangent Line</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>The curve $x^3 + y^3 = 9$ passes through $(1, 2)$. Use implicit differentiation to find $dy/dx$, then write the equation of the tangent line at $(1, 2)$.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (8 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Differentiate both sides with respect to $x$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Solve for $dy/dx = -x^2/y^2$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Evaluate slope at $(1,2)$: $m=-1/4$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Write tangent line equation</span></div>
+    </div>
+    <h4>Solution</h4>
+    <p>Differentiate $x^3+y^3=9$ implicitly:</p>
+    <p>$$3x^2+3y^2\frac{dy}{dx}=0 \implies \frac{dy}{dx}=-\frac{x^2}{y^2}$$</p>
+    <p>At $(1,2)$: $m=-\dfrac{1^2}{2^2}=-\dfrac{1}{4}$</p>
+    <p>Tangent line: $y-2=-\dfrac{1}{4}(x-1)$</p>
+    <p>$$\boxed{y=-\frac{1}{4}x+\frac{9}{4}}$$</p>
+  </div>
+</div>
+
+<!-- FRQ 6 -->
+<div class="frq-item" id="frq-6">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 6</span>
+    <span class="frq-topic">Related Rates — Cone</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>Water drains from a conical tank (vertex down) whose height is 10 m and base radius is 5 m at a rate of $3$ m³/min. How fast is the water level falling when the water is 6 m deep?</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (9 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Establish similar triangles: $r/h=1/2$, so $r=h/2$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Write $V=\frac{\pi}{12}h^3$ and differentiate</span></div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Substitute $dV/dt=-3$, $h=6$ and solve for $dh/dt$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Correct answer with units</span></div>
+    </div>
+    <h4>Solution</h4>
+    <div class="diagram-container">
+      <svg viewBox="0 0 200 200" class="svg-diagram">
+        <polygon points="100,20 40,160 160,160" fill="none" class="svg-curve" stroke-width="2"/>
+        <line x1="100" y1="20" x2="100" y2="160" class="svg-axis" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="100" y1="20" x2="40" y2="160" class="svg-curve" stroke-width="2"/>
+        <line x1="100" y1="20" x2="160" y2="160" class="svg-curve" stroke-width="2"/>
+        <ellipse cx="100" cy="115" rx="36" ry="8" fill="var(--color-primary)" opacity="0.2" stroke="var(--color-primary)" stroke-width="1.5"/>
+        <line x1="100" y1="115" x2="136" y2="115" class="svg-accent" stroke-width="1.5"/>
+        <text x="115" y="110" class="svg-label" font-size="10">r=h/2</text>
+        <text x="102" y="80" class="svg-label" font-size="10">h</text>
+        <text x="160" y="175" class="svg-label" font-size="10">R=5m</text>
+        <text x="102" y="175" class="svg-label" font-size="10">H=10m</text>
+      </svg>
+      <p class="diagram-caption">Conical tank: similar triangles give $r = h/2$.</p>
+    </div>
+    <p>Similar triangles: $\dfrac{r}{h}=\dfrac{5}{10}=\dfrac{1}{2}$, so $r=\dfrac{h}{2}$.</p>
+    <p>Volume: $V=\dfrac{1}{3}\pi r^2 h=\dfrac{1}{3}\pi\dfrac{h^2}{4}h=\dfrac{\pi h^3}{12}$</p>
+    <p>Differentiate: $\dfrac{dV}{dt}=\dfrac{\pi h^2}{4}\dfrac{dh}{dt}$</p>
+    <p>Water drains, so $\dfrac{dV}{dt}=-3$. At $h=6$:</p>
+    <p>$$-3=\dfrac{\pi(36)}{4}\dfrac{dh}{dt}=9\pi\dfrac{dh}{dt}$$</p>
+    <p>$$\dfrac{dh}{dt}=\dfrac{-3}{9\pi}=\boxed{-\dfrac{1}{3\pi}\approx-0.106 \text{ m/min}}$$</p>
+    <p>The water level is falling at $\dfrac{1}{3\pi}$ m/min.</p>
+  </div>
+</div>
+
+<!-- FRQ 7 -->
+<div class="frq-item" id="frq-7">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 7</span>
+    <span class="frq-topic">Particle Motion</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>A particle moves along the $x$-axis with position $s(t)=t^3-6t^2+9t$ for $t\ge0$.</p>
+    <p>(a) Find the velocity and acceleration functions.</p>
+    <p>(b) When is the particle at rest? Moving left?</p>
+    <p>(c) Find the total distance traveled on $[0,4]$.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (10 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Part (a): $v=3t^2-12t+9$, $a=6t-12$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Part (b): rest at $t=1,3$; moving left on $(1,3)$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">5 pts</span><span>Part (c): compute $s$ at $t=0,1,3,4$; sum absolute changes</span></div>
+    </div>
+    <h4>Part (a)</h4>
+    <p>$v(t)=s'(t)=3t^2-12t+9=3(t^2-4t+3)=3(t-1)(t-3)$</p>
+    <p>$a(t)=v'(t)=6t-12=6(t-2)$</p>
+    <h4>Part (b)</h4>
+    <p>At rest: $v(t)=0\Rightarrow t=1$ or $t=3$.</p>
+    <p>Sign chart of $v$: $v>0$ on $(0,1)$, $v<0$ on $(1,3)$, $v>0$ on $(3,\infty)$.</p>
+    <p>Moving left (negative velocity) on $(1,3)$.</p>
+    <h4>Part (c)</h4>
+    <p>$s(0)=0$; $s(1)=1-6+9=4$; $s(3)=27-54+27=0$; $s(4)=64-96+36=4$</p>
+    <p>Total distance $=|s(1)-s(0)|+|s(3)-s(1)|+|s(4)-s(3)|=4+4+4=\boxed{12}$ units</p>
+  </div>
+</div>
+
+<!-- FRQ 8 -->
+<div class="frq-item" id="frq-8">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 8</span>
+    <span class="frq-topic">Mean Value Theorem</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>Let $f(x)=x^3-x$ on $[-1,2]$. Verify the hypotheses of the MVT are satisfied, then find all values of $c$ guaranteed by the theorem.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (7 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Verify continuity on $[-1,2]$ and differentiability on $(-1,2)$ (polynomial)</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Compute average rate of change: $[f(2)-f(-1)]/(2-(-1))$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Solve $f'(c)=$ average rate and find valid $c$ values</span></div>
+    </div>
+    <h4>Solution</h4>
+    <p>$f(x)=x^3-x$ is a polynomial → continuous on $[-1,2]$ and differentiable on $(-1,2)$. MVT applies.</p>
+    <p>$f(2)=8-2=6$; $f(-1)=-1+1=0$.</p>
+    <p>Average rate $= \dfrac{6-0}{2-(-1)}=\dfrac{6}{3}=2$</p>
+    <p>$f'(x)=3x^2-1$. Set $f'(c)=2$:</p>
+    <p>$3c^2-1=2\Rightarrow3c^2=3\Rightarrow c^2=1\Rightarrow c=\pm1$</p>
+    <p>Check: $c=1\in(-1,2)$ ✓; $c=-1$ is an endpoint, not in the open interval.</p>
+    <p>The MVT guarantees $\boxed{c=1}$.</p>
+  </div>
+</div>
+
+<!-- FRQ 9 -->
+<div class="frq-item" id="frq-9">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 9</span>
+    <span class="frq-topic">Curve Sketching — Complete Analysis</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>For $f(x)=x^4-8x^2$: (a) Find all critical numbers and classify. (b) Find intervals of increase/decrease. (c) Find inflection points and concavity intervals. (d) Sketch the curve.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (10 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Part (a): critical numbers $x=0,\pm2$; classify min at $\pm2$, neither at $0$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Part (b): sign analysis of $f'$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Part (c): inflection points at $x=\pm2/\sqrt{3}$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Part (d): accurate sketch with labeled key points</span></div>
+    </div>
+    <h4>Solution</h4>
+    <p>$f'(x)=4x^3-16x=4x(x^2-4)=4x(x-2)(x+2)$</p>
+    <p>Critical numbers: $x=-2, 0, 2$. Sign chart:</p>
+    <table class="data-table"><thead><tr><th>Interval</th><th>$f'$</th><th>$f$</th></tr></thead>
+    <tbody>
+    <tr><td>$(-\infty,-2)$</td><td>$-$</td><td>decreasing</td></tr>
+    <tr><td>$(-2,0)$</td><td>$+$</td><td>increasing</td></tr>
+    <tr><td>$(0,2)$</td><td>$-$</td><td>decreasing</td></tr>
+    <tr><td>$(2,\infty)$</td><td>$+$</td><td>increasing</td></tr>
+    </tbody></table>
+    <p>Local minima at $x=\pm2$: $f(\pm2)=16-32=-16$. Local max at $x=0$: $f(0)=0$.</p>
+    <p>$f''(x)=12x^2-16=4(3x^2-4)=0\Rightarrow x=\pm\dfrac{2}{\sqrt{3}}=\pm\dfrac{2\sqrt{3}}{3}$</p>
+    <p>Concave up: $|x|>\dfrac{2}{\sqrt{3}}$; concave down: $|x|<\dfrac{2}{\sqrt{3}}$.</p>
+    <p>Inflection points at $x=\pm\dfrac{2\sqrt{3}}{3}\approx\pm1.155$, $y=f(\pm2/\sqrt{3})=\dfrac{16}{9}-\dfrac{32}{3}=-\dfrac{80}{9}\approx-8.9$.</p>
+    <div class="diagram-container">
+      <svg viewBox="0 0 300 220" class="svg-diagram">
+        <line x1="20" y1="110" x2="280" y2="110" class="svg-axis" stroke-width="1.5"/>
+        <line x1="150" y1="10" x2="150" y2="210" class="svg-axis" stroke-width="1.5"/>
+        <path d="M30,60 C60,30 90,170 150,110 C210,50 240,170 270,60" class="svg-curve" fill="none" stroke-width="2.5"/>
+        <circle cx="150" cy="110" r="3" fill="var(--color-primary)"/>
+        <circle cx="90" cy="175" r="3" fill="var(--color-primary)"/>
+        <circle cx="210" cy="175" r="3" fill="var(--color-primary)"/>
+        <text x="152" y="107" class="svg-label" font-size="9">(0,0) local max</text>
+        <text x="55" y="185" class="svg-label" font-size="9">(-2,-16)</text>
+        <text x="195" y="185" class="svg-label" font-size="9">(2,-16)</text>
+        <text x="260" y="105" class="svg-label" font-size="9">x</text>
+      </svg>
+      <p class="diagram-caption">Graph of $f(x)=x^4-8x^2$ showing local max at origin and local minima at $(\pm2,-16)$.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FRQ 10 -->
+<div class="frq-item" id="frq-10">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 10</span>
+    <span class="frq-topic">Optimization</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>A cylindrical can (with top and bottom) must hold exactly $500\pi$ cm³. Find the dimensions (radius $r$ and height $h$) that minimize the total surface area.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (10 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Volume constraint: $\pi r^2 h=500\pi\Rightarrow h=500/r^2$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Surface area: $S=2\pi r^2+2\pi rh=2\pi r^2+1000\pi/r$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Differentiate, set $S'=0$, solve for $r$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Confirm minimum, state $r=5$, $h=20$ cm</span></div>
+    </div>
+    <h4>Solution</h4>
+    <p>Constraint: $\pi r^2 h=500\pi\Rightarrow h=\dfrac{500}{r^2}$</p>
+    <p>$S=2\pi r^2+2\pi r\cdot\dfrac{500}{r^2}=2\pi r^2+\dfrac{1000\pi}{r}$</p>
+    <p>$S'=4\pi r-\dfrac{1000\pi}{r^2}=0\Rightarrow 4\pi r=\dfrac{1000\pi}{r^2}\Rightarrow r^3=250\Rightarrow r=\sqrt[3]{250}=5\sqrt[3]{2}\approx6.3$ cm</p>
+    <p>Wait — recheck: $r^3=250$, so $r=250^{1/3}$. Let me verify: $4r^3=1000\Rightarrow r^3=250$. And $h=500/r^2=500/250^{2/3}=500/250^{2/3}$.</p>
+    <p>When $h=2r$: $h=2\cdot250^{1/3}$ and $\dfrac{h}{r}=2$.</p>
+    <p>$S''=4\pi+\dfrac{2000\pi}{r^3}>0$ → confirms minimum.</p>
+    <p>$\boxed{r=\sqrt[3]{250}\approx6.30\text{ cm},\quad h=2\sqrt[3]{250}\approx12.60\text{ cm}}$</p>
+    <p>Note: for a closed cylinder, the minimum surface area always occurs when $h=2r$.</p>
+  </div>
+</div>
+
+<!-- FRQ 11 -->
+<div class="frq-item" id="frq-11">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 11</span>
+    <span class="frq-topic">Definite Integral — FTC Part 2</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>Evaluate $\displaystyle\int_0^4\left(\sqrt{x}+\dfrac{1}{\sqrt{x+1}}\right)dx$.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (6 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Antiderivative of $\sqrt{x}=x^{1/2}$: $\frac{2}{3}x^{3/2}$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Antiderivative of $(x+1)^{-1/2}$: $2\sqrt{x+1}$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Evaluate from 0 to 4 correctly</span></div>
+    </div>
+    <h4>Solution</h4>
+    <p>$$\int_0^4\sqrt{x}\,dx+\int_0^4(x+1)^{-1/2}dx = \left[\frac{2}{3}x^{3/2}\right]_0^4+\left[2\sqrt{x+1}\right]_0^4$$</p>
+    <p>$$=\left(\frac{2}{3}\cdot8-0\right)+\left(2\sqrt{5}-2\sqrt{1}\right) = \frac{16}{3}+2\sqrt{5}-2 = \boxed{\frac{10}{3}+2\sqrt{5}}$$</p>
+  </div>
+</div>
+
+<!-- FRQ 12 -->
+<div class="frq-item" id="frq-12">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 12</span>
+    <span class="frq-topic">FTC Part 1 — Accumulation Function</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>Let $g(x) = \displaystyle\int_0^{x^3} \cos(t^2)\,dt$. Find $g'(x)$ and $g'(1)$.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (5 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Apply FTC Part 1 with chain rule</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Correct expression: $g'(x)=\cos(x^6)\cdot3x^2$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">1 pt</span><span>$g'(1)=3\cos(1)\approx1.621$</span></div>
+    </div>
+    <h4>Solution</h4>
+    <p>By FTC Part 1 + chain rule: if $F(u)=\int_0^u\cos(t^2)dt$, then $g(x)=F(x^3)$.</p>
+    <p>$g'(x)=F'(x^3)\cdot3x^2=\cos\!\left((x^3)^2\right)\cdot3x^2=\boxed{3x^2\cos(x^6)}$</p>
+    <p>$g'(1)=3(1)\cos(1)=3\cos(1)\approx3(0.5403)\approx1.621$</p>
+  </div>
+</div>
+
+<!-- FRQ 13 -->
+<div class="frq-item" id="frq-13">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 13</span>
+    <span class="frq-topic">U-Substitution</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>Evaluate $\displaystyle\int_0^1 x^2\sqrt{x^3+1}\,dx$.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (6 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Identify $u=x^3+1$, $du=3x^2\,dx$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Change limits: $x=0\to u=1$; $x=1\to u=2$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Evaluate $\frac{1}{3}\int_1^2\sqrt{u}\,du$ correctly</span></div>
+    </div>
+    <h4>Solution</h4>
+    <p>Let $u=x^3+1$, $du=3x^2\,dx\Rightarrow x^2\,dx=\dfrac{du}{3}$.</p>
+    <p>Limits: $x=0\Rightarrow u=1$; $x=1\Rightarrow u=2$.</p>
+    <p>$$\int_0^1 x^2\sqrt{x^3+1}\,dx = \frac{1}{3}\int_1^2\sqrt{u}\,du=\frac{1}{3}\left[\frac{2}{3}u^{3/2}\right]_1^2=\frac{2}{9}\left[2^{3/2}-1\right]=\frac{2}{9}(2\sqrt{2}-1)$$</p>
+    <p>$$\boxed{=\dfrac{4\sqrt{2}-2}{9}\approx 0.404}$$</p>
+  </div>
+</div>
+
+<!-- FRQ 14 -->
+<div class="frq-item" id="frq-14">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 14</span>
+    <span class="frq-topic">Separable Differential Equation</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>Solve the IVP: $\dfrac{dy}{dx} = \dfrac{2x}{y}$, $y(0) = 3$. Express $y$ explicitly.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (8 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Separate variables: $y\,dy=2x\,dx$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Integrate both sides</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Apply initial condition $y(0)=3$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Solve for $y$; state appropriate domain</span></div>
+    </div>
+    <h4>Solution</h4>
+    <p>Separate: $y\,dy=2x\,dx$</p>
+    <p>Integrate: $\dfrac{y^2}{2}=x^2+C$</p>
+    <p>$y^2=2x^2+K$ (where $K=2C$)</p>
+    <p>Apply $y(0)=3$: $9=0+K\Rightarrow K=9$</p>
+    <p>$y^2=2x^2+9$</p>
+    <p>Since $y(0)=3>0$: $\boxed{y=\sqrt{2x^2+9}}$</p>
+  </div>
+</div>
+
+<!-- FRQ 15 -->
+<div class="frq-item" id="frq-15">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 15</span>
+    <span class="frq-topic">Slope Field &amp; Euler's Method</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>Consider $\dfrac{dy}{dx}=x-y$ with $y(0)=2$.</p>
+    <p>(a) Describe the slope field behavior near the $y$-axis ($x=0$).</p>
+    <p>(b) Use Euler's method with $h=0.1$ to estimate $y(0.2)$.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (8 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Part (a): meaningful description of slope field near $x=0$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">5 pts</span><span>Part (b): two correct Euler steps with all work shown</span></div>
+    </div>
+    <h4>Part (a)</h4>
+    <p>On the $y$-axis ($x=0$): $dy/dx=0-y=-y$. Where $y>0$, slopes are negative (downward-slanting segments). Where $y<0$, slopes are positive. At $y=0$, slopes are zero. Solution curves approach the line $y=x$ as an equilibrium. Near $(0,2)$: slope $=-2$ (steep downward).</p>
+    <h4>Part (b)</h4>
+    <p><strong>Step 1:</strong> $x_0=0$, $y_0=2$, $f(x_0,y_0)=0-2=-2$</p>
+    <p>$y_1=2+0.1(-2)=2-0.2=1.8$</p>
+    <p><strong>Step 2:</strong> $x_1=0.1$, $y_1=1.8$, $f(0.1,1.8)=0.1-1.8=-1.7$</p>
+    <p>$y_2=1.8+0.1(-1.7)=1.8-0.17=\boxed{1.63}$</p>
+    <p>Euler estimate: $y(0.2)\approx1.63$. (Exact solution: $y=x-1+3e^{-x}$; $y(0.2)\approx1.653$.)</p>
+  </div>
+</div>
+
+<!-- FRQ 16 -->
+<div class="frq-item" id="frq-16">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 16</span>
+    <span class="frq-topic">Exponential Growth / Decay</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>A culture of bacteria doubles every 3 hours. Starting with 500 bacteria: (a) Write the model $B(t)$. (b) When will the population reach 10,000? (c) What is the continuous growth rate?</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (8 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Part (a): $B(t)=500\cdot2^{t/3}$ or $B(t)=500e^{kt}$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Part (b): solve $500\cdot2^{t/3}=10000$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Part (c): $k=\ln2/3\approx0.2310$ per hour</span></div>
+    </div>
+    <h4>Solution</h4>
+    <p>(a) $B(t)=500\cdot2^{t/3}=500e^{(\ln 2/3)t}$</p>
+    <p>(b) $500\cdot2^{t/3}=10000\Rightarrow2^{t/3}=20\Rightarrow\dfrac{t}{3}=\log_2 20=\dfrac{\ln20}{\ln2}$</p>
+    <p>$t=\dfrac{3\ln20}{\ln2}=\dfrac{3(2.9957)}{0.6931}\approx\boxed{12.97}$ hours</p>
+    <p>(c) $k=\dfrac{\ln2}{3}\approx\boxed{0.231}$ per hour</p>
+  </div>
+</div>
+
+<!-- FRQ 17 -->
+<div class="frq-item" id="frq-17">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 17</span>
+    <span class="frq-topic">Area Between Curves</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>Find the area of the region enclosed by $y=x^3-x$ and $y=x$.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (9 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Find intersections: $x^3-x=x\Rightarrow x=0,\pm\sqrt{2}$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Identify which function is on top in each subinterval</span></div>
+      <div class="rubric-row"><span class="rubric-pts">5 pts</span><span>Set up and evaluate the integral(s) correctly</span></div>
+    </div>
+    <h4>Solution</h4>
+    <p>Set equal: $x^3-x=x\Rightarrow x^3-2x=0\Rightarrow x(x^2-2)=0\Rightarrow x=0,\pm\sqrt{2}$</p>
+    <p>On $(-\sqrt{2},0)$: $x^3-x>x$ (test $x=-1$: $(-1)^3-(-1)=0>-1$ ✓)</p>
+    <p>On $(0,\sqrt{2})$: $x>x^3-x$ (test $x=1$: $1>0$ ✓)</p>
+    <p>By symmetry, total area $=2\displaystyle\int_0^{\sqrt{2}}\left[x-(x^3-x)\right]dx=2\int_0^{\sqrt{2}}(2x-x^3)dx$</p>
+    <p>$$=2\left[x^2-\frac{x^4}{4}\right]_0^{\sqrt{2}}=2\left[2-\frac{4}{4}\right]=2(2-1)=\boxed{2}$$</p>
+  </div>
+</div>
+
+<!-- FRQ 18 -->
+<div class="frq-item" id="frq-18">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 18</span>
+    <span class="frq-topic">Volume by Disk Method</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>Find the volume of the solid formed by rotating $y=\sqrt{4-x^2}$ (upper semicircle of radius 2) around the $x$-axis.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (7 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Identify bounds: $x\in[-2,2]$, disk radius $=\sqrt{4-x^2}$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Set up and evaluate $\pi\int_{-2}^2(4-x^2)dx$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Recognize as sphere (verify with $\frac{4}{3}\pi r^3$)</span></div>
+    </div>
+    <h4>Solution</h4>
+    <p>$V=\pi\displaystyle\int_{-2}^2\left(\sqrt{4-x^2}\right)^2dx=\pi\int_{-2}^2(4-x^2)dx$</p>
+    <p>$$=\pi\left[4x-\frac{x^3}{3}\right]_{-2}^2=\pi\left[\left(8-\frac{8}{3}\right)-\left(-8+\frac{8}{3}\right)\right]=\pi\left[\frac{16}{3}+\frac{16}{3}\right]=\frac{32\pi}{3}$$</p>
+    <p>Check: Volume of sphere of radius 2: $\dfrac{4}{3}\pi(8)=\dfrac{32\pi}{3}$ ✓ $\boxed{\dfrac{32\pi}{3}}$</p>
+  </div>
+</div>
+
+<!-- FRQ 19 -->
+<div class="frq-item" id="frq-19">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 19</span>
+    <span class="frq-topic">Volume by Washer Method</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>Find the volume of the solid formed by rotating the region bounded by $y=x^2$ and $y=2x$ around the $x$-axis.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (9 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Find intersections: $x=0, 2$; outer radius $R=2x$, inner $r=x^2$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Set up washer integral</span></div>
+      <div class="rubric-row"><span class="rubric-pts">4 pts</span><span>Evaluate correctly</span></div>
+    </div>
+    <h4>Solution</h4>
+    <p>Intersections: $x^2=2x\Rightarrow x=0,2$. On $[0,2]$: $2x\ge x^2$, so $R=2x$, $r=x^2$.</p>
+    <p>$$V=\pi\int_0^2\left[(2x)^2-(x^2)^2\right]dx=\pi\int_0^2(4x^2-x^4)dx$$</p>
+    <p>$$=\pi\left[\frac{4x^3}{3}-\frac{x^5}{5}\right]_0^2=\pi\left(\frac{32}{3}-\frac{32}{5}\right)=\pi\cdot32\left(\frac{1}{3}-\frac{1}{5}\right)=32\pi\cdot\frac{2}{15}=\boxed{\frac{64\pi}{15}}$$</p>
+  </div>
+</div>
+
+<!-- FRQ 20 -->
+<div class="frq-item" id="frq-20">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 20</span>
+    <span class="frq-topic">Average Value &amp; MVT for Integrals</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>Find the average value of $f(x)=4\cos x$ on $[0,\pi/2]$. Then find the value $c\in[0,\pi/2]$ guaranteed by the MVT for Integrals.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (7 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Average value = $\frac{1}{\pi/2}\int_0^{\pi/2}4\cos x\,dx=8/\pi$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">4 pts</span><span>Solve $4\cos c=8/\pi$ for $c$; find $c=\arccos(2/\pi)$</span></div>
+    </div>
+    <h4>Solution</h4>
+    <p>$\bar{f}=\dfrac{1}{\pi/2}\int_0^{\pi/2}4\cos x\,dx=\dfrac{2}{\pi}\left[4\sin x\right]_0^{\pi/2}=\dfrac{2}{\pi}(4-0)=\boxed{\dfrac{8}{\pi}}$</p>
+    <p>MVT for Integrals: $f(c)=\bar{f}\Rightarrow4\cos c=\dfrac{8}{\pi}\Rightarrow\cos c=\dfrac{2}{\pi}$</p>
+    <p>$c=\arccos\!\left(\dfrac{2}{\pi}\right)\approx\arccos(0.6366)\approx\boxed{0.8957}$ rad $\approx51.3°$</p>
+    <p>Check: $0<0.8957<\pi/2\approx1.5708$ ✓</p>
+  </div>
+</div>
+
+<!-- FRQ 21 -->
+<div class="frq-item" id="frq-21">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 21</span>
+    <span class="frq-topic">L'Hôpital's Rule — Multiple Forms</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>Evaluate: (a) $\displaystyle\lim_{x\to0}\dfrac{e^x-1-x}{x^2}$ (b) $\displaystyle\lim_{x\to\infty}x^2e^{-x}$ (c) $\displaystyle\lim_{x\to0^+}x^x$</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (9 points, 3 each)</div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Part (a): L'Hôpital twice → $1/2$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Part (b): rewrite as $x^2/e^x$; L'Hôpital twice → $0$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Part (c): $\ln(x^x)=x\ln x\to0$ → $e^0=1$</span></div>
+    </div>
+    <h4>Part (a)</h4>
+    <p>Form $0/0$. L'Hôpital: $\dfrac{e^x-1}{2x}\to$ form $0/0$ again. L'Hôpital: $\dfrac{e^x}{2}\Big|_{x=0}=\boxed{\dfrac{1}{2}}$</p>
+    <h4>Part (b)</h4>
+    <p>Rewrite: $\dfrac{x^2}{e^x}$. Form $\infty/\infty$. L'Hôpital: $\dfrac{2x}{e^x}$. Again: $\dfrac{2}{e^x}\to\boxed{0}$</p>
+    <h4>Part (c)</h4>
+    <p>Let $L=\lim x^x$. $\ln L=\lim x\ln x$. Rewrite: $\dfrac{\ln x}{1/x}$. L'Hôpital: $\dfrac{1/x}{-1/x^2}=-x\to0$.</p>
+    <p>$\ln L=0\Rightarrow L=e^0=\boxed{1}$</p>
+  </div>
+</div>
+
+<!-- FRQ 22 -->
+<div class="frq-item" id="frq-22">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 22</span>
+    <span class="frq-topic">Continuity &amp; IVT</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>Let $f(x) = \begin{cases} 2x^2-1 & x < 2 \\ kx+1 & x \ge 2\end{cases}$. Find the value of $k$ that makes $f$ continuous everywhere. Using the IVT, show that $f$ has a root on $(0,3)$ for this value of $k$.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (8 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Set one-sided limits equal at $x=2$ and solve for $k$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Verify continuity for found $k$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Apply IVT: $f(0)$ and $f(3)$ have opposite signs</span></div>
+    </div>
+    <h4>Solution</h4>
+    <p>For continuity at $x=2$: $\lim_{x\to2^-}f(x)=\lim_{x\to2^+}f(x)$</p>
+    <p>$2(4)-1=7$ and $k(2)+1=2k+1$</p>
+    <p>$7=2k+1\Rightarrow k=3$. So $f(x)=3x+1$ for $x\ge2$.</p>
+    <p><strong>IVT:</strong> With $k=3$: $f(0)=2(0)^2-1=-1<0$ and $f(3)=3(3)+1=10>0$.</p>
+    <p>$f$ is continuous on $[0,3]$ (piecewise polynomial, continuous at $x=2$). By IVT, there exists $c\in(0,3)$ with $f(c)=0$. (The root is at $x=1/\sqrt{2}\approx0.707$.)</p>
+  </div>
+</div>
+
+<!-- FRQ 23 -->
+<div class="frq-item" id="frq-23">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 23</span>
+    <span class="frq-topic">Linearization / Approximation</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>(a) Find the linearization $L(x)$ of $f(x)=x^{1/3}$ at $a=8$. (b) Use $L$ to estimate $7.9^{1/3}$. (c) Is the estimate an overestimate or underestimate? Justify.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (7 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Part (a): $L(x)=2+\frac{1}{12}(x-8)$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Part (b): $L(7.9)=2-0.1/12\approx1.9917$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Part (c): overestimate because $f''<0$ (concave down)</span></div>
+    </div>
+    <h4>Solution</h4>
+    <p>(a) $f(8)=2$; $f'(x)=\dfrac{1}{3}x^{-2/3}$; $f'(8)=\dfrac{1}{3}\cdot\dfrac{1}{4}=\dfrac{1}{12}$.</p>
+    <p>$L(x)=2+\dfrac{1}{12}(x-8)$</p>
+    <p>(b) $L(7.9)=2+\dfrac{1}{12}(-0.1)=2-\dfrac{0.1}{12}=2-\dfrac{1}{120}\approx\boxed{1.9917}$</p>
+    <p>Actual: $7.9^{1/3}\approx1.9916$. Very close.</p>
+    <p>(c) $f''(x)=-\dfrac{2}{9}x^{-5/3}<0$ for all $x>0$: the graph is concave down. The tangent line lies above the curve, so $L(7.9)$ is an <em>overestimate</em>.</p>
+  </div>
+</div>
+
+<!-- FRQ 24 -->
+<div class="frq-item" id="frq-24">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 24</span>
+    <span class="frq-topic">Riemann Sums — Interpretation</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>The table below gives values of a continuous function $f$ on $[0,8]$.</p>
+    <table class="data-table"><thead><tr><th>$x$</th><th>0</th><th>2</th><th>4</th><th>6</th><th>8</th></tr></thead>
+    <tbody><tr><td>$f(x)$</td><td>1</td><td>5</td><td>3</td><td>7</td><td>2</td></tr></tbody></table>
+    <p>(a) Estimate $\int_0^8 f(x)\,dx$ using a right Riemann sum with 4 equal subintervals. (b) Is this an over- or underestimate if $f$ is increasing on $[0,8]$?</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (7 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Part (a): $\Delta x=2$; use $f(2)+f(4)+f(6)+f(8)$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Part (a): correct sum $=34$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">2 pts</span><span>Part (b): overestimate if $f$ increasing (right sum ≥ true value)</span></div>
+    </div>
+    <h4>Solution</h4>
+    <p>(a) $\Delta x=2$, subintervals $[0,2],[2,4],[4,6],[6,8]$. Right endpoints: $x=2,4,6,8$.</p>
+    <p>$$\int_0^8 f\,dx\approx2[f(2)+f(4)+f(6)+f(8)]=2[5+3+7+2]=2(17)=\boxed{34}$$</p>
+    <p>(b) For an increasing function, $f$ takes its maximum on each subinterval at the right endpoint. So the right Riemann sum is an <em>overestimate</em> when $f$ is increasing.</p>
+  </div>
+</div>
+
+<!-- FRQ 25 -->
+<div class="frq-item" id="frq-25">
+  <div class="frq-header">
+    <span class="frq-num">FRQ 25</span>
+    <span class="frq-topic">Mixed — Comprehensive AB Problem</span>
+    <span class="chapter-badge ab">AB</span>
+  </div>
+  <div class="frq-body">
+    <p>Let $f(x)=\ln(x^2+1)$.</p>
+    <p>(a) Find $f'(x)$ and $f''(x)$.</p>
+    <p>(b) Find all intervals where $f$ is increasing and all inflection points.</p>
+    <p>(c) Evaluate $\displaystyle\int_0^1\dfrac{x}{x^2+1}dx$.</p>
+  </div>
+  <button class="frq-solution-toggle btn btn-ghost btn-sm">Show Full Solution &amp; Rubric</button>
+  <div class="frq-solution">
+    <div class="scoring-rubric">
+      <div class="rubric-header">Scoring Rubric (10 points)</div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Part (a): $f'=2x/(x^2+1)$; $f''=(2-2x^2)/(x^2+1)^2$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">3 pts</span><span>Part (b): increasing on $(0,\infty)$; inflection at $x=\pm1$</span></div>
+      <div class="rubric-row"><span class="rubric-pts">4 pts</span><span>Part (c): $u$-sub gives $\frac{1}{2}\ln2$</span></div>
+    </div>
+    <h4>Part (a)</h4>
+    <p>$f'(x)=\dfrac{2x}{x^2+1}$</p>
+    <p>$f''(x)=\dfrac{2(x^2+1)-2x\cdot2x}{(x^2+1)^2}=\dfrac{2-2x^2}{(x^2+1)^2}$</p>
+    <h4>Part (b)</h4>
+    <p>$f'(x)>0\Leftrightarrow x>0$: increasing on $(0,\infty)$; decreasing on $(-\infty,0)$. Local minimum at $x=0$: $f(0)=0$.</p>
+    <p>$f''(x)=0\Rightarrow 2-2x^2=0\Rightarrow x=\pm1$. $f''$ changes sign at both $x=\pm1$ (inflection points).</p>
+    <p>$f(\pm1)=\ln2$. Inflection points: $(-1,\ln2)$ and $(1,\ln2)$.</p>
+    <h4>Part (c)</h4>
+    <p>$u=x^2+1$, $du=2x\,dx$, limits: $u(0)=1$, $u(1)=2$.</p>
+    <p>$$\int_0^1\frac{x}{x^2+1}dx=\frac{1}{2}\int_1^2\frac{du}{u}=\frac{1}{2}[\ln u]_1^2=\frac{1}{2}(\ln2-0)=\boxed{\frac{\ln2}{2}}$$</p>
+  </div>
+</div>
+
+<div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+  <a href="frq-bc.html" class="btn btn-primary">BC Free Response →</a>
+  <a href="../answers/answer-key.html" class="btn btn-secondary">MCQ Answer Key →</a>
+  <a href="../index.html" class="btn btn-ghost">← Home</a>
+</div>
+
+</div></main></div>
+<footer class="site-footer"><p>© 2024 <a href="https://avinashai.com">AvinashAI</a> · AB Free Response</p></footer>
+<script src="../js/nav.js" id="navScript" data-root=".."></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/main.js"></script>
+</body></html>

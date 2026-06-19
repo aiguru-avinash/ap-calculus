@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 6: Integration & Accumulation | AP Calculus</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+<div id="topNav"></div>
+<div class="page-wrapper">
+<div id="sidebarNav"></div>
+<main class="main-content"><div class="content-inner">
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow">
+    <span class="chapter-badge ab">AB</span><span class="chapter-badge bc">BC</span>
+    <span class="chapter-num">Chapter 6 of 10</span>
+  </div>
+  <h1>Integration &amp; Accumulation of Change</h1>
+  <p class="page-hero-subtitle">Antiderivatives, Riemann sums, the Fundamental Theorem of Calculus, u-substitution, integration by parts, and partial fractions.</p>
+  <div class="hero-meta">
+    <span class="hero-meta-item">📖 ~70 min read</span>
+    <span class="hero-meta-item">✏️ 8 worked examples</span>
+    <span class="hero-meta-item"><a href="../mcq/mcq-ch06.html">→ 20 MCQs</a></span>
+  </div>
+</div>
+
+<div class="toc-box">
+  <div class="toc-title">In This Chapter</div>
+  <ul class="toc-list">
+    <li><a href="#sec-antideriv">6.1 Antiderivatives &amp; Indefinite Integrals</a></li>
+    <li><a href="#sec-riemann">6.2 Riemann Sums &amp; The Definite Integral</a></li>
+    <li><a href="#sec-ftc">6.3 Fundamental Theorem of Calculus</a></li>
+    <li><a href="#sec-properties">6.4 Properties of Definite Integrals</a></li>
+    <li><a href="#sec-usub">6.5 U-Substitution</a></li>
+    <li><a href="#sec-parts">6.6 Integration by Parts (BC)</a></li>
+    <li><a href="#sec-partial">6.7 Partial Fraction Decomposition (BC)</a></li>
+    <li><a href="#sec-examples">Worked Examples</a></li>
+  </ul>
+</div>
+
+<!-- 6.1 Antiderivatives -->
+<section id="sec-antideriv">
+  <h2>6.1 Antiderivatives &amp; Indefinite Integrals</h2>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Antiderivative</div>
+    $F$ is an <strong>antiderivative</strong> of $f$ on an interval if $F'(x) = f(x)$ for all $x$ in that interval.
+    The general antiderivative includes the constant $C$:
+    $$\int f(x)\,dx = F(x) + C$$
+  </div>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Basic Integration Rules</div>
+    <table class="data-table">
+      <tr><th>Rule</th><th>Formula</th></tr>
+      <tr><td>Constant</td><td>$\int k\,dx = kx + C$</td></tr>
+      <tr><td>Power ($n \ne -1$)</td><td>$\int x^n\,dx = \dfrac{x^{n+1}}{n+1} + C$</td></tr>
+      <tr><td>$\int \frac{1}{x}\,dx$</td><td>$\ln|x| + C$</td></tr>
+      <tr><td>$\int e^x\,dx$</td><td>$e^x + C$</td></tr>
+      <tr><td>$\int a^x\,dx$</td><td>$\dfrac{a^x}{\ln a} + C$</td></tr>
+      <tr><td>$\int \sin x\,dx$</td><td>$-\cos x + C$</td></tr>
+      <tr><td>$\int \cos x\,dx$</td><td>$\sin x + C$</td></tr>
+      <tr><td>$\int \sec^2 x\,dx$</td><td>$\tan x + C$</td></tr>
+      <tr><td>$\int \csc^2 x\,dx$</td><td>$-\cot x + C$</td></tr>
+      <tr><td>$\int \sec x\tan x\,dx$</td><td>$\sec x + C$</td></tr>
+      <tr><td>$\int \csc x\cot x\,dx$</td><td>$-\csc x + C$</td></tr>
+      <tr><td>$\int \frac{1}{\sqrt{1-x^2}}\,dx$</td><td>$\arcsin x + C$</td></tr>
+      <tr><td>$\int \frac{1}{1+x^2}\,dx$</td><td>$\arctan x + C$</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- 6.2 Riemann Sums -->
+<section id="sec-riemann">
+  <h2>6.2 Riemann Sums &amp; The Definite Integral</h2>
+  <p>A Riemann sum approximates the area under a curve by summing areas of rectangles.</p>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Riemann Sum</div>
+    Partition $[a,b]$ into $n$ subintervals of width $\Delta x = \dfrac{b-a}{n}$. Choose sample points $x_i^*$ in each subinterval:
+    $$\sum_{i=1}^{n} f(x_i^*)\,\Delta x$$
+    Types: <strong>Left</strong> ($x_i^* = $ left endpoint), <strong>Right</strong> ($x_i^* = $ right endpoint), <strong>Midpoint</strong>.
+  </div>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 Definite Integral</div>
+    $$\int_a^b f(x)\,dx = \lim_{n\to\infty} \sum_{i=1}^{n} f(x_i^*)\,\Delta x$$
+    This equals the <em>net signed area</em> between the curve and the $x$-axis on $[a,b]$.
+  </div>
+
+  <!-- Riemann Sum Diagram -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" width="480" height="260">
+      <line x1="50" y1="20" x2="50" y2="230" class="svg-axis"/>
+      <line x1="50" y1="230" x2="460" y2="230" class="svg-axis"/>
+      <polygon points="50,20 45,34 55,34" class="svg-arrow"/>
+      <polygon points="460,230 446,225 446,235" class="svg-arrow"/>
+      <!-- Rectangles (right Riemann sum, 6 rects) -->
+      <rect x="51" y="165" width="65" height="65" fill="rgba(108,99,255,0.2)" stroke="var(--color-primary)" stroke-width="1"/>
+      <rect x="116" y="140" width="65" height="90" fill="rgba(108,99,255,0.2)" stroke="var(--color-primary)" stroke-width="1"/>
+      <rect x="181" y="110" width="65" height="120" fill="rgba(108,99,255,0.2)" stroke="var(--color-primary)" stroke-width="1"/>
+      <rect x="246" y="88" width="65" height="142" fill="rgba(108,99,255,0.2)" stroke="var(--color-primary)" stroke-width="1"/>
+      <rect x="311" y="72" width="65" height="158" fill="rgba(108,99,255,0.2)" stroke="var(--color-primary)" stroke-width="1"/>
+      <rect x="376" y="64" width="64" height="166" fill="rgba(108,99,255,0.2)" stroke="var(--color-primary)" stroke-width="1"/>
+      <!-- Actual curve -->
+      <path d="M51,195 C100,175 160,140 220,110 C280,80 340,65 440,55" class="svg-curve"/>
+      <!-- Labels -->
+      <text x="54" y="18" class="svg-label">y</text>
+      <text x="456" y="228" class="svg-label">x</text>
+      <text x="47" y="244" class="svg-label" text-anchor="middle">a</text>
+      <text x="441" y="244" class="svg-label" text-anchor="middle">b</text>
+      <text x="240" y="255" class="svg-label" text-anchor="middle">Δx</text>
+      <line x1="246" y1="248" x2="311" y2="248" stroke="var(--color-warning)" stroke-width="1"/>
+      <line x1="246" y1="245" x2="246" y2="251" stroke="var(--color-warning)" stroke-width="1"/>
+      <line x1="311" y1="245" x2="311" y2="251" stroke="var(--color-warning)" stroke-width="1"/>
+    </svg>
+    <p class="diagram-caption">Figure 6.1 — Right Riemann sum with 6 rectangles. As $n\to\infty$ and $\Delta x\to 0$, the sum approaches the exact area.</p>
+  </div>
+</section>
+
+<!-- 6.3 FTC -->
+<section id="sec-ftc">
+  <h2>6.3 Fundamental Theorem of Calculus</h2>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ FTC Part 1 — Derivative of an Integral</div>
+    If $f$ is continuous on $[a,b]$ and $g(x) = \displaystyle\int_a^x f(t)\,dt$, then:
+    $$g'(x) = f(x)$$
+    In general (with chain rule): $\dfrac{d}{dx}\!\left[\int_a^{u(x)} f(t)\,dt\right] = f(u(x)) \cdot u'(x)$
+  </div>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ FTC Part 2 — Evaluation Theorem</div>
+    If $F$ is any antiderivative of $f$, then:
+    $$\int_a^b f(x)\,dx = F(b) - F(a) \equiv \Big[F(x)\Big]_a^b$$
+  </div>
+
+  <div class="callout callout-example">
+    <div class="callout-title">📝 Example — FTC Part 1 with Chain Rule</div>
+    $\dfrac{d}{dx}\!\left[\displaystyle\int_1^{x^3} \sin t\,dt\right] = \sin(x^3) \cdot 3x^2$
+  </div>
+</section>
+
+<!-- 6.4 Properties -->
+<section id="sec-properties">
+  <h2>6.4 Properties of Definite Integrals</h2>
+  <table class="data-table">
+    <tr><th>Property</th><th>Formula</th></tr>
+    <tr><td>Zero width</td><td>$\displaystyle\int_a^a f\,dx = 0$</td></tr>
+    <tr><td>Reversal</td><td>$\displaystyle\int_b^a f\,dx = -\displaystyle\int_a^b f\,dx$</td></tr>
+    <tr><td>Sum</td><td>$\displaystyle\int_a^b (f+g)\,dx = \int_a^b f\,dx + \int_a^b g\,dx$</td></tr>
+    <tr><td>Constant multiple</td><td>$\displaystyle\int_a^b cf\,dx = c\int_a^b f\,dx$</td></tr>
+    <tr><td>Additivity</td><td>$\displaystyle\int_a^b f\,dx + \int_b^c f\,dx = \int_a^c f\,dx$</td></tr>
+    <tr><td>Comparison</td><td>If $f \ge g$ on $[a,b]$: $\displaystyle\int_a^b f\,dx \ge \int_a^b g\,dx$</td></tr>
+  </table>
+</section>
+
+<!-- 6.5 U-Sub -->
+<section id="sec-usub">
+  <h2>6.5 U-Substitution (Change of Variable)</h2>
+
+  <div class="callout callout-definition">
+    <div class="callout-title">📐 U-Substitution</div>
+    Let $u = g(x)$, $du = g'(x)\,dx$. Then:
+    $$\int f(g(x))\,g'(x)\,dx = \int f(u)\,du$$
+    For definite integrals, also change the bounds: if $x = a \Rightarrow u = g(a)$; $x = b \Rightarrow u = g(b)$.
+  </div>
+
+  <div class="callout callout-note">
+    <div class="callout-title">📌 Choosing $u$</div>
+    Pick $u$ to be the "inside" of a composition, especially if you see $u'$ (or a constant multiple of it) already in the integral.
+  </div>
+
+  <div class="callout callout-example">
+    <div class="callout-title">📝 Quick Example</div>
+    $\displaystyle\int 2x\cos(x^2)\,dx$: let $u = x^2$, $du = 2x\,dx$.
+    $= \displaystyle\int \cos u\,du = \sin u + C = \sin(x^2) + C$.
+  </div>
+</section>
+
+<!-- 6.6 Integration by Parts (BC) -->
+<section id="sec-parts">
+  <h2>6.6 Integration by Parts <span class="chapter-badge bc" style="font-size:0.65rem;vertical-align:middle;">BC</span></h2>
+
+  <div class="callout callout-theorem">
+    <div class="callout-title">✅ Integration by Parts Formula</div>
+    $$\int u\,dv = uv - \int v\,du$$
+    Derived from the product rule: $(uv)' = u'v + uv'$.
+  </div>
+
+  <div class="callout callout-note">
+    <div class="callout-title">📌 LIATE Guideline for Choosing $u$</div>
+    Pick $u$ from the first matching category: <strong>L</strong>ogarithmic, <strong>I</strong>nverse trig, <strong>A</strong>lgebraic (polynomials), <strong>T</strong>rigonometric, <strong>E</strong>xponential.
+    Then $dv$ = everything else.
+  </div>
+</section>
+
+<!-- 6.7 Partial Fractions (BC) -->
+<section id="sec-partial">
+  <h2>6.7 Partial Fraction Decomposition <span class="chapter-badge bc" style="font-size:0.65rem;vertical-align:middle;">BC</span></h2>
+  <p>Used to integrate rational functions by decomposing them into simpler fractions.</p>
+
+  <div class="callout callout-example">
+    <div class="callout-title">📝 Example</div>
+    $\displaystyle\int \frac{1}{x^2-1}\,dx = \int \frac{1}{(x-1)(x+1)}\,dx$.
+    Decompose: $\dfrac{1}{(x-1)(x+1)} = \dfrac{A}{x-1} + \dfrac{B}{x+1}$.
+    Solving: $A = 1/2$, $B = -1/2$.
+    $= \dfrac{1}{2}\ln|x-1| - \dfrac{1}{2}\ln|x+1| + C = \dfrac{1}{2}\ln\left|\dfrac{x-1}{x+1}\right| + C$.
+  </div>
+</section>
+
+<!-- Worked Examples -->
+<section id="sec-examples">
+  <h2>Worked Examples</h2>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 1</span><span class="example-title">Basic Integration</span></div>
+    <div class="example-body">
+      <p class="example-problem">Evaluate $\displaystyle\int\!\left(3x^2 - \frac{2}{x} + e^x - \cos x\right)dx$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Integrate term by term:
+          $$= x^3 - 2\ln|x| + e^x - \sin x + C$$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 2</span><span class="example-title">FTC Part 2</span></div>
+    <div class="example-body">
+      <p class="example-problem">Evaluate $\displaystyle\int_0^3 (x^2 + 1)\,dx$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Antiderivative: $F(x) = \dfrac{x^3}{3} + x$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">$F(3) - F(0) = (9 + 3) - 0 = \boxed{12}$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 3</span><span class="example-title">FTC Part 1</span></div>
+    <div class="example-body">
+      <p class="example-problem">Find $\dfrac{d}{dx}\!\left[\displaystyle\int_2^{x^2} \frac{1}{\ln t}\,dt\right]$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">By FTC Part 1 with chain rule: $= \dfrac{1}{\ln(x^2)} \cdot 2x = \dfrac{2x}{2\ln x} = \boxed{\dfrac{x}{\ln x}}$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 4</span><span class="example-title">U-Substitution — Indefinite</span></div>
+    <div class="example-body">
+      <p class="example-problem">Evaluate $\displaystyle\int x^2 \sqrt{x^3+1}\,dx$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Let $u = x^3+1$, $du = 3x^2\,dx$, so $x^2\,dx = \dfrac{du}{3}$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">$\displaystyle\int \sqrt{u}\cdot\frac{du}{3} = \frac{1}{3}\cdot\frac{u^{3/2}}{3/2} + C = \frac{2}{9}u^{3/2} + C = \boxed{\frac{2}{9}(x^3+1)^{3/2} + C}$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 5</span><span class="example-title">U-Substitution — Definite</span></div>
+    <div class="example-body">
+      <p class="example-problem">Evaluate $\displaystyle\int_0^{\pi/2} \sin x\cos x\,dx$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Let $u = \sin x$, $du = \cos x\,dx$. Bounds: $x=0 \Rightarrow u=0$; $x=\pi/2 \Rightarrow u=1$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">$\displaystyle\int_0^1 u\,du = \left[\frac{u^2}{2}\right]_0^1 = \boxed{\frac{1}{2}}$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 6</span><span class="example-title">Integration by Parts (BC)</span></div>
+    <div class="example-body">
+      <p class="example-problem">Evaluate $\displaystyle\int x e^x\,dx$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">LIATE: $u = x$ (Algebraic), $dv = e^x\,dx$. Then $du = dx$, $v = e^x$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">$\int xe^x\,dx = xe^x - \int e^x\,dx = xe^x - e^x + C = \boxed{e^x(x-1) + C}$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 7</span><span class="example-title">Integration by Parts — $\int \ln x\,dx$</span></div>
+    <div class="example-body">
+      <p class="example-problem">Evaluate $\displaystyle\int \ln x\,dx$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">LIATE: $u = \ln x$ (Log), $dv = dx$. Then $du = \dfrac{1}{x}dx$, $v = x$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">$\int \ln x\,dx = x\ln x - \int x \cdot \dfrac{1}{x}\,dx = x\ln x - \int 1\,dx = \boxed{x\ln x - x + C}$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-header"><span class="example-number">Example 8</span><span class="example-title">Partial Fractions (BC)</span></div>
+    <div class="example-body">
+      <p class="example-problem">Evaluate $\displaystyle\int \frac{3x+1}{x^2-x-2}\,dx$.</p>
+      <button class="solution-toggle">▶ Show Solution</button>
+      <div class="solution-body">
+        <div class="solution-step"><div class="step-num">1</div>
+          <div class="step-content">Factor denominator: $x^2-x-2 = (x-2)(x+1)$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">2</div>
+          <div class="step-content">$\dfrac{3x+1}{(x-2)(x+1)} = \dfrac{A}{x-2} + \dfrac{B}{x+1}$. Multiply: $3x+1 = A(x+1) + B(x-2)$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">3</div>
+          <div class="step-content">$x=2$: $7 = 3A \Rightarrow A = 7/3$. $x=-1$: $-2 = -3B \Rightarrow B = 2/3$.</div>
+        </div>
+        <div class="solution-step"><div class="step-num">4</div>
+          <div class="step-content">$\displaystyle\int\!\left(\frac{7/3}{x-2} + \frac{2/3}{x+1}\right)dx = \boxed{\frac{7}{3}\ln|x-2| + \frac{2}{3}\ln|x+1| + C}$</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="chapter-nav">
+  <a href="ch05-analytical-applications.html" class="chapter-nav-card prev">
+    <span class="nav-card-arrow">←</span>
+    <div><div class="nav-card-label">Previous</div><div class="nav-card-title">Analytical Applications</div></div>
+  </a>
+  <a href="ch07-differential-equations.html" class="chapter-nav-card next">
+    <span class="nav-card-arrow">→</span>
+    <div><div class="nav-card-label">Next Chapter</div><div class="nav-card-title">Differential Equations</div></div>
+  </a>
+</div>
+
+</div></main></div>
+<footer class="site-footer"><p>© 2024 <a href="https://avinashai.com">AvinashAI</a> · Chapter 6: Integration &amp; Accumulation</p></footer>
+<script src="../js/nav.js" id="navScript" data-root=".."></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/main.js"></script>
+</body></html>

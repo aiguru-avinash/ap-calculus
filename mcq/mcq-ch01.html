@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ Chapter 1: Limits & Continuity | AP Calculus</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+<div id="topNav"></div>
+<div class="page-wrapper">
+<div id="sidebarNav"></div>
+<main class="main-content"><div class="content-inner">
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow"><span class="chapter-badge ab">AB</span><span class="chapter-badge bc">BC</span></div>
+  <h1>Chapter 1 — Limits &amp; Continuity: 20 MCQs</h1>
+  <p class="page-hero-subtitle">Click an option to check your answer. All answers are explained.</p>
+</div>
+
+<div class="quiz-controls">
+  <div class="quiz-score">
+    <div><div class="score-display" id="scoreDisplay">0/20</div><div class="score-label">Score</div></div>
+  </div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+  <span class="text-muted" id="answeredCount">0 answered</span>
+  <button class="btn btn-secondary btn-sm" id="resetQuiz">Reset</button>
+</div>
+
+<div class="mcq-container">
+
+<!-- Q1 -->
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header">
+    <div class="mcq-num">1</div>
+    <div class="mcq-question">$\displaystyle\lim_{x \to 2} \frac{x^2 - 4}{x - 2}$ equals</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 0</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 4</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 2</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> Does not exist</div>
+  </div>
+  <div class="mcq-explanation">Factor: $(x^2-4)/(x-2) = (x-2)(x+2)/(x-2) = x+2$. At $x=2$: $2+2=4$.</div>
+</div>
+
+<!-- Q2 -->
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header">
+    <div class="mcq-num">2</div>
+    <div class="mcq-question">$\displaystyle\lim_{x \to 0} \frac{\sin(5x)}{x}$ equals</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 0</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 1</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 5</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $1/5$</div>
+  </div>
+  <div class="mcq-explanation">$\dfrac{\sin(5x)}{x} = 5\cdot\dfrac{\sin(5x)}{5x} \to 5\cdot 1 = 5$ as $x\to 0$.</div>
+</div>
+
+<!-- Q3 -->
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header">
+    <div class="mcq-num">3</div>
+    <div class="mcq-question">$\displaystyle\lim_{x \to \infty} \frac{3x^2 + 5}{x^2 - 1}$ equals</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 3</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 5</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\infty$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 0</div>
+  </div>
+  <div class="mcq-explanation">Divide by $x^2$: $(3+5/x^2)/(1-1/x^2) \to 3/1 = 3$.</div>
+</div>
+
+<!-- Q4 -->
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header">
+    <div class="mcq-num">4</div>
+    <div class="mcq-question">$\displaystyle\lim_{x \to 0} \frac{1-\cos x}{x}$ equals</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 1</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $-1$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $1/2$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 0</div>
+  </div>
+  <div class="mcq-explanation">Standard limit: $\lim_{x\to 0}\dfrac{1-\cos x}{x} = 0$.</div>
+</div>
+
+<!-- Q5 -->
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header">
+    <div class="mcq-num">5</div>
+    <div class="mcq-question">Which of the following is a necessary condition for $\displaystyle\lim_{x \to a} f(x)$ to exist?</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $f(a)$ must be defined</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> The left and right one-sided limits must both exist and be equal</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $f$ must be continuous at $a$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $f'(a)$ must exist</div>
+  </div>
+  <div class="mcq-explanation">By definition, the two-sided limit exists iff both one-sided limits exist and are equal. $f(a)$ need not be defined.</div>
+</div>
+
+<!-- Q6 -->
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header">
+    <div class="mcq-num">6</div>
+    <div class="mcq-question">$f(x) = \dfrac{x^2 - 9}{x-3}$ has what type of discontinuity at $x=3$?</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> Jump</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> Infinite</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> Removable</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> No discontinuity</div>
+  </div>
+  <div class="mcq-explanation">$(x^2-9)/(x-3) = x+3$ for $x\ne 3$. Limit $= 6$ exists but $f(3)$ undefined → removable.</div>
+</div>
+
+<!-- Q7 -->
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header">
+    <div class="mcq-num">7</div>
+    <div class="mcq-question">If $f(x) = \begin{cases} x+1 & x < 2\\ 3 & x=2\\ 2x-1 & x>2 \end{cases}$, then $\displaystyle\lim_{x\to 2}f(x)$ equals</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 3</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> Does not exist</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 2</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 1</div>
+  </div>
+  <div class="mcq-explanation">Left: $\lim_{x\to 2^-}(x+1) = 3$. Right: $\lim_{x\to 2^+}(2x-1)=3$. Both equal 3, so limit $= 3$. ($f(2)=3$ too — this function is actually continuous!)</div>
+</div>
+
+<!-- Q8 -->
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header">
+    <div class="mcq-num">8</div>
+    <div class="mcq-question">$\displaystyle\lim_{x \to 4} \frac{\sqrt{x} - 2}{x - 4}$ equals</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 0</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> Does not exist</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 2</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\dfrac{1}{4}$</div>
+  </div>
+  <div class="mcq-explanation">Multiply by conjugate: $\dfrac{(\sqrt{x}-2)(\sqrt{x}+2)}{(x-4)(\sqrt{x}+2)} = \dfrac{x-4}{(x-4)(\sqrt{x}+2)} = \dfrac{1}{\sqrt{x}+2}\to\dfrac{1}{4}$.</div>
+</div>
+
+<!-- Q9 -->
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header">
+    <div class="mcq-num">9</div>
+    <div class="mcq-question">Which function is continuous at $x=0$?</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $f(x) = \dfrac{1}{x}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $g(x) = x\sin\!\left(\dfrac{1}{x}\right)$ with $g(0)=0$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $h(x) = \dfrac{|x|}{x}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $k(x) = \dfrac{\sin x}{x}$ with $k(0)=0$</div>
+  </div>
+  <div class="mcq-explanation">$g(x)=x\sin(1/x)$: squeeze theorem gives $\lim_{x\to 0} g(x)=0=g(0)$ ✓. (D is wrong because $k(0)$ should be 1 for continuity, not 0.)</div>
+</div>
+
+<!-- Q10 -->
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header">
+    <div class="mcq-num">10</div>
+    <div class="mcq-question">For $f(x) = \dfrac{2x^3 - x}{4x^3 + 1}$, the horizontal asymptote is</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $y = 0$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $y = -1$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $y = \dfrac{1}{2}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $y = 2$</div>
+  </div>
+  <div class="mcq-explanation">Equal degrees: ratio of leading coefficients $= 2/4 = 1/2$.</div>
+</div>
+
+<!-- Q11 -->
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header">
+    <div class="mcq-num">11</div>
+    <div class="mcq-question">The Intermediate Value Theorem guarantees that $f(x) = x^3 - 3x + 1$ has a root in</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $(1, 2)$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $(-3, -2)$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $(3, 4)$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $(2, 3)$</div>
+  </div>
+  <div class="mcq-explanation">$f(1)=1-3+1=-1<0$ and $f(2)=8-6+1=3>0$. Sign change → root in $(1,2)$ by IVT.</div>
+</div>
+
+<!-- Q12 -->
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header">
+    <div class="mcq-num">12</div>
+    <div class="mcq-question">$\displaystyle\lim_{x\to 0^+} \ln x$ equals</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 0</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 1</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $+\infty$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $-\infty$</div>
+  </div>
+  <div class="mcq-explanation">As $x\to 0^+$, $\ln x\to -\infty$ (vertical asymptote at $x=0$).</div>
+</div>
+
+<!-- Q13 -->
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header">
+    <div class="mcq-num">13</div>
+    <div class="mcq-question">If $-x^2 \le f(x) \le x^2$ for all $x$, then $\displaystyle\lim_{x\to 0}f(x)$ equals</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $-1$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 0</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 1</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> Does not exist</div>
+  </div>
+  <div class="mcq-explanation">Squeeze Theorem: $\lim_{x\to 0}(-x^2) = \lim_{x\to 0}(x^2) = 0$, so $\lim f(x) = 0$.</div>
+</div>
+
+<!-- Q14 -->
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header">
+    <div class="mcq-num">14</div>
+    <div class="mcq-question">At which value of $x$ does $f(x) = \dfrac{x}{x^2-4}$ have a vertical asymptote?</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $x=0$ only</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $x=4$ only</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $x=2$ and $x=-2$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $x=\pm 4$</div>
+  </div>
+  <div class="mcq-explanation">$x^2-4=(x-2)(x+2)=0$ at $x=\pm 2$. Numerator $\ne 0$ there, so vertical asymptotes at $x=2$ and $x=-2$.</div>
+</div>
+
+<!-- Q15 -->
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header">
+    <div class="mcq-num">15</div>
+    <div class="mcq-question">Which of the following statements about continuity is FALSE?</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> If $f$ is differentiable at $a$, then $f$ need not be continuous at $a$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> Polynomials are continuous everywhere</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> If $f$ and $g$ are continuous at $a$, then $f+g$ is continuous at $a$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> A function continuous on $[a,b]$ attains its maximum and minimum on $[a,b]$</div>
+  </div>
+  <div class="mcq-explanation">A is FALSE: differentiability IMPLIES continuity. If $f$ is differentiable at $a$, it MUST be continuous at $a$.</div>
+</div>
+
+<!-- Q16 -->
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header">
+    <div class="mcq-num">16</div>
+    <div class="mcq-question">$\displaystyle\lim_{x\to\infty}\frac{\sqrt{4x^2+3}}{x+1}$ equals</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\infty$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 2</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\sqrt{4}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 4</div>
+  </div>
+  <div class="mcq-explanation">Divide by $x$ (for $x>0$): $\dfrac{\sqrt{4+3/x^2}}{1+1/x}\to\dfrac{\sqrt{4}}{1}=2$.</div>
+</div>
+
+<!-- Q17 -->
+<div class="mcq-item" data-correct="C">
+  <div class="mcq-header">
+    <div class="mcq-num">17</div>
+    <div class="mcq-question">For $f(x) = \begin{cases}kx & x<2\\ x^2-1 & x\ge 2\end{cases}$ to be continuous at $x=2$, the value of $k$ must be</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 1</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 2</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $\dfrac{3}{2}$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 3</div>
+  </div>
+  <div class="mcq-explanation">From the right: $f(2) = 2^2-1=3$. From the left: $\lim_{x\to 2^-}(kx) = 2k$. For continuity: $2k=3 \Rightarrow k=\dfrac{3}{2}$.</div>
+</div>
+
+<!-- Q18 -->
+<div class="mcq-item" data-correct="A">
+  <div class="mcq-header">
+    <div class="mcq-num">18</div>
+    <div class="mcq-question">$\displaystyle\lim_{x\to 0}\frac{\tan(2x)}{3x}$ equals</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\dfrac{2}{3}$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $\dfrac{3}{2}$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 0</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> 1</div>
+  </div>
+  <div class="mcq-explanation">$\dfrac{\tan(2x)}{3x} = \dfrac{2}{3}\cdot\dfrac{\tan(2x)}{2x}\to\dfrac{2}{3}\cdot 1=\dfrac{2}{3}$. (Since $\lim_{\theta\to 0}\tan\theta/\theta=1$.)</div>
+</div>
+
+<!-- Q19 -->
+<div class="mcq-item" data-correct="D">
+  <div class="mcq-header">
+    <div class="mcq-num">19</div>
+    <div class="mcq-question">Which statement correctly describes $f(x) = \sin(1/x)$ at $x=0$?</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> $\displaystyle\lim_{x\to 0}f(x) = 0$</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> $f$ has a jump discontinuity at $x=0$</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> $f$ has a removable discontinuity at $x=0$</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $\displaystyle\lim_{x\to 0}f(x)$ does not exist</div>
+  </div>
+  <div class="mcq-explanation">$\sin(1/x)$ oscillates infinitely between $-1$ and $1$ as $x\to 0$, so the limit does not exist (oscillating, not a jump discontinuity in the usual sense).</div>
+</div>
+
+<!-- Q20 -->
+<div class="mcq-item" data-correct="B">
+  <div class="mcq-header">
+    <div class="mcq-num">20</div>
+    <div class="mcq-question">If $\displaystyle\lim_{x\to a}f(x) = 5$ and $\displaystyle\lim_{x\to a}g(x) = -2$, then $\displaystyle\lim_{x\to a}[3f(x) - g(x)^2]$ equals</div>
+  </div>
+  <div class="mcq-options">
+    <div class="mcq-option" data-option="A"><span class="option-letter">A</span> 11</div>
+    <div class="mcq-option" data-option="B"><span class="option-letter">B</span> 11</div>
+    <div class="mcq-option" data-option="C"><span class="option-letter">C</span> 19</div>
+    <div class="mcq-option" data-option="D"><span class="option-letter">D</span> $-11$</div>
+  </div>
+  <div class="mcq-explanation">$3(5) - (-2)^2 = 15 - 4 = 11$. By limit laws.</div>
+</div>
+
+</div><!-- /mcq-container -->
+
+<div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+  <a href="../chapters/ch01-limits.html" class="btn btn-secondary">← Review Chapter 1</a>
+  <a href="mcq-ch02.html" class="btn btn-primary">Chapter 2 MCQs →</a>
+  <a href="../answers/answer-key.html" class="btn btn-ghost">Full Answer Key</a>
+</div>
+
+</div></main></div>
+<footer class="site-footer"><p>© 2024 <a href="https://avinashai.com">AvinashAI</a> · MCQ — Chapter 1</p></footer>
+<script src="../js/nav.js" id="navScript" data-root=".."></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/main.js"></script>
+</body></html>
